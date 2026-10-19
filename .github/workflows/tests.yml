@@ -25,5 +25,7 @@ jobs:
       - run: python -m ruff format --check .
       - run: python -m compileall -q db.py server.py production.py instance.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests
       - run: node --check static/app.js
+      - run: node --check tools/capture_screenshots.cjs
       - run: python -m bandit -q -r . --exclude ./.tmp,./tests,./.venv,./data
       - run: python tools/release_audit.py
+      - run: python tools/check_docs.py
