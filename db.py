@@ -40,6 +40,9 @@ def connect():
 
 def init():
     with connect() as db:
+        version = db.execute("PRAGMA user_version").fetchone()[0]
+        if version > 2:
+            raise RuntimeError("Database schema is newer than this application; do not downgrade")
         db.executescript("""
             PRAGMA journal_mode=WAL;
             CREATE TABLE IF NOT EXISTS stories (
@@ -71,7 +74,6 @@ def init():
             CREATE INDEX IF NOT EXISTS ix_issues_status ON issues(status, published_at DESC);
         """)
         # Versioned, transactional table rebuilds preserve existing records and foreign keys.
-        version = db.execute("PRAGMA user_version").fetchone()[0]
         if version < 1:
             db.executescript("""
                 PRAGMA foreign_keys=OFF;
@@ -108,8 +110,33 @@ def init():
             CREATE TABLE IF NOT EXISTS operations (
                 id INTEGER PRIMARY KEY, kind TEXT NOT NULL, detail TEXT NOT NULL, created_at TEXT NOT NULL);
         """)
+        if version < 2:
+            db.executescript("""
+                BEGIN IMMEDIATE;
+                CREATE TABLE IF NOT EXISTS rate_limits (
+                    identity TEXT PRIMARY KEY, started INTEGER NOT NULL, attempts INTEGER NOT NULL);
+                PRAGMA user_version=2;
+                COMMIT;
+            """)
         if db.execute("PRAGMA foreign_key_check").fetchone():
             raise RuntimeError("Database foreign-key validation failed; restore a verified backup")
+
+
+def rate_limited(identity, limit, window, timestamp):
+    """Atomic fixed-window limits survive restarts; identity is a keyed hash, never an IP."""
+    with connect() as conn:
+        conn.execute("BEGIN IMMEDIATE")
+        conn.execute("DELETE FROM rate_limits WHERE started<=?", (timestamp - 3600,))
+        record = conn.execute("SELECT * FROM rate_limits WHERE identity=?", (identity,)).fetchone()
+        if record and record["started"] > timestamp - window:
+            if record["attempts"] >= limit:
+                return True
+            conn.execute("UPDATE rate_limits SET attempts=attempts+1 WHERE identity=?", (identity,))
+        else:
+            if conn.execute("SELECT COUNT(*) FROM rate_limits").fetchone()[0] >= 10000:
+                return True
+            conn.execute("INSERT OR REPLACE INTO rate_limits VALUES(?,?,1)", (identity, timestamp))
+    return False
 
 
 def row(r):

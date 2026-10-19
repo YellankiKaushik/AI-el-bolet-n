@@ -164,7 +164,7 @@ class TestPersistenceWorkflow(DatabaseCase):
         db.init()
         self.assertEqual(db.get_issue(issue_id=identity)["topic"], "Research")
         with db.connect() as conn:
-            self.assertEqual(conn.execute("PRAGMA user_version").fetchone()[0], 1)
+            self.assertEqual(conn.execute("PRAGMA user_version").fetchone()[0], 2)
             self.assertIsNone(conn.execute("PRAGMA foreign_key_check").fetchone())
 
     def test_search_topic_and_private_drafts(self):

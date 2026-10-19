@@ -18,6 +18,10 @@ __pycache__/
 *.db-shm
 *.db-wal
 data/
+backups/
+*.db.lock
+*.sqlite3.lock
+*.sqlite.lock
 newsletter-draft.json
 .DS_Store
 
