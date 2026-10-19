@@ -20,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 # A private per-container tmpfs mount, not a host temporary filename.
 CONTAINER_TMPFS = "/tmp:size=32m,mode=1777"  # nosec B108
+LOG_OPTIONS = {"max-size": "10m", "max-file": "5"}
 
 
 def ensure(condition, message="Container acceptance assertion failed"):
@@ -88,6 +89,18 @@ class Acceptance:
     def env_args(self):
         return [part for key in self.env for part in ("--env", key)]
 
+    @staticmethod
+    def logging_args():
+        return [
+            "--log-driver",
+            "local",
+            *[
+                part
+                for key, value in LOG_OPTIONS.items()
+                for part in ("--log-opt", f"{key}={value}")
+            ],
+        ]
+
     def start(self, suffix, volume, network="none", extra=()):
         name = self.prefix + "-" + suffix
         self.containers.append(name)
@@ -109,6 +122,7 @@ class Acceptance:
             "128",
             "--memory",
             "512m",
+            *self.logging_args(),
             "--mount",
             f"type=volume,src={volume},dst=/data",
             *self.env_args(),
@@ -122,6 +136,7 @@ class Acceptance:
         ensure(info["HostConfig"]["Memory"] == 512 * 1024 * 1024)
         ensure(info["HostConfig"]["PidsLimit"] == 128)
         ensure(info["HostConfig"]["CapDrop"] == ["ALL"])
+        ensure(info["HostConfig"]["LogConfig"] == {"Type": "local", "Config": LOG_OPTIONS})
         return name
 
     def healthy(self, name):
@@ -169,6 +184,8 @@ class Acceptance:
         ensure(app["mem_limit"] == "536870912" or app["mem_limit"] == 536870912)
         ports = values["services"]["proxy"]["ports"]
         ensure({int(port["target"]) for port in ports} == {80, 443})
+        for service in values["services"].values():
+            ensure(service["logging"] == {"driver": "local", "options": LOG_OPTIONS})
         self.checked(
             "Production Compose validates with synthetic configuration; app and Ollama have no published ports"
         )
@@ -208,7 +225,22 @@ class Acceptance:
             encoding="utf-8",
         )
         network = self.prefix + "-private"
-        self.docker("network", "create", "--internal", network)
+        # Docker accepts static container IPs only for an explicitly configured subnet.
+        # Choose an unused range so acceptance can coexist with unrelated daemon networks.
+        network_ids = self.docker("network", "ls", "--quiet").splitlines()
+        existing = json.loads(self.docker("network", "inspect", *network_ids))
+        occupied = [
+            ipaddress.ip_network(config["Subnet"])
+            for item in existing
+            for config in item.get("IPAM", {}).get("Config", [])
+            if config.get("Subnet")
+        ]
+        available = next(
+            candidate
+            for candidate in ipaddress.ip_network("172.28.0.0/16").subnets(new_prefix=24)
+            if not any(candidate.overlaps(other) for other in occupied if other.version == 4)
+        )
+        self.docker("network", "create", "--internal", "--subnet", available, network)
         self.networks.append(network)
         details = self.inspect("network", network)
         ensure(details["Internal"])
@@ -238,11 +270,14 @@ class Acceptance:
             "no-new-privileges:true",
             "--memory",
             "256m",
+            *self.logging_args(),
             "--mount",
             f"type=bind,src={caddyfile},dst=/etc/caddy/Caddyfile,readonly",
             caddy_image,
         )
-        ensure(not json.loads(self.docker("inspect", proxy))[0]["HostConfig"]["PortBindings"])
+        proxy_info = json.loads(self.docker("inspect", proxy))[0]
+        ensure(not proxy_info["HostConfig"]["PortBindings"])
+        ensure(proxy_info["HostConfig"]["LogConfig"] == {"Type": "local", "Config": LOG_OPTIONS})
         for attempt in range(20):
             try:
                 self.docker(
@@ -286,7 +321,7 @@ class Acceptance:
                 name = self.start("app", volume)
                 self.probe(name, "runtime")
                 self.checked(
-                    "Non-root image startup, real healthcheck, readonly root, resource limits and no external network"
+                    "Non-root startup, healthcheck, readonly root, resource limits, bounded local logs and no external network"
                 )
                 self.docker("exec", name, "python", "tools/pilot_smoke.py")
                 self.checked(

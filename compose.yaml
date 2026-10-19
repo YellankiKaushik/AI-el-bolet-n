@@ -20,6 +20,11 @@ services:
     security_opt: [no-new-privileges:true]
     pids_limit: 128
     mem_limit: 512m
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
+        max-file: "5"
     volumes:
       - signal_data:/data
     networks:
@@ -44,6 +49,11 @@ services:
         condition: service_healthy
     security_opt: [no-new-privileges:true]
     mem_limit: 256m
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
+        max-file: "5"
     networks:
       private:
         ipv4_address: 172.30.0.2
