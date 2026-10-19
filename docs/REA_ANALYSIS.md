@@ -1,5 +1,7 @@
 # REA and reference analysis
 
+> Historical snapshot: retain the recorded results and machine details as evidence. For current behavior, portable setup and verification, see [Project status](PROJECT_STATUS.md), [Getting started](GETTING_STARTED.md) and the [documentation release report](GITHUB_DOCUMENTATION_REPORT.md).
+
 Inspected 2026-10-19. Passive public-page reading only. No signup submission, authentication, private API access, code extraction, protection bypass or brand/content copying.
 
 ## Local REA findings

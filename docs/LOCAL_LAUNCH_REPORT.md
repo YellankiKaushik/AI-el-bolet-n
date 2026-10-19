@@ -1,5 +1,7 @@
 # SIGNAL DAILY — LOCAL LAUNCH REPORT
 
+> Historical snapshot: retain the recorded results and machine details as evidence. For current behavior, portable setup and verification, see [Project status](PROJECT_STATUS.md), [Getting started](GETTING_STARTED.md) and the [documentation release report](GITHUB_DOCUMENTATION_REPORT.md).
+
 Date: 2026-10-19. **Local application: READY. Newsletter draft: READY FOR REVIEW.**
 
 Signal Daily is running on this Windows laptop, with the real editor left open on draft #2. It is restricted to loopback, live email is disabled, and no real news was approved or published. No deployment, service purchase, VPS configuration or GitHub push occurred. Production readiness is a separate, deferred objective; its blockers do not prevent this local workflow.

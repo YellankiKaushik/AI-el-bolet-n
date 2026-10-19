@@ -4,6 +4,8 @@ Date: 2026-10-19. Source readiness and a live production launch are separate. Th
 
 Phase 2's [production readiness report](PRODUCTION_READINESS_REPORT.md) and [controlled pilot runbook](PRODUCTION_RUNBOOK.md) contain the current launch gates, Docker rehearsal, backup/restore commands and first-edition instructions.
 
+For portable laptop onboarding and the current release, use [Getting started](GETTING_STARTED.md), [Configuration](CONFIGURATION.md) and [Project status](PROJECT_STATUS.md). Historical audit counts remain in their dated reports.
+
 ## Windows local installation
 
 Use Python 3.11+ and SQLite (bundled with Python). Local `run.py` needs no pip packages; `production.py` requires `requirements.txt`. Work from the `signal-daily` folder. Git is needed for the release audit; Node is only needed for the JavaScript syntax check.

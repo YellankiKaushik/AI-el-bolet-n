@@ -1,5 +1,7 @@
 # Signal Daily — Phase 2 production readiness
 
+> Historical snapshot: retain the recorded results and machine details as evidence. For current behavior, portable setup and verification, see [Project status](PROJECT_STATUS.md), [Getting started](GETTING_STARTED.md) and the [documentation release report](GITHUB_DOCUMENTATION_REPORT.md).
+
 Date: 2026-10-19. Development branch: `production-readiness`, based on published `main` commit `3b4ae381ba3d2db7d0834002dfa0f49aec83b27e`.
 
 **NOT READY FOR CONTROLLED DEPLOYMENT**

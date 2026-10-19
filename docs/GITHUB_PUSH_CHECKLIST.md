@@ -1,5 +1,7 @@
 # GitHub push checklist
 
+> Historical snapshot: retain the recorded results and machine details as evidence. For current behavior, portable setup and verification, see [Project status](PROJECT_STATUS.md), [Getting started](GETTING_STARTED.md) and the [documentation release report](GITHUB_DOCUMENTATION_REPORT.md).
+
 > Historical local-engineering audit, recorded before GitHub publication. See [the publication report](GITHUB_PUBLICATION_REPORT.md) for the later Git operations and verification.
 
 Audit date: 2026-10-19. **Source readiness: READY**, contingent on the final evidence files retaining their passing results. **Production deployment readiness: BLOCKED** for the reasons below. No remote repository was created or pushed.
