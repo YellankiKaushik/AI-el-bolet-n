@@ -4,12 +4,55 @@ services:
     restart: unless-stopped
     env_file: .env
     environment:
+      APP_ENV: production
       HOST: 0.0.0.0
       PORT: 8787
-      DATABASE_PATH: /data/signal_daily.db
-    ports:
-      - "127.0.0.1:8787:8787"
+      DATABASE_PATH: /data/${DATABASE_FILE:-signal_daily.db}
+      PUBLIC_URL: https://${PUBLIC_HOST:?Set PUBLIC_HOST to your public DNS name}
+      TRUSTED_PROXY: 172.30.0.2
+      ENABLE_LOCAL_GENERATION: "false"
+      EMAIL_DELIVERY_ENABLED: ${EMAIL_DELIVERY_ENABLED:-false}
+      DELIVERY_BATCH_SIZE: 5
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 512m
     volumes:
       - signal_data:/data
+    networks:
+      private:
+        ipv4_address: 172.30.0.3
+  proxy:
+    # Resolve and pin an audited image digest before public launch.
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      PUBLIC_HOST: ${PUBLIC_HOST:?Set PUBLIC_HOST to your public DNS name}
+      EDITOR_CIDR: ${EDITOR_CIDR:-127.0.0.1/32}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      newsletter:
+        condition: service_healthy
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    networks:
+      private:
+        ipv4_address: 172.30.0.2
 volumes:
   signal_data:
+  caddy_data:
+  caddy_config:
+networks:
+  private:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24

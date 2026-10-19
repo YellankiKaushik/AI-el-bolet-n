@@ -1,0 +1,34 @@
+{
+    servers {
+        max_header_size 16KB
+        timeouts {
+            read_header 10s
+            read_body 15s
+            write 120s
+            idle 60s
+        }
+    }
+}
+
+{$PUBLIC_HOST} {
+    # Restrict editor entry points to an operator IP/VPN range, independently of the password.
+    @blocked_editor {
+        path /admin /api/admin/* /api/login /api/logout
+        not remote_ip {$EDITOR_CIDR:127.0.0.1/32}
+    }
+    respond @blocked_editor "Forbidden" 403
+    request_body {
+        max_size 140000
+    }
+    # Access logging is deliberately disabled: confirmation/unsubscribe URLs are secrets.
+    reverse_proxy newsletter:8787 {
+        header_up Host {$PUBLIC_HOST}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto https
+        header_up -Forwarded
+        transport http {
+            dial_timeout 3s
+            response_header_timeout 120s
+        }
+    }
+}
