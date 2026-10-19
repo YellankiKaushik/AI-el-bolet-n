@@ -4,13 +4,30 @@ import html
 import os
 import smtplib
 import ssl
+from contextlib import contextmanager
 from email.message import EmailMessage
+from email.utils import parseaddr
 from urllib.parse import quote
 from validation import verify_issue, email_address
 
 
 class DeliveryUncertain(RuntimeError):
     """Transport failed during DATA; retrying could duplicate an accepted email."""
+
+
+@contextmanager
+def smtp_session(client):
+    try:
+        yield client
+    finally:
+        # Failure during QUIT must not turn a known accepted DATA into a retryable failure.
+        try:
+            client.quit()
+        except (OSError, smtplib.SMTPException):
+            try:
+                client.close()
+            except (OSError, smtplib.SMTPException):
+                pass
 
 
 def transmit(smtp, message):
@@ -23,10 +40,45 @@ def transmit(smtp, message):
 
 
 def configured():
-    return bool(os.getenv("SMTP_HOST") and os.getenv("MAIL_FROM"))
+    default = "false" if os.getenv("APP_ENV") == "production" else "true"
+    return os.getenv("EMAIL_DELIVERY_ENABLED", default).lower() == "true" and bool(
+        os.getenv("SMTP_HOST") and os.getenv("MAIL_FROM")
+    )
+
+
+def validate_config():
+    for key in ("EMAIL_DELIVERY_ENABLED", "SMTP_SSL"):
+        if key in os.environ and os.environ[key].lower() not in ("true", "false"):
+            raise ValueError(f"{key} must be true or false")
+    default = "false" if os.getenv("APP_ENV") == "production" else "true"
+    enabled = os.getenv("EMAIL_DELIVERY_ENABLED", default).lower() == "true"
+    if not enabled:
+        return
+    if not os.getenv("SMTP_HOST") and not os.getenv("MAIL_FROM"):
+        if os.getenv("APP_ENV") == "production":
+            raise ValueError("Enabled production email requires SMTP_HOST and MAIL_FROM")
+        return
+    if not os.getenv("SMTP_HOST") or not os.getenv("MAIL_FROM"):
+        raise ValueError("SMTP_HOST and MAIL_FROM must be configured together")
+    host = os.environ["SMTP_HOST"]
+    if any(char.isspace() for char in host) or "://" in host:
+        raise ValueError("SMTP_HOST must be a hostname")
+    sender = os.environ["MAIL_FROM"]
+    if "\r" in sender or "\n" in sender:
+        raise ValueError("Invalid MAIL_FROM")
+    email_address(parseaddr(sender)[1])
+    if bool(os.getenv("SMTP_USER")) != bool(os.getenv("SMTP_PASSWORD")):
+        raise ValueError("SMTP_USER and SMTP_PASSWORD must be configured together")
+    port = int(os.getenv("SMTP_PORT", "587"))
+    implicit = os.getenv("SMTP_SSL", "false").lower() == "true" or port in (465, 2465)
+    if port not in (465, 587, 2465, 2587):
+        raise ValueError("Use a supported TLS SMTP port: 465, 587, 2465 or 2587")
+    if implicit and port in (587, 2587):
+        raise ValueError("STARTTLS ports require SMTP_SSL=false")
 
 
 def send(to, subject, text, html_part="", unsubscribe_url=""):
+    validate_config()
     if not configured():
         raise RuntimeError("Email is not configured: SMTP_HOST and MAIL_FROM are required")
     email_address(to)
@@ -36,6 +88,7 @@ def send(to, subject, text, html_part="", unsubscribe_url=""):
     msg["Subject"] = subject.replace("\r", " ").replace("\n", " ")[:200]
     if unsubscribe_url:
         msg["List-Unsubscribe"] = f"<{unsubscribe_url}>"
+        msg["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
     msg.set_content(text)
     if html_part:
         msg.add_alternative(html_part, subtype="html")
@@ -44,15 +97,15 @@ def send(to, subject, text, html_part="", unsubscribe_url=""):
     username = os.getenv("SMTP_USER")
     password = os.getenv("SMTP_PASSWORD", "")
     timeout = 20
-    if os.getenv("SMTP_SSL", "false").lower() == "true" or port == 465:
-        with smtplib.SMTP_SSL(
-            host, port, timeout=timeout, context=ssl.create_default_context()
+    if os.getenv("SMTP_SSL", "false").lower() == "true" or port in (465, 2465):
+        with smtp_session(
+            smtplib.SMTP_SSL(host, port, timeout=timeout, context=ssl.create_default_context())
         ) as s:
             if username:
                 s.login(username, password)
             transmit(s, msg)
     else:
-        with smtplib.SMTP(host, port, timeout=timeout) as s:
+        with smtp_session(smtplib.SMTP(host, port, timeout=timeout)) as s:
             s.ehlo()
             s.starttls(context=ssl.create_default_context())
             s.ehlo()
