@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-19T20:45:50.503200+00:00",
+  "8787": "listening",
+  "8790": "stopped",
+  "8791": "stopped",
+  "8792": "stopped",
+  "11434": "listening",
+  "normal_health": {
+    "status": 200,
+    "body": {
+      "status": "ok"
+    }
+  }
+}

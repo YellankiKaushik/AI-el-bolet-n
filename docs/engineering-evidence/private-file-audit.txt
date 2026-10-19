@@ -1,0 +1,5 @@
+{
+  "candidate_count": 245,
+  "findings": [],
+  "scope": "Git candidates; known credential signatures and private file rules. Not an exhaustive secret detector."
+}

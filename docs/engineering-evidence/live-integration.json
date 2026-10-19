@@ -1,0 +1,204 @@
+{
+  "transport": "Actual HTTPS feeds and local Ollama; no mocked transport",
+  "feed_requests": [
+    {
+      "source": "Hugging Face",
+      "parsed": 30,
+      "relevant_recent": 3
+    },
+    {
+      "source": "MIT Technology Review",
+      "parsed": 10,
+      "relevant_recent": 9
+    },
+    {
+      "source": "arXiv AI",
+      "parsed": 0,
+      "relevant_recent": 0
+    },
+    {
+      "source": "The Verge AI",
+      "parsed": 10,
+      "relevant_recent": 8
+    }
+  ],
+  "source_records": [
+    {
+      "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/reflection-beam",
+      "published_at": "2026-10-16T00:00:00+00:00"
+    },
+    {
+      "title": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/meta-muse-spark-open",
+      "published_at": "2026-10-15T00:00:00+00:00"
+    },
+    {
+      "title": "The model that didn't exist, so you made it yourself",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/building-with-ml-intern",
+      "published_at": "2026-10-08T00:00:00+00:00"
+    },
+    {
+      "title": "Making the internet better for AI agents might make it worse for everyone else",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/",
+      "published_at": "2026-10-19T18:22:47+00:00"
+    },
+    {
+      "title": "\u201cWe were looking at it wrong\u201d: The explosive claim that\u2019s upended the AI world",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/19/1147149/we-were-looking-at-it-wrong-the-explosive-claim-thats-upended-the-ai-world/",
+      "published_at": "2026-10-19T17:45:55+00:00"
+    },
+    {
+      "title": "AI researchers stranded Claude on a virtual desert island. It started to \u201cplay.\u201d",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/19/1147095/ai-stranded-claude-virtual-desert-island-play/",
+      "published_at": "2026-10-19T09:08:05+00:00"
+    },
+    {
+      "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/16/1146224/roundtables-a-conversation-with-the-creator-of-ai-designed-viruses/",
+      "published_at": "2026-10-16T18:00:00+00:00"
+    },
+    {
+      "title": "Open models have real benefits. Do they outweigh the risks?",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/",
+      "published_at": "2026-10-13T10:00:00+00:00"
+    },
+    {
+      "title": "AI labs are buying data from dead startups to train their models",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/13/1145755/ai-labs-buying-data-from-dead-startups-to-train-models/",
+      "published_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "title": "We\u2019re putting too much faith in AI\u2019s ability to say no",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/09/1145728/we-are-putting-too-much-faith-in-ai-to-say-no/",
+      "published_at": "2026-10-09T09:00:00+00:00"
+    },
+    {
+      "title": "AI breakthroughs in robotics won\u2019t change your life any time soon",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/08/1145923/ai-breakthroughs-in-robotics-wont-change-your-life-any-time-soon/",
+      "published_at": "2026-10-08T09:00:00+00:00"
+    },
+    {
+      "title": "Building a safer path to autonomous industrial AI",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/10/08/1144020/building-a-safer-path-to-autonomous-industrial-ai/",
+      "published_at": "2026-10-08T08:17:32+00:00"
+    },
+    {
+      "title": "JB Pritzker thinks AI could help us live to 100 \u2014 or threaten us like nukes",
+      "source": "The Verge AI",
+      "url": "https://www.theverge.com/podcast/1012839/pritzker-ai-privacy-data-centers-flock-congress-laws",
+      "published_at": "2026-10-19T11:46:56-04:00"
+    },
+    {
+      "title": "A hacker broke into John Deere and SharkNinja with an army of AI agents",
+      "source": "The Verge AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+      "published_at": "2026-10-19T13:33:16-04:00"
+    },
+    {
+      "title": "Democrats think cracking down on AI could give them an edge",
+      "source": "The Verge AI",
+      "url": "https://www.theverge.com/policy/1013113/democrats-ai-midterms",
+      "published_at": "2026-10-19T08:37:05-04:00"
+    },
+    {
+      "title": "A woman was arrested in Philly for blocking a delivery robot",
+      "source": "The Verge AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1013541/a-woman-was-arrested-in-philly-for-blocking-a-delivery-robot",
+      "published_at": "2026-10-18T14:28:10-04:00"
+    },
+    {
+      "title": "Meta removes language that may have allowed it to scrape news sites",
+      "source": "The Verge AI",
+      "url": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites",
+      "published_at": "2026-10-17T11:04:36-04:00"
+    },
+    {
+      "title": "Websites are closing their doors to AI agents",
+      "source": "The Verge AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+      "published_at": "2026-10-16T18:31:39-04:00"
+    },
+    {
+      "title": "Meta\u2019s new terms may allow it to train AI on news sites for free",
+      "source": "The Verge AI",
+      "url": "https://www.theverge.com/tech/1012846/meta-business-terms-scrape-news-publishers",
+      "published_at": "2026-10-17T11:08:35-04:00"
+    },
+    {
+      "title": "Sega pulls Total War: Shogun 2 remaster from sale following disastrous launch",
+      "source": "The Verge AI",
+      "url": "https://www.theverge.com/games/1012512/sega-total-war-shogun-2-remaster-pulled",
+      "published_at": "2026-10-15T18:35:55-04:00"
+    }
+  ],
+  "model": "gemma4:e4b",
+  "model_endpoint": "http://127.0.0.1:11434",
+  "human_fact_check_required": true,
+  "feed_errors": [],
+  "feed_urls": {
+    "Hugging Face": "https://huggingface.co/blog/feed.xml",
+    "MIT Technology Review": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+    "arXiv AI": "https://rss.arxiv.org/rss/cs.AI",
+    "The Verge AI": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+  },
+  "accepted_stories": 20,
+  "collection_seconds": 0.7,
+  "duplicates_removed": 0,
+  "inserted": 20,
+  "duplicate_reinsert_added": 0,
+  "input_sources": [
+    {
+      "id": 1,
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/reflection-beam",
+      "published_at": "2026-10-16T00:00:00+00:00"
+    },
+    {
+      "id": 2,
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/meta-muse-spark-open",
+      "published_at": "2026-10-15T00:00:00+00:00"
+    },
+    {
+      "id": 3,
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/blog/building-with-ml-intern",
+      "published_at": "2026-10-08T00:00:00+00:00"
+    }
+  ],
+  "generation": "verified",
+  "generated_items": 3,
+  "saved_status": "draft",
+  "provenance_verified": true,
+  "loaded_models": [
+    {
+      "name": "gemma4:e4b",
+      "size": 9470056854,
+      "size_vram": 3160659720,
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M"
+      }
+    }
+  ],
+  "generation_seconds": 15.39
+}

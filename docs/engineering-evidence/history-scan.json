@@ -1,0 +1,10 @@
+{
+  "reachable_commits": 43,
+  "current_candidates": 192,
+  "current_findings": [],
+  "historical_reachable_blobs": 204,
+  "history_findings": [],
+  "scope": "Current Git candidates and all locally reachable Git history blobs. Known credential signatures and private/generated path rules only; no exact comparison to private .env values, remote-only/unreachable objects, entropy detection, container scanning or exhaustive secret guarantee.",
+  "exact_private_value_comparison": false,
+  "audit_date": "2026-10-20"
+}

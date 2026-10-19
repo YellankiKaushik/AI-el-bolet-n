@@ -1,0 +1,62 @@
+[
+  {
+    "check": "ruff-check",
+    "command": "\"C:\\Users\\YellankiKaushik\\Desktop\\KAUSHIK\\ALL Projects\\AI Newsletter\\signal-daily\\.tmp\\fresh-venv\\Scripts\\python.exe\" -m ruff check .",
+    "exit_code": 0,
+    "seconds": 0.09
+  },
+  {
+    "check": "ruff-format",
+    "command": "\"C:\\Users\\YellankiKaushik\\Desktop\\KAUSHIK\\ALL Projects\\AI Newsletter\\signal-daily\\.tmp\\fresh-venv\\Scripts\\python.exe\" -m ruff format --check .",
+    "exit_code": 0,
+    "seconds": 0.09
+  },
+  {
+    "check": "compile",
+    "command": "\"C:\\Users\\YellankiKaushik\\Desktop\\KAUSHIK\\ALL Projects\\AI Newsletter\\signal-daily\\.tmp\\fresh-venv\\Scripts\\python.exe\" -m compileall -q db.py server.py production.py instance.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests",
+    "exit_code": 0,
+    "seconds": 0.09
+  },
+  {
+    "check": "javascript",
+    "command": "node --check static/app.js",
+    "exit_code": 0,
+    "seconds": 0.05
+  },
+  {
+    "check": "screenshot-script",
+    "command": "node --check tools/capture_screenshots.cjs",
+    "exit_code": 0,
+    "seconds": 0.03
+  },
+  {
+    "check": "acceptance-script",
+    "command": "node --check tools/acceptance_browser.cjs",
+    "exit_code": 0,
+    "seconds": 0.05
+  },
+  {
+    "check": "bandit",
+    "command": "\"C:\\Users\\YellankiKaushik\\Desktop\\KAUSHIK\\ALL Projects\\AI Newsletter\\signal-daily\\.tmp\\fresh-venv\\Scripts\\python.exe\" -m bandit -q -r . --exclude ./.tmp,./tests,./.venv,./data,./backups",
+    "exit_code": 0,
+    "seconds": 0.78
+  },
+  {
+    "check": "documentation",
+    "command": "\"C:\\Users\\YellankiKaushik\\Desktop\\KAUSHIK\\ALL Projects\\AI Newsletter\\signal-daily\\.tmp\\fresh-venv\\Scripts\\python.exe\" tools/check_docs.py",
+    "exit_code": 0,
+    "seconds": 0.23
+  },
+  {
+    "check": "private-file-audit",
+    "command": "\"C:\\Users\\YellankiKaushik\\Desktop\\KAUSHIK\\ALL Projects\\AI Newsletter\\signal-daily\\.tmp\\fresh-venv\\Scripts\\python.exe\" tools/release_audit.py",
+    "exit_code": 0,
+    "seconds": 0.2
+  },
+  {
+    "check": "dependencies",
+    "command": "\"C:\\Users\\YellankiKaushik\\Desktop\\KAUSHIK\\ALL Projects\\AI Newsletter\\signal-daily\\.tmp\\fresh-venv\\Scripts\\python.exe\" tools/audit_dependencies.py",
+    "exit_code": 0,
+    "seconds": 0.7
+  }
+]

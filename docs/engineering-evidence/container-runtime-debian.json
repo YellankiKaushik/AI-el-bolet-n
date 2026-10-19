@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "checks": [
+    "Actual Dockerfile builds on Linux",
+    "Production Compose validates with synthetic configuration; app and Ollama have no published ports",
+    "Non-root startup, healthcheck, readonly root, resource limits, bounded local logs and no external network",
+    "Authenticated import, approval bypass rejection, review, approval, synthetic publication and public archive",
+    "Mounted-volume publication survives actual container restart",
+    "Online backup, integrity, separate-volume restore and invalid/existing restore rejection; consent and delivery ledger preserved",
+    "Actual image migrates v1 SQLite volume to v2 without losing publication, consent or ledger",
+    "Unmodified production Caddy configuration validates in the real Caddy image",
+    "Real Caddy proxy: canonical metadata, public archive, four editor CIDR denials and request limit on isolated network"
+  ],
+  "public_https": "NOT_TESTED",
+  "source_commit": "6db28bd65fd278cca2b22cb0194e116dd0a93b29",
+  "image_id": "sha256:aad41308aa3ec2b9458f5a873bb47ce4bbe60e3af1d30676c1c301c208bb4ce3",
+  "python_base_image": [
+    "python@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1"
+  ],
+  "caddy_image": [
+    "caddy@sha256:d8542f48d34a9cf4e4c11a478865229840e87e4c96ea3f439101f31a5d35f75f"
+  ],
+  "cleanup_errors": []
+}

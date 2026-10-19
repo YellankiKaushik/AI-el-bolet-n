@@ -1,0 +1,73 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "database_counts": {
+    "deliveries": 0,
+    "issue_events": 2,
+    "issues": 2,
+    "operations": 2,
+    "rate_limits": 0,
+    "stories": 19,
+    "subscribers": 0
+  },
+  "backup_integrity": "ok",
+  "configured_model": "gemma4:e4b",
+  "ollama_loopback": "http://127.0.0.1:11434",
+  "env_unchanged": true,
+  "unchanged_tables": {
+    "deliveries": true,
+    "issue_events": true,
+    "issues": true,
+    "operations": true,
+    "rate_limits": true,
+    "stories": true,
+    "subscribers": true
+  },
+  "/api/tags": [
+    {
+      "name": "gemma4-lab:latest",
+      "size": 9608350695,
+      "size_vram": null,
+      "details": {
+        "parent_model": "gemma4:e4b",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 2560
+      },
+      "remote_host": null,
+      "remote_model": null
+    },
+    {
+      "name": "gemma4:e4b",
+      "size": 9608350718,
+      "size_vram": null,
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 2560
+      },
+      "remote_host": null,
+      "remote_model": null
+    }
+  ],
+  "/api/ps": [],
+  "health_8787": {
+    "status": 200,
+    "body": {
+      "status": "ok"
+    }
+  },
+  "health_8790": "URLError"
+}

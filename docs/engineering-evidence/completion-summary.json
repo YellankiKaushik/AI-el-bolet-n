@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-20",
+  "tested_source_commit": "aaf91a7b955323dc2928d6f9b5d9222037d8fb99",
+  "branch": "main",
+  "automated": {
+    "passed": 97,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "passed": 75,
+    "failed": 0,
+    "skipped": 0
+  },
+  "protocol_checks_passed": 2,
+  "current_defects_found": 7,
+  "current_defects_fixed": 7,
+  "historical_qa_defects_fixed": 4,
+  "docker": "PASS",
+  "image_high_critical_findings": 0,
+  "staging": "BLOCKED",
+  "production": "BLOCKED",
+  "public_url": null,
+  "smtp": "DISABLED",
+  "local_gemma": "VERIFIED",
+  "rss": "VERIFIED"
+}

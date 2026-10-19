@@ -1,0 +1,35 @@
+{
+  "source_commit": "aaf91a7b955323dc2928d6f9b5d9222037d8fb99",
+  "run_id": 39321202556,
+  "scanner": "Trivy 0.70.0",
+  "severity_gate": [
+    "HIGH",
+    "CRITICAL"
+  ],
+  "ignore_unfixed": false,
+  "high_critical_findings": 0,
+  "images": [
+    {
+      "evidence": "image-scan-final.json",
+      "image_id": "sha256:8876d95e45b84b117a6c1edb5b6f91a6061e5da7a41ae4833021ba9ed3f35809",
+      "artifact_name": "signal-daily:acceptance",
+      "created_at": "2026-10-19T20:43:07.758291537Z",
+      "os": {
+        "Family": "alpine",
+        "Name": "3.24.2"
+      },
+      "high_critical_findings": 0
+    },
+    {
+      "evidence": "proxy-scan-final.json",
+      "image_id": "sha256:9dcd714193cf66806a3b3f219b8ca2e52d29e87d5208237cbbb54389f1ecacd9",
+      "artifact_name": "signal-daily-proxy:acceptance",
+      "created_at": "2026-10-19T20:43:11.566491656Z",
+      "os": {
+        "Family": "alpine",
+        "Name": "3.23.6"
+      },
+      "high_critical_findings": 0
+    }
+  ]
+}

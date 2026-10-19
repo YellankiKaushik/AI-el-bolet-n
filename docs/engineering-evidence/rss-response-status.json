@@ -1,0 +1,32 @@
+{
+  "scope": "Actual configured RSS collector with transparent status observation; no database writes",
+  "requests": [
+    {
+      "url": "https://huggingface.co/blog/feed.xml",
+      "final_url": "https://huggingface.co/blog/feed.xml",
+      "http_status": 200,
+      "seconds": 0.313
+    },
+    {
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+      "final_url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+      "http_status": 200,
+      "seconds": 0.062
+    },
+    {
+      "url": "https://rss.arxiv.org/rss/cs.AI",
+      "final_url": "https://rss.arxiv.org/rss/cs.AI",
+      "http_status": 200,
+      "seconds": 0.031
+    },
+    {
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "final_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "http_status": 200,
+      "seconds": 0.047
+    }
+  ],
+  "accepted": 20,
+  "errors": [],
+  "publication_dates_supplied": 20
+}

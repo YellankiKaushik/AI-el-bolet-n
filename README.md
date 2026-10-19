@@ -13,6 +13,8 @@ Local drafting, retained source evidence, and a mandatory approval gate keep the
 
 **Working locally. Public newsletter service not deployed. Email disabled by default.** GitHub hosts this source code; it does not run the newsletter server. See [project status](docs/PROJECT_STATUS.md) for tested capabilities and remaining production requirements.
 
+The [final engineering report](docs/FINAL_ENGINEERING_REPORT.md) records the 20 October 2026 acceptance: 97 automated tests, 75 fresh browser scenarios, actual Linux container/Caddy checks and strict scans of both images passed. Deployment needs a connected host with persistent storage and encrypted off-host backups.
+
 ![Signal Daily homepage rendered in a real browser with a clearly marked fictional demo workspace](docs/screenshots/homepage-desktop.png)
 
 *Actual application rendering, captured with Playwright. All gallery editions are fictional demo fixtures in a separate database; no real subscribers, private drafts, credentials or tokens appear.*
@@ -199,8 +201,8 @@ Private `data/`, `backups/`, `local-drafts/`, `.tmp/` and `.env` appear only aft
 
 | Category | Work |
 |---|---|
-| Completed | Local Gemma workflow, source evidence, review/approval gate, reader archive, mocked consent/delivery, migrations, local backup/restore, safe Windows startup, synthetic demo and beginner guides |
-| In progress / awaiting external acceptance | Prepared production WSGI/proxy/container configuration; real Docker, TLS, sender DNS, inbox acceptance and off-host disaster recovery |
+| Completed | Local Gemma workflow, source evidence, review/approval gate, reader archive, mocked consent/delivery, migrations, local backup/restore, safe Windows startup, synthetic demo, guides and actual Linux container/Caddy/image-scan acceptance |
+| Awaiting external acceptance | Persistent hosting, public TLS/ingress, installed operations, sender DNS, inbox acceptance and encrypted off-host disaster recovery |
 | Planned | Background delivery workers, bounce/complaint synchronization, multi-editor roles/MFA/recovery, correction/takedown tools and retention controls |
 
 [Detailed project status](docs/PROJECT_STATUS.md) distinguishes implementation from external verification. These are directions, not promised release dates.
@@ -214,6 +216,7 @@ Start with [CONTRIBUTING.md](CONTRIBUTING.md), run the checks, and keep changes 
 - [Getting started](docs/GETTING_STARTED.md), [user guide](docs/USER_GUIDE.md), [manual testing](docs/LOCAL_TESTING_GUIDE.md)
 - [Architecture](docs/ARCHITECTURE.md), [configuration](docs/CONFIGURATION.md), [troubleshooting](docs/TROUBLESHOOTING.md)
 - [Project status](docs/PROJECT_STATUS.md), [production runbook](docs/PRODUCTION_RUNBOOK.md)
+- [Final engineering report](docs/FINAL_ENGINEERING_REPORT.md), [test results](docs/FINAL_TEST_RESULTS.md), [deployment and blockers](docs/FINAL_DEPLOYMENT_REPORT.md)
 - [Documentation release report](docs/GITHUB_DOCUMENTATION_REPORT.md)
 - [Historical evidence index](docs/HISTORY.md)
 

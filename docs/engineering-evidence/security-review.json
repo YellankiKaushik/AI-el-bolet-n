@@ -1,0 +1,68 @@
+{
+  "audit_date": "2026-10-20",
+  "assessment": "PARTIAL: targeted source review and isolated privacy tests completed; production controls need actual hosting acceptance.",
+  "scope": [
+    "Authentication/session signing, expiry, logout epoch and login throttling",
+    "CSRF/origin checks and production Host/HTTPS/proxy trust",
+    "Mandatory review/approval/publication transitions and stale-version handling",
+    "HTML escaping, content limits, parameterized SQL, static path allowlist",
+    "RSS HTTPS/DNS/redirect/XML limits",
+    "Ollama loopback endpoint, model selection and request transport",
+    "SMTP TLS/consent/delivery configuration; actual sending not activated",
+    "Current candidates and locally reachable Git history known-signature/private-path scan",
+    "Static Docker/Caddy secret, privilege, persistence and network review"
+  ],
+  "exact_private_value_comparison": false,
+  "issues": [
+    {
+      "id": "SEC-01",
+      "severity": "HIGH",
+      "title": "Cloud model tags were accepted by the local-only drafting client",
+      "baseline_proof": "A mocked transport recorded model gemma4:cloud in an actual generated request. No cloud inference or external model request occurred. Ollama primary documentation confirms signed-in localhost can route a cloud tag remotely.",
+      "fix": "Reject model names containing the cloud token before any transport operation. Installed gemma4:e4b requests retain source provenance.",
+      "status": "FIXED",
+      "regressions": [
+        "test_cloud_tags_are_rejected_before_transport",
+        "test_local_model_tag_and_source_provenance_are_preserved"
+      ],
+      "reference": "https://github.com/ollama/ollama/blob/main/docs/api/openai-compatibility.mdx"
+    },
+    {
+      "id": "SEC-02",
+      "severity": "MEDIUM",
+      "title": "Default HTTP transport could route local inference through proxies or redirects",
+      "baseline_proof": "A synthetic loopback HTTP 302 was followed to a second listener and its JSON was accepted. In a separate reproduction using the original urllib transport with explicit proxy settings and proxy bypass disabled, a loopback proxy received the fictional prompt and absolute Ollama target URL. Neither reproduction used an external destination.",
+      "fix": "Build the local inference opener with ProxyHandler({}) and an HTTPRedirectHandler that rejects redirects.",
+      "status": "FIXED",
+      "regressions": [
+        "test_loopback_redirect_does_not_contact_redirect_target",
+        "test_system_proxy_cannot_receive_local_model_prompts",
+        "test_remote_endpoint_is_rejected_before_transport"
+      ]
+    }
+  ],
+  "targeted_tests": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "commands": [
+      ".tmp/fresh-venv/Scripts/python.exe -m unittest discover -s tests -p test_final_security.py -v",
+      ".tmp/fresh-venv/Scripts/python.exe -m ruff check llm.py tests/test_final_security.py",
+      ".tmp/fresh-venv/Scripts/python.exe -m ruff format --check llm.py tests/test_final_security.py",
+      ".tmp/fresh-venv/Scripts/python.exe -m compileall -q llm.py tests/test_final_security.py"
+    ],
+    "ruff_lint": "PASS",
+    "ruff_format": "PASS",
+    "python_compile": "PASS"
+  },
+  "review_findings": "No additional confirmed authentication, CSRF, SQL injection, HTML escaping or editor state-machine defect found within this targeted review. This is not a full penetration test.",
+  "history_scan": "history-scan.json",
+  "limits": [
+    "RSS resolves destinations during validation and again during connection; DNS rebinding is a documented residual requiring trusted configured feeds and host egress policy. No DNS-pinning redesign or live rebinding attack was performed.",
+    "The local Ollama daemon remains a trusted component. Standard cloud tags are rejected; independently renamed models or a malicious daemon cannot be proven local by tag screening. Disable cloud features in the daemon and use host egress policy for a stronger boundary.",
+    "No real public HTTPS, editor CIDR enforcement, server filesystem permissions, container image/OS scanning, off-host encryption, or production recovery was established by this source review.",
+    "Known-pattern secret scanning cannot prove no secret ever existed; unreachable objects, remote-only history, entropy analysis and exact private-value comparison are outside this scan.",
+    "SMTP testing was mocked elsewhere; no real email was sent by this review.",
+    "No original database or private configuration was opened or modified by this review. Only isolated synthetic inputs and ignored temporary proof files were used."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "run_id": 39306953309,
+  "job_id": 118246392788,
+  "source_commit": "ce55b39fd582c32c729fb9311b465171589eb7cc",
+  "url": "https://github.com/YellankiKaushik/AI-el-bolet-n/actions/runs/39306953309",
+  "result": "FAIL",
+  "scope": "Acceptance tooling metadata lookup, after the actual application image build succeeded",
+  "error": "Error response from daemon: No such image: python:3.12-slim",
+  "root_cause": "BuildKit retained FROM layers in its own cache without a corresponding daemon image tag. The acceptance driver incorrectly assumed docker image inspect could resolve that tag after a successful build.",
+  "repair": "Explicitly pull the base image before building and recording its digest.",
+  "repair_commit": "f937fdaa541a36fc1bac508ce317c53928e13f15",
+  "reverification": "Run 39307141911 built the real Linux image and passed startup, health, synthetic publication, restart, backup/restore, migration and production Caddy validation before a separate acceptance network configuration defect."
+}

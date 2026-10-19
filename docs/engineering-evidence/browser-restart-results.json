@@ -1,0 +1,57 @@
+{
+  "browser": "151.0.7922.34",
+  "base": "http://127.0.0.1:8790",
+  "results": [
+    {
+      "id": "B51",
+      "feature": "Restart publication",
+      "action": "Open saved permalink after process restart",
+      "expected": "Saved fictional publication remains readable",
+      "actual": "Saved fictional publication remains readable",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B52",
+      "feature": "Restart sessions",
+      "action": "Replay the old private browser state",
+      "expected": "Old authentication is rejected after restart",
+      "actual": "Old authentication is rejected after restart",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B53",
+      "feature": "Restart login",
+      "action": "Log in again and open persisted edition",
+      "expected": "Published editor and history survive restart",
+      "actual": "Published editor and history survive restart",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B54",
+      "feature": "Post-restart private data",
+      "action": "Open archive and search private blank title",
+      "expected": "Private editions remain hidden after restart",
+      "actual": "Private editions remain hidden after restart",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B55",
+      "feature": "Browser exceptions",
+      "action": "Inspect captured page exceptions",
+      "expected": "Zero uncaught JavaScript exceptions",
+      "actual": "Zero uncaught JavaScript exceptions",
+      "status": "PASS",
+      "type": "browser"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "fatalError": null,
+  "title": "Demo: Acceptance 9999999999999",
+  "issueId": 2,
+  "slug": "demo-a-quieter-kind-of-ai-briefing-810fab"
+}

@@ -2,7 +2,7 @@
 
 Signal Daily works as a local, single-editor newsletter application. **The public newsletter service is not deployed.** GitHub source publication, laptop execution, public website hosting and real email delivery are separate outcomes.
 
-The [documentation release report](GITHUB_DOCUMENTATION_REPORT.md) is the current source/CI verification record. [Historical reports](HISTORY.md) retain their original dates, test counts and environment limitations; they are not current status assertions.
+The [final engineering report](FINAL_ENGINEERING_REPORT.md), [test results](FINAL_TEST_RESULTS.md) and [completion checklist](PROJECT_COMPLETION_CHECKLIST.md) are the current verification record, dated 20 October 2026. [Historical reports](HISTORY.md), including the earlier documentation and QA reports, retain their original dates, counts and environment limitations.
 
 ## Implemented and tested
 
@@ -16,20 +16,20 @@ The [documentation release report](GITHUB_DOCUMENTATION_REPORT.md) is the curren
 | Consent and mail logic | Registration/expiry/confirmation/unsubscribe, multipart templates, TLS settings, active-only/duplicate/uncertain delivery tests with mocked SMTP |
 | Storage/recovery | SQLite migrations, WAL-aware backup, separate-path restore/integrity checks, process restart and instance locking |
 | Laptop startup | Working Windows Python detection, loopback-only local entry and email disabled |
-| Demo / docs | Isolated fictional workspace, six real browser screenshots, beginner/manual/configuration/troubleshooting guides and link/image audit |
-| Quality | Local automated suite and lint/security checks; exact final counts and hosted matrix outcome in the release report |
+| Demo / docs | Isolated fictional workspaces, fresh responsive browser captures, beginner/configuration/troubleshooting guides and link/image audit |
+| Quality | 97 automated tests and 75 fresh browser scenarios passed, plus two protocol checks; Windows/Linux Python matrix passed |
+| Docker / Caddy | Actual Linux image build, nonroot/read-only/resource/log controls, workflow, restart, separate-volume restore/migration and internal proxy acceptance passed; app and patched proxy HIGH/CRITICAL scans passed |
 
 ## Implemented but not externally accepted
 
 | Prepared component | Still required |
 |---|---|
-| Waitress/Caddy/Compose architecture | Actual Docker image/volume/restart/migration test and Caddy configuration/runtime validation |
 | HTTPS/proxy/cookie protections | Real approved domain, certificate, ingress, trusted-client and operator-IP checks from separate networks |
 | SMTP support | Approved sender/provider credentials, DNS authentication and consented single-mailbox/inbox acceptance |
 | Backup tool | Encrypted off-host storage, retention/scheduler/alerting and timed disaster recovery on the intended host |
-| Browser responsiveness | Desktop/mobile emulation and screenshots passed; physical devices/email-client rendering/accessibility audits are broader work |
+| Browser responsiveness | Desktop/tablet/mobile/narrow-mobile emulation, Axe and keyboard checks passed; physical devices and real email-client rendering remain outside the verified scope |
 
-Docker/Linux hosting were unavailable on the development laptop; source presence is not container verification. CI can verify Linux application tests without proving deployment infrastructure. Live email is deliberately disabled locally.
+Docker/Podman and WSL were unavailable locally. The authorized GitHub Linux runner executed the actual container and Caddy acceptance and strict image scans successfully. No suitable existing production host or encrypted off-host storage was found through scoped integration/configuration discovery. Public HTTPS and installed operations remain blocked. Live email stays disabled.
 
 ## Not implemented
 
@@ -44,15 +44,15 @@ Docker/Linux hosting were unavailable on the development laptop; source presence
 
 ## Planned work
 
-Prioritize local manual acceptance with the fictional workspace, then fix reproducible usability failures. Add correction/retention and mail-operation controls before inviting public subscribers. Durable delivery workers and independent roles make sense only with clear requirements/evidence. Roadmap items are not promised dates or completed functionality.
+Connect an existing suitable host and backup allocation, then execute the staging and external HTTPS/recovery acceptance in the [deployment report](FINAL_DEPLOYMENT_REPORT.md). Local application acceptance has already been automated and executed; no owner manual application QA is required. Correction/retention and mail-operation controls remain necessary before inviting public subscribers. Roadmap items are not completed functionality.
 
 ## Public pilot blockers
 
-1. Separate authorization for hosting and real email; source-push authorization does not deploy the service.
-2. Maintained host/domain/firewall/operator access and verified container/HTTPS ingress.
-3. Encrypted off-host recovery, monitoring and disk/retention procedures.
+1. An accessible existing host with durable private storage and approved origin/editor-access policy. Deployment to a suitable existing target is authorized; new charges require separate approval.
+2. Actual staging and public HTTPS/ingress/restart acceptance on that host.
+3. Installed and verified encrypted off-host recovery, monitoring and disk/retention procedures.
 4. Publisher identity/privacy/contact information, correction/takedown policy and consent/complaint operations.
 5. Approved sender DNS and live mailbox acceptance if email is included; keep mail off otherwise.
 6. Human source review and deliberate approval of each real edition.
 
-Use [PRODUCTION_RUNBOOK.md](PRODUCTION_RUNBOOK.md) for future controlled deployment preparation. The current recommended next task is **local manual acceptance testing**, not purchasing hosting or sending subscriber mail.
+Use [PRODUCTION_OPERATIONS.md](PRODUCTION_OPERATIONS.md) and [PRODUCTION_RUNBOOK.md](PRODUCTION_RUNBOOK.md) for controlled deployment. The remaining owner input is infrastructure/access, any separately approved spending and real-news editorial judgment. No public URL or actual SMTP delivery is claimed.

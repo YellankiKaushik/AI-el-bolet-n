@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "id": "M01",
+      "feature": "Subscription form requests a double-opt-in message",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Fake SMTP only; actual UI and HTTP"
+    },
+    {
+      "id": "M02",
+      "feature": "Open real confirmation UI using token captured only by fake SMTP",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Fake SMTP only; actual UI and HTTP"
+    },
+    {
+      "id": "M03",
+      "feature": "Confirmation is single use",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Fake SMTP only; actual UI and HTTP"
+    },
+    {
+      "id": "M04",
+      "feature": "Duplicate confirmed subscription sends no second message",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Fake SMTP only; actual UI and HTTP"
+    },
+    {
+      "id": "M05",
+      "feature": "GET unsubscribe shows confirmation without mutating consent",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Fake SMTP only; actual UI and HTTP"
+    },
+    {
+      "id": "M06",
+      "feature": "POST unsubscribe shows successful confirmation",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Fake SMTP only; actual UI and HTTP"
+    },
+    {
+      "id": "M07",
+      "feature": "Invalid confirmation token shows safe error",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Fake SMTP only; actual UI and HTTP"
+    }
+  ],
+  "realSMTPConnections": 0
+}

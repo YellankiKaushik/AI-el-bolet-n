@@ -1,0 +1,22 @@
+{
+  "run_id": 39307141911,
+  "job_id": 118247048718,
+  "source_commit": "f937fdaa541a36fc1bac508ce317c53928e13f15",
+  "url": "https://github.com/YellankiKaushik/AI-el-bolet-n/actions/runs/39307141911",
+  "result": "FAIL",
+  "passed_phases": [
+    "Actual Dockerfile builds on Linux",
+    "Production Compose validates with synthetic configuration",
+    "Nonroot startup, real healthcheck, read-only root, resource limits and no external network",
+    "Authenticated import, approval bypass rejection, review, approval, synthetic publication and public archive",
+    "Mounted-volume publication survives actual container restart",
+    "Online backup, integrity, separate-volume restoration, invalid/existing restore rejection and consent/delivery ledger preservation",
+    "Actual image migrates v1 SQLite volume to v2 without losing business state",
+    "Unmodified production Caddy configuration validates in the real Caddy image"
+  ],
+  "error": "user specified IP address is supported only when connecting to networks with user configured subnets",
+  "root_cause": "The acceptance driver selected static proxy/upstream addresses on an automatically allocated Docker network without explicitly configuring its subnet.",
+  "repair": "Inspect existing daemon networks and explicitly create the internal test network with a nonoverlapping subnet before assigning static test addresses.",
+  "remaining_at_this_run": ["Actual isolated Caddy proxy route assertions", "Image vulnerability scan"],
+  "public_https": "NOT_TESTED"
+}
