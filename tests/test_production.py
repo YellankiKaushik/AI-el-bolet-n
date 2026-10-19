@@ -10,6 +10,7 @@ import tempfile
 import threading
 import unittest
 from contextlib import closing
+from http.client import HTTPConnection
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 from urllib.error import HTTPError
@@ -234,7 +235,20 @@ class TestProductionHTTP(DatabaseTest):
 
     def test_body_header_method_limits_and_disabled_generation(self):
         self.login()
-        self.assertEqual(self.request("/api/admin/import", {"large": "x" * 140001})[0], 413)
+        # Waitress rejects the declared size before reading the body. Sending the body
+        # anyway can race its close and cause Windows to reset urllib's connection.
+        connection = HTTPConnection("127.0.0.1", self.host.effective_port, timeout=5)
+        try:
+            connection.putrequest("POST", "/api/admin/import", skip_host=True)
+            connection.putheader("Host", "pilot.example.org")
+            connection.putheader("Content-Type", "application/json")
+            connection.putheader("Content-Length", "140001")
+            connection.endheaders()
+            response = connection.getresponse()
+            self.assertEqual(response.status, 413)
+            response.read()
+        finally:
+            connection.close()
         self.assertEqual(self.request("/", headers={"X-Long": "x" * 17000})[0], 431)
         self.assertEqual(self.request("/", method="TRACE")[0], 405)
         self.assertEqual(self.request("/", method="HEAD")[1], b"")
