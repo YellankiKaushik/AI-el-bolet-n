@@ -1,0 +1,36 @@
+{
+  "title": "Demo: A quieter kind of AI briefing",
+  "subject": "A small model, a useful workflow, and a better question",
+  "intro": "This fictional demo edition shows how Signal Daily turns a few source notes into a readable briefing. The names, events, and source links below are synthetic examples, not news reporting.",
+  "topic": "AI",
+  "items": [
+    {
+      "headline": "A small-model experiment puts clarity first",
+      "summary": "In this fictional example, a research team shares a compact model and a short evaluation notebook. Their demonstration focuses on explaining limitations alongside useful results.",
+      "why": "A clear evaluation helps readers decide what to test, rather than treating a model announcement as a promise.",
+      "source": "Demo Research Notebook",
+      "url": "https://example.org/demo/small-models",
+      "source_title": "Synthetic source note: a compact-model experiment",
+      "source_description": "Fictional fixture: a team shares a small model, an evaluation notebook, and a description of limitations."
+    },
+    {
+      "headline": "An assistant workflow keeps the editor in control",
+      "summary": "A fictional product team connects a drafting assistant to a review checklist. The assistant suggests text, while an editor checks sources and makes the publication decision.",
+      "why": "Useful automation can shorten preparation while keeping a person's judgment at the point of publication.",
+      "source": "Demo Builder Journal",
+      "url": "https://example.org/demo/editor-workflows",
+      "source_title": "Synthetic source note: a review-first assistant",
+      "source_description": "Fictional fixture: drafting suggestions are saved for an editor to check before publication."
+    },
+    {
+      "headline": "Better questions make a better evaluation",
+      "summary": "A fictional community workshop compares assistants on ordinary tasks. Participants record failures and explain the context behind each result instead of announcing a universal winner.",
+      "why": "Context makes a comparison more useful to readers choosing tools for their own work.",
+      "source": "Demo Community Notes",
+      "url": "https://example.org/demo/evaluation",
+      "source_title": "Synthetic source note: contextual evaluation",
+      "source_description": "Fictional fixture: a workshop compares assistants, records failures, and describes task context."
+    }
+  ],
+  "closing": "Good briefings leave room for judgment. This entire edition is synthetic demo content, written to demonstrate the interface; it was not generated from real news."
+}

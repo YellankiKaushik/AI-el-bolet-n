@@ -90,6 +90,11 @@ def rate_limit(ip, limit=5, window=3600):
 
 
 def layout(title, content, admin=False):
+    demo_banner = (
+        '<aside class="demo-banner" role="note">DEMO WORKSPACE <span>Fictional editions · Email disabled · Separate database</span></aside>'
+        if os.getenv("DEMO_MODE", "false").lower() == "true"
+        else ""
+    )
     nav = (
         '<a href="/">Home</a><a href="/archive">Archive</a><a class="nav-cta" href="/#subscribe">Subscribe <span>↗</span></a>'
         if not admin
@@ -103,7 +108,7 @@ def layout(title, content, admin=False):
 <meta name="description" content="Signal Daily: independent AI news explained without the noise.">
 <meta name="robots" content="{"noindex,nofollow" if admin else "index,follow"}"><meta property="og:title" content="{esc(title)} | Signal Daily"><title>{esc(title)} | Signal Daily</title><link rel="stylesheet" href="/static/style.css?v={asset_version}"></head>
 <body class="{"admin-page" if admin else ""}"><a class="skip-link" href="#main-content">Skip to content</a><div class="topbar"><div class="topbar-inner"><a class="wordmark" href="/">SIGNAL<span class="logo-dot">●</span> DAILY</a><nav aria-label="Main navigation">{nav}</nav></div></div>
-{content}<footer class="footer"><div class="footer-inner"><div><strong>SIGNAL<span class="logo-dot">●</span> DAILY</strong><p>Independent AI reporting, distilled with care.</p></div><p>AI drafts. Human approves. Source links always.</p><span>© {datetime.now().year} Signal Daily · <a href="/admin">Editor login</a></span></div></footer>
+{demo_banner}{content}<footer class="footer"><div class="footer-inner"><div><strong>SIGNAL<span class="logo-dot">●</span> DAILY</strong><p>Independent AI reporting, distilled with care.</p></div><p>AI drafts. Human approves. Source links always.</p><span>© {datetime.now().year} Signal Daily · <a href="/admin">Editor login</a></span></div></footer>
 <script src="/static/app.js?v={asset_version}" defer></script></body></html>'''
 
 
