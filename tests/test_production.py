@@ -3,6 +3,7 @@
 import json
 import os
 import smtplib
+import socket
 import sqlite3
 import subprocess
 import sys
@@ -10,7 +11,7 @@ import tempfile
 import threading
 import unittest
 from contextlib import closing
-from http.client import HTTPConnection
+from http.client import HTTPConnection, HTTPResponse
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 from urllib.error import HTTPError
@@ -249,7 +250,16 @@ class TestProductionHTTP(DatabaseTest):
             response.read()
         finally:
             connection.close()
-        self.assertEqual(self.request("/", headers={"X-Long": "x" * 17000})[0], 431)
+        # Stop exactly at the parser's rejection boundary. Extra bytes after an
+        # early rejection can cause Windows to reset the connection on close.
+        prefix = b"GET / HTTP/1.1\r\nHost: pilot.example.org\r\nX-Long: "
+        limit = self.host.adj.max_request_header_size
+        with socket.create_connection(("127.0.0.1", self.host.effective_port), timeout=5) as sock:
+            sock.sendall(prefix + b"x" * (limit - len(prefix)))
+            with HTTPResponse(sock) as response:
+                response.begin()
+                self.assertEqual(response.status, 431)
+                response.read()
         self.assertEqual(self.request("/", method="TRACE")[0], 405)
         self.assertEqual(self.request("/", method="HEAD")[1], b"")
         with patch.object(server.llm, "generate") as generate:
