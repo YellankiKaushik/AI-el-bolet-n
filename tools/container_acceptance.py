@@ -211,11 +211,22 @@ class Acceptance:
         )
 
     def proxy(self, directory, volume):
-        caddy_image = "caddy:2-alpine"
-        self.docker("pull", caddy_image)
-        self.report["caddy_image"] = json.loads(self.docker("image", "inspect", caddy_image))[0][
-            "RepoDigests"
+        caddy_image = "signal-daily-proxy:acceptance"
+        self.docker(
+            "build",
+            "--pull",
+            "--tag",
+            caddy_image,
+            "--file",
+            ROOT / "deploy" / "Dockerfile.caddy",
+            ROOT,
+        )
+        self.report["caddy_image_id"] = json.loads(self.docker("image", "inspect", caddy_image))[0][
+            "Id"
         ]
+        self.report["caddy_build_info"] = self.docker(
+            "run", "--rm", "--network", "none", caddy_image, "caddy", "build-info"
+        )
         self.docker(
             "run",
             "--rm",

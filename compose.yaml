@@ -31,8 +31,11 @@ services:
       private:
         ipv4_address: 172.30.0.3
   proxy:
-    # Resolve and pin an audited image digest before public launch.
-    image: caddy:2-alpine
+    # The official binary is rebuilt with patched Go HTTP/TLS dependencies.
+    image: signal-daily-proxy:release
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.caddy
     restart: unless-stopped
     environment:
       PUBLIC_HOST: ${PUBLIC_HOST:?Set PUBLIC_HOST to your public DNS name}
