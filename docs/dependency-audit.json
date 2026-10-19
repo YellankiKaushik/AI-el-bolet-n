@@ -1,0 +1,52 @@
+{
+  "source": "https://api.osv.dev/v1/querybatch",
+  "runtime_third_party_packages": 0,
+  "developer_packages": [
+    {
+      "package": "ruff",
+      "version": "0.14.1",
+      "advisories": []
+    },
+    {
+      "package": "bandit",
+      "version": "1.8.6",
+      "advisories": []
+    },
+    {
+      "package": "PyYAML",
+      "version": "6.0.3",
+      "advisories": []
+    },
+    {
+      "package": "stevedore",
+      "version": "5.9.1",
+      "advisories": []
+    },
+    {
+      "package": "rich",
+      "version": "15.0.0",
+      "advisories": []
+    },
+    {
+      "package": "colorama",
+      "version": "0.4.6",
+      "advisories": []
+    },
+    {
+      "package": "markdown-it-py",
+      "version": "4.2.0",
+      "advisories": []
+    },
+    {
+      "package": "pygments",
+      "version": "2.21.0",
+      "advisories": []
+    },
+    {
+      "package": "mdurl",
+      "version": "0.1.2",
+      "advisories": []
+    }
+  ],
+  "advisory_count": 0
+}

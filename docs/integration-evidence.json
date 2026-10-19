@@ -1,0 +1,20 @@
+{
+  "model": "gemma4:e4b",
+  "sources_collected": 19,
+  "feed_errors": [],
+  "generation": "passed",
+  "generated_stories": 2,
+  "elapsed_seconds": 52.84,
+  "final_validator_real_model_recheck": {
+    "status": "passed",
+    "stories": 2,
+    "elapsed_seconds": 14.17
+  },
+  "local_database": {
+    "stories": 19,
+    "generated_draft_id": 1,
+    "generated_draft_status": "draft",
+    "published_editions": 0,
+    "active_subscribers": 0
+  }
+}

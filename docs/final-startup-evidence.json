@@ -1,0 +1,15 @@
+{
+  "/": 200,
+  "/archive": 200,
+  "/health": 200,
+  "unauthorized_admin": 401,
+  "unpublished_draft_hidden": true,
+  "database": {
+    "stories": 19,
+    "drafts": 1,
+    "published": 0,
+    "subscribers": 0,
+    "pending": 0
+  },
+  "python": "3.12.14"
+}
