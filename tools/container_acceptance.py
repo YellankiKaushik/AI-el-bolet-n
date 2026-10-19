@@ -268,6 +268,9 @@ class Acceptance:
         try:
             if self.docker("info", "--format", "{{.OSType}}") != "linux":
                 raise RuntimeError("Acceptance requires a Linux Docker daemon")
+            # BuildKit may keep FROM layers in its cache without creating a daemon image
+            # entry; pull explicitly so the base digest can be inspected as evidence.
+            self.docker("pull", "python:3.12-slim")
             self.docker("build", "--pull", "--tag", self.image, ROOT)
             self.report["image_id"] = json.loads(self.docker("image", "inspect", self.image))[0][
                 "Id"
