@@ -1,0 +1,2 @@
+# Production HTTP parsing and serving; local run.py remains standard-library only.
+waitress==3.0.2

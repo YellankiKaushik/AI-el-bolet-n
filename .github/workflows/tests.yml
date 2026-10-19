@@ -19,11 +19,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m pip install -r requirements.txt -r requirements-dev.txt
       - run: python -m unittest discover -s tests -v
       - run: python -m ruff check .
       - run: python -m ruff format --check .
-      - run: python -m compileall -q db.py server.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests
+      - run: python -m compileall -q db.py server.py production.py instance.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests
       - run: node --check static/app.js
       - run: python -m bandit -q -r . --exclude ./.tmp,./tests,./.venv,./data
       - run: python tools/release_audit.py

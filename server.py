@@ -13,7 +13,7 @@ import threading
 import time
 from collections import defaultdict
 from datetime import datetime
-from http.cookies import SimpleCookie
+from http.cookies import SimpleCookie, CookieError
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, quote, urlparse
@@ -64,11 +64,14 @@ def session_ok(cookie_header):
         payload = base64.urlsafe_b64decode(encoded + "=" * (-len(encoded) % 4)).decode()
         expires, _, epoch = payload.split(":")
         return int(expires) > time.time() and int(epoch) == SESSION_EPOCH
-    except (ValueError, KeyError, UnicodeError):
+    except (ValueError, KeyError, UnicodeError, CookieError):
         return False
 
 
 def rate_limit(ip, limit=5, window=3600):
+    if os.getenv("APP_ENV", "development") == "production":
+        identity = hmac.new(SESSION_KEY, ip.encode(), hashlib.sha256).hexdigest()
+        return db.rate_limited(identity, limit, window, int(time.time()))
     ts = time.monotonic()
     with LOCK:
         if len(REQUEST_COUNTS) > 10000:
@@ -240,8 +243,12 @@ class Handler(BaseHTTPRequestHandler):
             return False
         origin = self.headers.get("Origin")
         if origin:
-            origin_host = urlparse(origin).netloc
-            if origin_host != self.headers.get("Host"):
+            expected = (
+                PUBLIC_URL
+                if os.getenv("APP_ENV", "development") == "production"
+                else ("https://" if HTTPS else "http://") + self.headers.get("Host", "")
+            )
+            if origin != expected:
                 self.json_out(403, {"error": "Cross-origin requests forbidden"})
                 return False
         return True
@@ -311,7 +318,12 @@ class Handler(BaseHTTPRequestHandler):
             )
             return self.send(200, data, ctype, {"Cache-Control": "public,max-age=300"})
         if path == "/health":
-            return self.json_out(200, {"status": "ok"})
+            try:
+                with db.connect() as conn:
+                    conn.execute("SELECT id FROM issues LIMIT 1").fetchone()
+                return self.json_out(200, {"status": "ok"})
+            except Exception:
+                return self.json_out(503, {"status": "unavailable"})
         if path == "/api/admin/status":
             return self.json_out(
                 200,
@@ -501,6 +513,11 @@ class Handler(BaseHTTPRequestHandler):
                         200, {"ok": True, "added": count, "found": len(incoming), "errors": errors}
                     )
                 if path == "/api/admin/draft":
+                    default_generation = "false" if os.getenv("APP_ENV") == "production" else "true"
+                    if os.getenv("ENABLE_LOCAL_GENERATION", default_generation).lower() != "true":
+                        raise RuntimeError(
+                            "Generate JSON on your laptop and import it into the editor"
+                        )
                     selected = data.get("story_ids")
                     all_stories = [s for s in db.get_stories(200) if feeds.relevant_recent(s)]
                     if isinstance(selected, list) and selected:
@@ -625,6 +642,8 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def validate_config():
+    if os.getenv("APP_ENV", "development") not in ("development", "production"):
+        raise ValueError("APP_ENV must be development or production")
     if not valid_url(PUBLIC_URL):
         raise ValueError("PUBLIC_URL must be an HTTP(S) origin")
     p = urlparse(PUBLIC_URL)
@@ -639,6 +658,9 @@ def validate_config():
             raise ValueError(f"Production {key} is missing or too short")
     if production and (not HTTPS or p.hostname in ("localhost", "127.0.0.1")):
         raise ValueError("Production requires an HTTPS public origin")
+    if production and os.getenv("ENABLE_LOCAL_GENERATION", "false").lower() != "false":
+        raise ValueError("Production must disable local generation; use authenticated JSON import")
+    mailer.validate_config()
 
 
 class BoundedHTTPServer(ThreadingHTTPServer):
@@ -666,8 +688,9 @@ class BoundedHTTPServer(ThreadingHTTPServer):
 
 
 def main():
+    if os.getenv("APP_ENV", "development") == "production":
+        raise RuntimeError("Use python production.py behind an HTTPS reverse proxy in production")
     validate_config()
-    db.init()
     if "ADMIN_PASSWORD" not in os.environ:
         print(
             "IMPORTANT: No ADMIN_PASSWORD set. Temporary editor password (restart resets):",
@@ -683,7 +706,11 @@ def main():
             "Email is not configured; public subscriptions disabled until SMTP_HOST + MAIL_FROM are set.",
             flush=True,
         )
-    BoundedHTTPServer((HOST, PORT), Handler).serve_forever()
+    from instance import instance_lock
+
+    with instance_lock(db.DB_PATH):
+        db.init()
+        BoundedHTTPServer((HOST, PORT), Handler).serve_forever()
 
 
 if __name__ == "__main__":
