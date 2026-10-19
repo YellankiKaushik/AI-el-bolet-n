@@ -1,0 +1,21 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "database_counts": {
+    "deliveries": 0,
+    "issue_events": 2,
+    "issues": 2,
+    "operations": 2,
+    "rate_limits": 0,
+    "stories": 19,
+    "subscribers": 0
+  },
+  "backup_integrity": "ok",
+  "configured_model": "gemma4:e4b",
+  "ollama_loopback": "http://127.0.0.1:11434",
+  "env_unchanged": null,
+  "unchanged_tables": null,
+  "/api/tags": "URLError",
+  "/api/ps": "URLError",
+  "health_8787": "URLError",
+  "health_8790": "URLError"
+}

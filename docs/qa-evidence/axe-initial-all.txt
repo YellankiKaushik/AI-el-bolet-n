@@ -1,0 +1,211 @@
+home
+color-contrast serious
+<div class="assurance">Free to read <span>·</span> Original source links <span>·</span> Unsubscribe anytime</div> Fix any of the following:
+  Element has insufficient color contrast of 3.02 (foreground color: #869088, background color: #f6f5ef, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<b>01</b> Fix any of the following:
+  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1
+<p>Trusted RSS headlines and primary sources—not invented news.</p> Fix any of the following:
+  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1
+<b>02</b> Fix any of the following:
+  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1
+<p>Your own Gemma model summarizes and explains.</p> Fix any of the following:
+  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1
+<b>03</b> Fix any of the following:
+  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1
+<p>Every edition is checked and approved before publishing.</p> Fix any of the following:
+  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1
+<em>Stay informed.</em> Fix any of the following:
+  Element has insufficient color contrast of 2.7 (foreground color: #c97082, background color: #dceac2, font size: 48.8pt (65px), font weight: normal). Expected contrast ratio of 3:1
+archive
+login
+dashboard
+color-contrast serious
+<span>NEWS SOURCES</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>UNPUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>PUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>SUBSCRIBERS</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="sources" class="">Source feed</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="import" class="">Import local draft</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="settings" class="">Publishing setup</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 3 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>2026-10-19 · 0 stories</small> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #79857e, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+draft
+color-contrast serious
+<span>NEWS SOURCES</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>UNPUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>PUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>SUBSCRIBERS</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="sources" class="">Source feed</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="import" class="">Import local draft</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="settings" class="">Publishing setup</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>Fact-check each link and claim before approving.</span> Fix any of the following:
+  Element has insufficient color contrast of 3.87 (foreground color: #77847a, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+published
+color-contrast serious
+<span>NEWS SOURCES</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>UNPUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>PUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>SUBSCRIBERS</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="sources" class="">Source feed</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="import" class="">Import local draft</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="settings" class="">Publishing setup</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>Fact-check each link and claim before approving.</span> Fix any of the following:
+  Element has insufficient color contrast of 3.87 (foreground color: #77847a, background color: #fffefa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1
+<p class="muted">Email is disabled. No subscriber delivery is available.</p> Fix any of the following:
+  Element has insufficient color contrast of 4.46 (foreground color: #6c7a70, background color: #fffefa, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1
+import
+color-contrast serious
+<span>NEWS SOURCES</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>UNPUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>PUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>SUBSCRIBERS</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="overview" class="">Editions</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="sources" class="">Source feed</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="settings" class="">Publishing setup</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<code>python tools/local_generate.py</code> Fix any of the following:
+  Element has insufficient color contrast of 3.95 (foreground color: #67796d, background color: #ebeee7, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1
+label critical
+<input type="file" accept=".json,application/json" id="import-file"> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"
+settings
+color-contrast serious
+<span>NEWS SOURCES</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>UNPUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>PUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>SUBSCRIBERS</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="overview" class="">Editions</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="sources" class="">Source feed</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="import" class="">Import local draft</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<small>GEMMA MODEL</small> Fix any of the following:
+  Element has insufficient color contrast of 3.5 (foreground color: #b17283, background color: #f7f8f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<p>Configured with <code>OLLAMA_MODEL</code>. Your installed model tag may differ.</p> Fix any of the following:
+  Element has insufficient color contrast of 4.13 (foreground color: #6c7c70, background color: #f7f8f2, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1
+<code>OLLAMA_MODEL</code> Fix any of the following:
+  Element has insufficient color contrast of 3.76 (foreground color: #6c7c70, background color: #ebeee7, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>EMAIL STATUS</small> Fix any of the following:
+  Element has insufficient color contrast of 3.5 (foreground color: #b17283, background color: #f7f8f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<p>Set SMTP_HOST, MAIL_FROM, and credentials on the host to enable subscriptions.</p> Fix any of the following:
+  Element has insufficient color contrast of 4.13 (foreground color: #6c7c70, background color: #f7f8f2, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>APPROVAL MODE</small> Fix any of the following:
+  Element has insufficient color contrast of 3.5 (foreground color: #b17283, background color: #f7f8f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<p>All new editions start as drafts. Review → Approve → Publish. Edits reset approval.</p> Fix any of the following:
+  Element has insufficient color contrast of 4.13 (foreground color: #6c7c70, background color: #f7f8f2, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1
+<small>PRODUCTION HOSTING</small> Fix any of the following:
+  Element has insufficient color contrast of 3.5 (foreground color: #b17283, background color: #f7f8f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<p>A VPS/container with a persistent SQLite volume is supported. Pure serverless hosting is not recommended for this build.</p> Fix any of the following:
+  Element has insufficient color contrast of 4.13 (foreground color: #6c7c70, background color: #f7f8f2, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1
+sources
+color-contrast serious
+<span>NEWS SOURCES</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>UNPUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>PUBLISHED</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<span>SUBSCRIBERS</span> Fix any of the following:
+  Element has insufficient color contrast of 3.79 (foreground color: #728075, background color: #f6f5ef, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="overview" class="">Editions</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="import" class="">Import local draft</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<button role="tab" aria-selected="false" data-tab="settings" class="">Publishing setup</button> Fix any of the following:
+  Element has insufficient color contrast of 3.8 (foreground color: #718076, background color: #f6f5ef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1
+<p class="muted">Fetches RSS/Atom feeds. Drafts are written from feed summaries with source links.</p> Fix any of the following:
+  Element has insufficient color contrast of 4.46 (foreground color: #6c7a70, background color: #fffefa, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1
+<p>Click refresh to fetch available stories from configured sources.</p> Fix any of the following:
+  Element has insufficient color contrast of 4.46 (foreground color: #6c7a70, background color: #fffefa, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1

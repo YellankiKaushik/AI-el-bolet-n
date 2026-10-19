@@ -1,0 +1,38 @@
+[
+  {
+    "target": "home",
+    "violations": []
+  },
+  {
+    "target": "archive",
+    "violations": []
+  },
+  {
+    "target": "login",
+    "violations": []
+  },
+  {
+    "target": "dashboard",
+    "violations": []
+  },
+  {
+    "target": "draft",
+    "violations": []
+  },
+  {
+    "target": "published",
+    "violations": []
+  },
+  {
+    "target": "import",
+    "violations": []
+  },
+  {
+    "target": "settings",
+    "violations": []
+  },
+  {
+    "target": "sources",
+    "violations": []
+  }
+]

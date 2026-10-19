@@ -1,0 +1,142 @@
+{
+  "images": [
+    {
+      "file": "archive-search.png",
+      "bytes": 13194,
+      "sha256": "a74d79c39eaa6e5f65a34245da0d414e1c3958fdc9ff5c734e104dd7ddb44396",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "editor-1440.png",
+      "bytes": 11620,
+      "sha256": "2c3d235038ed09d3b645d5c1f488892b452d17e1bbdbae216407ab64bd8e33e8",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "editor-320.png",
+      "bytes": 6969,
+      "sha256": "b8e02b755625d6f4f533f980e2f933a26eac97712f566061a11f2136ba736246",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "editor-390.png",
+      "bytes": 8301,
+      "sha256": "db77175c9988eec11f25cd53b61645bffdfd0ea04108d9fe4fd8b0d69a0ae4ac",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "editor-768.png",
+      "bytes": 11084,
+      "sha256": "2c65d091f987caabe71735c1f970cb1048af6348caf52d61964a97b098d19cdf",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "empty-dashboard.png",
+      "bytes": 21782,
+      "sha256": "a7d1ca000adfb45f34246f3c456172b6957e8721d5e07d82a85e52b9a5d09feb",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "empty-home-desktop.png",
+      "bytes": 46685,
+      "sha256": "aeeb72e7ee20263b18a9705a149e1b16b584752473d8ae0b4d7d9a35b1e7605f",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "homepage-desktop.png",
+      "bytes": 46685,
+      "sha256": "aeeb72e7ee20263b18a9705a149e1b16b584752473d8ae0b4d7d9a35b1e7605f",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "homepage-mobile.png",
+      "bytes": 20660,
+      "sha256": "999e1bd10da2cd61cb94351c0482fcfb671ddbec66c20ea6a4adcb9884efdf85",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "login-mobile.png",
+      "bytes": 10058,
+      "sha256": "5a91a9cc610f18dc0457f9d746f9fe2794ee15a6d2ba5633b4d984eb3e5ea8bd",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "narrow-overflow-before.png",
+      "bytes": 9853,
+      "sha256": "63f115e8202a2d729af17403989b10fc7c8a33de87cbb31e5afeef591f6d7a15",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 320,
+      "height": 844
+    },
+    {
+      "file": "published-editor.png",
+      "bytes": 19007,
+      "sha256": "bbe662ffa04140e4b050aaa5ec80c81e379b8daea6d10c1e1a2ce15c17e40cb9",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "published-home-listing.png",
+      "bytes": 18194,
+      "sha256": "3318d8e66c638ca7bbabf39d718c55f34752240bf9d3e8ee01920fe02cbbb3e0",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "published-reader-desktop.png",
+      "bytes": 17375,
+      "sha256": "0bb95b1e1b05838ce418bf4e667a029e37e2a20205df7a6d6590449ef1cd9d9d",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "published-reader-mobile.png",
+      "bytes": 9696,
+      "sha256": "6ae3a6c3e0d9efd9236357e602cba597f1bf6624c84939fb037401983856f311",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "reader-320-full.png",
+      "bytes": 34033,
+      "sha256": "22e924395cb0c4befbd410a7bd0d625a45c69a41a6146628e80c0a3642fde9dc",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 320,
+      "height": 3219
+    },
+    {
+      "file": "saved-preview.png",
+      "bytes": 23361,
+      "sha256": "5ca528fc1779b841012a68d7ad21a0ffadaa8a84431076deb8ba4cad5751a3fa",
+      "provenance": "Actual headless Chromium screenshot; fictional fixtures only",
+      "width": 1440,
+      "height": 900
+    }
+  ],
+  "no_real_drafts_or_credentials": true,
+  "verified_png_dimensions_and_hashes": true
+}

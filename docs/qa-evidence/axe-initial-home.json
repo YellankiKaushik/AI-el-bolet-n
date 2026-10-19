@@ -1,0 +1,41 @@
+[
+  {
+    "id": "color-contrast",
+    "impact": "serious",
+    "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "nodes": [
+      {
+        "html": "<div class=\"assurance\">Free to read <span>·</span> Original source links <span>·</span> Unsubscribe anytime</div>",
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.02 (foreground color: #869088, background color: #f6f5ef, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<b>01</b>",
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<p>Trusted RSS headlines and primary sources—not invented news.</p>",
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<b>02</b>",
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<p>Your own Gemma model summarizes and explains.</p>",
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<b>03</b>",
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<p>Every edition is checked and approved before publishing.</p>",
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "html": "<em>Stay informed.</em>",
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.7 (foreground color: #c97082, background color: #dceac2, font size: 48.8pt (65px), font weight: normal). Expected contrast ratio of 3:1"
+      }
+    ]
+  }
+]

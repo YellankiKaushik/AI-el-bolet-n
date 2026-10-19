@@ -1,0 +1,413 @@
+{
+  "browser": "151.0.7922.34",
+  "base": "http://127.0.0.1:8790",
+  "results": [
+    {
+      "id": "B01",
+      "feature": "Homepage",
+      "action": "Navigate to empty demo homepage",
+      "expected": "HTTP 200, demo banner, branding and empty edition state",
+      "actual": "HTTP 200, demo banner, branding and empty edition state",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B02",
+      "feature": "Navigation and assets",
+      "action": "Follow Archive, Home and Subscribe navigation",
+      "expected": "Links navigate; CSS/JS succeed; no broken images",
+      "actual": "Links navigate; CSS/JS succeed; no broken images",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B03",
+      "feature": "Subscription validation",
+      "action": "Submit invalid email then a reserved example.org email",
+      "expected": "Native invalid email blocked; mail-off error displayed",
+      "actual": "Native invalid email blocked; mail-off error displayed",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B04",
+      "feature": "Login failure",
+      "action": "Open Editor login and submit incorrect password",
+      "expected": "Clear rejection and password input remains masked",
+      "actual": "Clear rejection and password input remains masked",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B05",
+      "feature": "Login success",
+      "action": "Enter isolated workspace password and unlock",
+      "expected": "Authenticated dashboard is visible",
+      "actual": "Authenticated dashboard is visible",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B06",
+      "feature": "Dashboard tabs",
+      "action": "Open Source feed, Publishing setup and Editions tabs",
+      "expected": "Empty source state, mail-off setup and edition controls render",
+      "actual": "Empty source state, mail-off setup and edition controls render",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B07",
+      "feature": "Disabled generation",
+      "action": "Click Generate with Gemma in isolated mail-off demo",
+      "expected": "Generation refusal is visible and no edition is created",
+      "actual": "Generation refusal is visible and no edition is created",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B08",
+      "feature": "Blank edition",
+      "action": "Create a blank edition and submit incomplete review",
+      "expected": "DRAFT created; review validation rejects incomplete intro",
+      "actual": "DRAFT created; review validation rejects incomplete intro",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B09",
+      "feature": "Story controls",
+      "action": "Add and remove a fictional story",
+      "expected": "Story count changes and returns to zero",
+      "actual": "Story count changes and returns to zero",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B10",
+      "feature": "Invalid JSON import",
+      "action": "Enter malformed JSON and import",
+      "expected": "Enter valid JSON error appears; no extra edition",
+      "actual": "Enter valid JSON error appears; no extra edition",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B11",
+      "feature": "Missing required import fields",
+      "action": "Import an empty JSON object",
+      "expected": "title is required error appears",
+      "actual": "title is required error appears",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B12",
+      "feature": "Invalid source URL",
+      "action": "Import a fixture containing javascript source URL",
+      "expected": "Import rejected with valid HTTP(S) URL error",
+      "actual": "Import rejected with valid HTTP(S) URL error",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B13",
+      "feature": "File import",
+      "action": "Upload the supplied fictional JSON and import",
+      "expected": "New edition opens in DRAFT state",
+      "actual": "New edition opens in DRAFT state",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B14",
+      "feature": "Full edition editor",
+      "action": "Edit title, subject, intro, closing, topic, headline, summary, why, source and URL; save",
+      "expected": "All submitted values persist; changed source clears old evidence",
+      "actual": "All submitted values persist; changed source clears old evidence",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B15",
+      "feature": "Reopening saved draft",
+      "action": "Return to editions and reopen edited title",
+      "expected": "Edited draft content persists",
+      "actual": "Edited draft content persists",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B16",
+      "feature": "Saved preview",
+      "action": "Expand saved preview and evidence disclosure",
+      "expected": "Correct order, text escaping, retained evidence and saved content",
+      "actual": "Correct order, text escaping, retained evidence and saved content",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B17",
+      "feature": "Version conflict",
+      "action": "Save the same draft in a second tab, then attempt a stale save",
+      "expected": "Stale browser sees reload error and does not overwrite newer content",
+      "actual": "Stale browser sees reload error and does not overwrite newer content",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B18",
+      "feature": "Review transition",
+      "action": "Submit complete saved fictional edition",
+      "expected": "REVIEW status and approval button appear",
+      "actual": "REVIEW status and approval button appear",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B19",
+      "feature": "Dirty approval guard",
+      "action": "Edit reviewed content, then save",
+      "expected": "Approval is disabled while dirty; saving returns to DRAFT",
+      "actual": "Approval is disabled while dirty; saving returns to DRAFT",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B20",
+      "feature": "Request revision",
+      "action": "Submit again then request revision",
+      "expected": "REVIEW returns to DRAFT",
+      "actual": "REVIEW returns to DRAFT",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B21",
+      "feature": "Approval transition",
+      "action": "Submit and explicitly approve reviewed fictional edition",
+      "expected": "APPROVED state and mail-off publish button",
+      "actual": "APPROVED state and mail-off publish button",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B22",
+      "feature": "Dirty publication guard",
+      "action": "Edit an approved edition and save",
+      "expected": "Publish disables while dirty; save invalidates approval",
+      "actual": "Publish disables while dirty; save invalidates approval",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B23",
+      "feature": "Publication cancellation",
+      "action": "Review, approve, click publish and dismiss confirmation",
+      "expected": "Edition remains APPROVED after cancellation",
+      "actual": "Edition remains APPROVED after cancellation",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B24",
+      "feature": "Fictional publication",
+      "action": "Accept local-only publication confirmation",
+      "expected": "PUBLISHED; immutable fields; zero email deliveries",
+      "actual": "PUBLISHED; immutable fields; zero email deliveries",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B25",
+      "feature": "Edition history",
+      "action": "Expand Edition history",
+      "expected": "created, saved, review, approval, revision and publication events",
+      "actual": "created, saved, review, approval, revision and publication events",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B26",
+      "feature": "Published permalink",
+      "action": "Open View published edition link",
+      "expected": "Correct fictional article opens in new reader page",
+      "actual": "Correct fictional article opens in new reader page",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B27",
+      "feature": "Homepage publication listing",
+      "action": "Open homepage and click published edition card",
+      "expected": "Published title appears; link opens correct permalink",
+      "actual": "Published title appears; link opens correct permalink",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B28",
+      "feature": "Archive text search",
+      "action": "Search exact acceptance title through form",
+      "expected": "Correct published title returned",
+      "actual": "Correct published title returned",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B29",
+      "feature": "Archive topic filter",
+      "action": "Change topic to Tools then Research",
+      "expected": "Mismatch hides edition; matching topic restores it",
+      "actual": "Mismatch hides edition; matching topic restores it",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B30",
+      "feature": "Empty search",
+      "action": "Search nonexistent fictional text",
+      "expected": "Understandable empty state",
+      "actual": "Understandable empty state",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B31",
+      "feature": "Private draft visibility",
+      "action": "Search unpublished blank edition title",
+      "expected": "Private blank edition absent from archive",
+      "actual": "Private blank edition absent from archive",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "P01",
+      "feature": "API state validation",
+      "action": "Attempt direct approval/publication of blank draft; mutate publication; cross-origin and oversized request",
+      "expected": "Unsafe transitions, edits and requests rejected without tracebacks",
+      "actual": "Unsafe transitions, edits and requests rejected without tracebacks",
+      "status": "PASS",
+      "type": "protocol"
+    },
+    {
+      "id": "B32",
+      "feature": "Missing route and query handling",
+      "action": "Visit unknown route and archive with malformed page parameter",
+      "expected": "404 useful page; invalid page query safely falls back",
+      "actual": "404 useful page; invalid page query safely falls back",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "P02",
+      "feature": "Pagination fixture preparation",
+      "action": "Create and explicitly review/approve/publish 25 fictional editions via authenticated APIs",
+      "expected": "Sufficient separate synthetic records for actual UI pagination",
+      "actual": "Sufficient separate synthetic records for actual UI pagination",
+      "status": "PASS",
+      "type": "protocol"
+    },
+    {
+      "id": "B33",
+      "feature": "Archive pagination",
+      "action": "Click Next and Previous on populated archive",
+      "expected": "24 cards first page, 2 second page, no overlap or private drafts",
+      "actual": "24 cards first page, 2 second page, no overlap or private drafts",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "R1440",
+      "feature": "Responsive layout 1440",
+      "action": "Render homepage, archive, reader, login and draft editor; inspect geometry",
+      "expected": "No page overflow or clipped editor controls at requested viewport",
+      "actual": "No page overflow or clipped editor controls at requested viewport",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "R768",
+      "feature": "Responsive layout 768",
+      "action": "Render homepage, archive, reader, login and draft editor; inspect geometry",
+      "expected": "No page overflow or clipped editor controls at requested viewport",
+      "actual": "No page overflow or clipped editor controls at requested viewport",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "R390",
+      "feature": "Responsive layout 390",
+      "action": "Render homepage, archive, reader, login and draft editor; inspect geometry",
+      "expected": "No page overflow or clipped editor controls at requested viewport",
+      "actual": "No page overflow or clipped editor controls at requested viewport",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "R320",
+      "feature": "Responsive layout 320",
+      "action": "Render homepage, archive, reader, login and draft editor; inspect geometry",
+      "expected": "No page overflow or clipped editor controls at requested viewport",
+      "actual": "No page overflow or clipped editor controls at requested viewport",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "B38",
+      "feature": "Keyboard navigation",
+      "action": "Press Tab from fresh homepage, use skip link, keyboard search submit",
+      "expected": "Visible focus, skip link and keyboard-operated search work",
+      "actual": "Visible focus, skip link and keyboard-operated search work",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "A/",
+      "feature": "Accessibility /",
+      "action": "Run Axe WCAG 2.1 A/AA including labels and contrast",
+      "expected": "No serious or critical accessibility violations",
+      "actual": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     description: 'Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds',\n+     id: 'color-contrast',\n+     impact: 'serious',\n+     nodes: [\n+       {\n+         failureSummary: 'Fix any of the following:\\n' +\n+           '  Element has insufficient color contrast of 3.02 (foreground color: #869088, background color: #f6f5ef, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1',\n+         html: '<div class=\"assurance\">Free to read <span>·</span> Original source links <span>·</span> Unsubscribe anytime</div>'\n+       },\n+       {\n+         failureSummary: 'Fix any of the following:\\n' +\n+           '  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1',\n+         html: '<b>01</b>'\n+       },\n+       {\n+         failureSummary: 'Fix any of the following:\\n' +\n+           '  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1',\n+         html: '<p>Trusted RSS headlines and primary sources—not invented news.</p>'\n+       },\n+       {\n+         failureSummary: 'Fix any of the following:\\n' +\n+           '  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1',\n+         html: '<b>02</b>'\n+       },\n+       {\n+         failureSummary: 'Fix any of the following:\\n' +\n+           '  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1',\n+         html: '<p>Your own Gemma model summarizes and explains.</p>'\n+       },\n+       {\n+         failureSummary: 'Fix any of the following:\\n' +\n+           '  Element has insufficient color contrast of 3 (foreground color: #bf7082, background color: #e8eddf, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1',\n+         html: '<b>03</b>'\n+       },\n+       {\n+         failureSummary: 'Fix any of the following:\\n' +\n+           '  Element has insufficient color contrast of 3.96 (foreground color: #68776c, background color: #e8eddf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1',\n+         html: '<p>Every edition is checked and approved before publishing.</p>'\n+       },\n+       {\n+         failureSummary: 'Fix any of the following:\\n' +\n+           '  Element has insufficient color contrast of 2.7 (foreground color: #c97082, background color: #dceac2, font size: 48.8pt (65px), font weight: normal). Expected contrast ratio of 3:1',\n+         html: '<em>Stay informed.</em>'\n+       }\n+     ]\n+   }\n+ ]\n- []\n",
+      "status": "FAIL",
+      "type": "browser"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+      "url": "/#subscribe"
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "url": "/admin"
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+      "url": "/admin"
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "/admin"
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "/admin"
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "/admin"
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "url": "/admin"
+    },
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "url": "/missing-acceptance-route"
+    }
+  ],
+  "title": "Demo: Acceptance 1792433641715",
+  "issueId": 2,
+  "slug": "demo-a-quieter-kind-of-ai-briefing-f4601b"
+}

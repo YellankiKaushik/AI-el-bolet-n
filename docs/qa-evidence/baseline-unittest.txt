@@ -1,0 +1,179 @@
+test_editor_state_machine (test_core.TestCore.test_editor_state_machine) ... ok
+test_grounded_model_rejects_unknown_ids (test_core.TestCore.test_grounded_model_rejects_unknown_ids) ... ok
+test_refuses_bad_url (test_core.TestCore.test_refuses_bad_url) ... ok
+test_rss_and_atom_ingestion (test_core.TestCore.test_rss_and_atom_ingestion) ... ok
+test_rejects_existing_subscriber_records (test_demo.TestDemoWorkspace.test_rejects_existing_subscriber_records) ... ok
+test_rejects_real_path_and_mismatched_active_database (test_demo.TestDemoWorkspace.test_rejects_real_path_and_mismatched_active_database) ... ok
+test_seed_and_restart_preserve_synthetic_edits (test_demo.TestDemoWorkspace.test_seed_and_restart_preserve_synthetic_edits) ... ok
+test_workspace_rejects_traversal (test_demo.TestDemoWorkspace.test_workspace_rejects_traversal) ... ok
+test_collects_markdown_and_html_images_but_not_code_examples (test_documentation.TestDocumentationLinks.test_collects_markdown_and_html_images_but_not_code_examples) ... ok
+test_valid_and_missing_relative_targets (test_documentation.TestDocumentationLinks.test_valid_and_missing_relative_targets) ... ok
+[19/Oct/2026 23:39:47] 127.0.0.1 "GET / HTTP/1.1" 200 -
+[19/Oct/2026 23:39:47] 127.0.0.1 "GET /api/admin/data HTTP/1.1" 401 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/login HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/subscribe HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "GET /confirm/[REDACTED] HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/import HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/publish HTTP/1.1" 400 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/approve HTTP/1.1" 400 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/review HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/approve HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/publish HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/send HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "GET /issue/integration-edition-f0f42f HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "GET /archive HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "GET /unsubscribe/[REDACTED] HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /unsubscribe/[REDACTED] HTTP/1.1" 200 -
+test_complete_editor_and_subscriber_flow (test_http.TestHTTP.test_complete_editor_and_subscriber_flow) ... ok
+[19/Oct/2026 23:39:48] 127.0.0.1 "GET /confirm/[REDACTED] HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "GET /confirm/[REDACTED] HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "GET /confirm/[REDACTED] HTTP/1.1" 200 -
+test_confirmation_expiry_and_single_use (test_http.TestHTTP.test_confirmation_expiry_and_single_use) ... ok
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/login HTTP/1.1" 403 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/login HTTP/1.1" 403 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/login HTTP/1.1" 400 -
+test_csrf_and_bad_json_objects (test_http.TestHTTP.test_csrf_and_bad_json_objects) ... ok
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/login HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/ingest HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/draft HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/publish HTTP/1.1" 400 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/review HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/approve HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/admin/issue/1/publish HTTP/1.1" 200 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "GET /issue/ai-research-briefing-147d12 HTTP/1.1" 200 -
+test_ingest_generate_review_publish_with_service_doubles (test_http.TestHTTP.test_ingest_generate_review_publish_with_service_doubles) ... ok
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:48] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 429 -
+test_login_rate_limit (test_http.TestHTTP.test_login_rate_limit) ... ok
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/login HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/logout HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /api/admin/data HTTP/1.1" 401 -
+test_logout_invalidates_replayed_cookie (test_http.TestHTTP.test_logout_invalidates_replayed_cookie) ... ok
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/subscribe HTTP/1.1" 503 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/subscribe HTTP/1.1" 400 -
+test_missing_smtp_and_email_validation (test_http.TestHTTP.test_missing_smtp_and_email_validation) ... ok
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /issue/ai-research-briefing-d08df3 HTTP/1.1" 404 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET / HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /archive HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /issue/ai-research-briefing-d08df3 HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /sitemap.xml HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /robots.txt HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /static/app.js HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /static/style.css HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /archive?q=research&topic=Research HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /archive?q=not-found HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /static/../server.py HTTP/1.1" 404 -
+test_public_routes_search_metadata_and_private_issue (test_http.TestHTTP.test_public_routes_search_metadata_and_private_issue) ... ok
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/subscribe HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/subscribe HTTP/1.1" 200 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "GET /api/admin/status HTTP/1.1" 200 -
+test_subscription_duplicates_and_privacy (test_http.TestHTTP.test_subscription_duplicates_and_privacy) ... ok
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/admin/ingest HTTP/1.1" 401 -
+[19/Oct/2026 23:39:49] 127.0.0.1 "POST /api/admin/draft HTTP/1.1" 401 -
+[19/Oct/2026 23:39:50] 127.0.0.1 "POST /api/admin/import HTTP/1.1" 401 -
+[19/Oct/2026 23:39:50] 127.0.0.1 "POST /api/admin/issue/1/approve HTTP/1.1" 401 -
+[19/Oct/2026 23:39:50] 127.0.0.1 "POST /api/admin/issue/1/publish HTTP/1.1" 401 -
+[19/Oct/2026 23:39:50] 127.0.0.1 "POST /api/admin/issue/1/send HTTP/1.1" 401 -
+test_unauthorized_mutations_are_blocked (test_http.TestHTTP.test_unauthorized_mutations_are_blocked) ... ok
+[19/Oct/2026 23:39:50] 127.0.0.1 "POST /api/subscribe HTTP/1.1" 200 -
+[19/Oct/2026 23:39:50] 127.0.0.1 "POST /api/subscribe HTTP/1.1" 200 -
+test_unsubscribe_token_survives_pending_resubscribe (test_http.TestHTTP.test_unsubscribe_token_survives_pending_resubscribe) ... ok
+test_local_startup_defaults_mail_off (test_local.TestLocalStartup.test_local_startup_defaults_mail_off) ... ok
+test_local_startup_preserves_existing_secrets (test_local.TestLocalStartup.test_local_startup_preserves_existing_secrets) ... ok
+test_local_startup_rejects_public_bind (test_local.TestLocalStartup.test_local_startup_rejects_public_bind) ... ok
+test_creates_parent_directory_for_new_private_output (test_local_generate.TestLocalGenerateFiles.test_creates_parent_directory_for_new_private_output) ... ok
+test_refuses_to_overwrite_before_using_model (test_local_generate.TestLocalGenerateFiles.test_refuses_to_overwrite_before_using_model) ... usage: local_generate.py [-h] [--stories STORIES] [--output OUTPUT]
+local_generate.py: error: Output already exists; choose a new filename to preserve your draft
+ok
+test_authenticated_import_and_synthetic_publication (test_production.TestProductionHTTP.test_authenticated_import_and_synthetic_publication) ... ok
+test_body_header_method_limits_and_disabled_generation (test_production.TestProductionHTTP.test_body_header_method_limits_and_disabled_generation) ... Exception in thread Thread-72 (run):
+Traceback (most recent call last):
+  File "C:\Users\YellankiKaushik\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\YellankiKaushik\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily\.tmp\fresh-venv\Lib\site-packages\waitress\server.py", line 325, in run
+    self.asyncore.loop(
+  File "C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily\.tmp\fresh-venv\Lib\site-packages\waitress\wasyncore.py", line 240, in loop
+    poll_fun(timeout, map)
+  File "C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily\.tmp\fresh-venv\Lib\site-packages\waitress\wasyncore.py", line 167, in poll
+    r, w, e = select.select(r, w, e, timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+ok
+test_confirmation_delivery_and_unsubscribe_with_mock_tls_smtp (test_production.TestProductionHTTP.test_confirmation_delivery_and_unsubscribe_with_mock_tls_smtp) ... ok
+test_host_https_origin_and_secure_cookie (test_production.TestProductionHTTP.test_host_https_origin_and_secure_cookie) ... ok
+test_login_rate_limit_survives_restart_state_and_uses_proxy_client (test_production.TestProductionHTTP.test_login_rate_limit_survives_restart_state_and_uses_proxy_client) ... ok
+test_readiness_checks_database (test_production.TestProductionHTTP.test_readiness_checks_database) ... ok
+test_real_waitress_distrusts_unrecognized_proxy (test_production.TestProductionHTTP.test_real_waitress_distrusts_unrecognized_proxy) ... ok
+test_data_disconnect_remains_uncertain_even_if_quit_fails (test_production.TestProductionMail.test_data_disconnect_remains_uncertain_even_if_quit_fails) ... ok
+test_invalid_smtp_settings_fail_before_connection (test_production.TestProductionMail.test_invalid_smtp_settings_fail_before_connection) ... ok
+test_production_defaults_to_no_outgoing_email (test_production.TestProductionMail.test_production_defaults_to_no_outgoing_email) ... ok
+test_quit_failure_does_not_retry_accepted_message (test_production.TestProductionMail.test_quit_failure_does_not_retry_accepted_message) ... ok
+test_smoke_tool_refuses_a_real_host (test_production.TestProductionMail.test_smoke_tool_refuses_a_real_host) ... ok
+test_tls_and_implicit_tls_with_one_click_headers (test_production.TestProductionMail.test_tls_and_implicit_tls_with_one_click_headers) ... ok
+test_unsafe_proxy_and_development_server_rejected (test_production.TestProductionMail.test_unsafe_proxy_and_development_server_rejected) ... ok
+test_backup_rejects_missing_invalid_and_same_path (test_production.TestRecovery.test_backup_rejects_missing_invalid_and_same_path) ... ok
+test_newer_schema_is_rejected (test_production.TestRecovery.test_newer_schema_is_rejected) ... ok
+test_online_backup_restore_preserves_all_data_and_state (test_production.TestRecovery.test_online_backup_restore_preserves_all_data_and_state) ... ok
+test_rate_limit_survives_new_connections_and_expires (test_production.TestRecovery.test_rate_limit_survives_new_connections_and_expires) ... ok
+test_restore_rejects_running_target_and_orphan_sidecars (test_production.TestRecovery.test_restore_rejects_running_target_and_orphan_sidecars) ... ok
+test_single_instance_across_processes_and_restart (test_production.TestRecovery.test_single_instance_across_processes_and_restart) ... ok
+test_v1_migration_preserves_draft_and_is_repeatable (test_production.TestRecovery.test_v1_migration_preserves_draft_and_is_repeatable) ... ok
+test_inline_model_citations_rejected (test_release.TestAdditionalGeneration.test_inline_model_citations_rejected) ... ok
+test_env_load_preserves_caller_and_handles_bom_quotes (test_release.TestConfiguration.test_env_load_preserves_caller_and_handles_bom_quotes) ... ok
+test_newsletter_template_contains_alternatives_and_source_links (test_release.TestConfiguration.test_newsletter_template_contains_alternatives_and_source_links) ... ok
+test_setup_creates_private_config_without_overwriting (test_release.TestConfiguration.test_setup_creates_private_config_without_overwriting) ... ok
+test_utf16_entity_bypass_rejected (test_release.TestConfiguration.test_utf16_entity_bypass_rejected) ... ok
+test_successful_send_with_failed_ledger_write_is_not_retryable (test_release.TestDeliveryLedgerFailure.test_successful_send_with_failed_ledger_write_is_not_retryable) ... ok
+test_atom_prefers_article_over_self_link (test_release.TestFeeds.test_atom_prefers_article_over_self_link) ... ok
+test_collection_limits (test_release.TestFeeds.test_collection_limits) ... ok
+test_entity_and_malformed_feed_rejected (test_release.TestFeeds.test_entity_and_malformed_feed_rejected) ... ok
+test_private_endpoints_rejected (test_release.TestFeeds.test_private_endpoints_rejected) ... ok
+test_recency_and_relevance (test_release.TestFeeds.test_recency_and_relevance) ... ok
+test_retry_limit_and_partial_failure (test_release.TestFeeds.test_retry_limit_and_partial_failure) ... ok
+test_actual_payload_and_provenance (test_release.TestGeneration.test_actual_payload_and_provenance) ... ok
+test_detectable_unsupported_numeric_claim_rejected (test_release.TestGeneration.test_detectable_unsupported_numeric_claim_rejected) ... ok
+test_empty_inputs_and_concurrency_bound (test_release.TestGeneration.test_empty_inputs_and_concurrency_bound) ... ok
+test_missing_subject_or_summary_rejected (test_release.TestGeneration.test_missing_subject_or_summary_rejected) ... ok
+test_network_timeout_malformed_and_size_failures (test_release.TestGeneration.test_network_timeout_malformed_and_size_failures) ... ok
+test_unknown_duplicate_and_noninteger_ids_rejected (test_release.TestGeneration.test_unknown_duplicate_and_noninteger_ids_rejected) ... ok
+test_blank_draft_cannot_enter_review (test_release.TestPersistenceWorkflow.test_blank_draft_cannot_enter_review) ... ok
+test_consent_and_publication_checked_at_reservation (test_release.TestPersistenceWorkflow.test_consent_and_publication_checked_at_reservation) ... ok
+test_delivery_reservation_is_atomic (test_release.TestPersistenceWorkflow.test_delivery_reservation_is_atomic) ... ok
+test_failed_delivery_can_retry_sent_cannot (test_release.TestPersistenceWorkflow.test_failed_delivery_can_retry_sent_cannot) ... ok
+test_history_records_transitions_and_snapshots (test_release.TestPersistenceWorkflow.test_history_records_transitions_and_snapshots) ... ok
+test_old_schema_migration_preserves_rows (test_release.TestPersistenceWorkflow.test_old_schema_migration_preserves_rows) ... ok
+test_persistence_and_idempotent_init (test_release.TestPersistenceWorkflow.test_persistence_and_idempotent_init) ... ok
+test_review_is_mandatory (test_release.TestPersistenceWorkflow.test_review_is_mandatory) ... ok
+test_revision_and_edit_reset_approval (test_release.TestPersistenceWorkflow.test_revision_and_edit_reset_approval) ... ok
+test_safe_retry_delivery_and_uncertain_delivery (test_release.TestPersistenceWorkflow.test_safe_retry_delivery_and_uncertain_delivery) ... ok
+test_search_topic_and_private_drafts (test_release.TestPersistenceWorkflow.test_search_topic_and_private_drafts) ... ok
+test_stale_save_is_rejected (test_release.TestPersistenceWorkflow.test_stale_save_is_rejected) ... ok
+test_uncertain_and_interrupted_are_not_retried (test_release.TestPersistenceWorkflow.test_uncertain_and_interrupted_are_not_retried) ... ok
+test_url_deduplication_preserves_metadata (test_release.TestPersistenceWorkflow.test_url_deduplication_preserves_metadata) ... ok
+test_bad_urls_and_duplicate_sources_rejected (test_release.TestSecurityAndMail.test_bad_urls_and_duplicate_sources_rejected) ... ok
+test_email_validation (test_release.TestSecurityAndMail.test_email_validation) ... ok
+test_html_escape_public_output (test_release.TestSecurityAndMail.test_html_escape_public_output) ... ok
+test_mail_multipart_and_header_sanitization (test_release.TestSecurityAndMail.test_mail_multipart_and_header_sanitization) ... ok
+test_missing_and_placeholder_production_config (test_release.TestSecurityAndMail.test_missing_and_placeholder_production_config) ... ok
+test_missing_smtp_and_unpublished_issue_rejected (test_release.TestSecurityAndMail.test_missing_smtp_and_unpublished_issue_rejected) ... ok
+test_session_tampering_expiry_and_logout_epoch (test_release.TestSecurityAndMail.test_session_tampering_expiry_and_logout_epoch) ... ok
+test_smtp_disconnect_is_uncertain (test_release.TestSecurityAndMail.test_smtp_disconnect_is_uncertain) ... ok
+test_token_paths_are_redacted_in_logs (test_release.TestSecurityAndMail.test_token_paths_are_redacted_in_logs) ... ok
+
+----------------------------------------------------------------------
+Ran 88 tests in 6.325s
+
+OK
+Draft written to C:\Users\YellankiKaushik\AppData\Local\Temp\tmpkpw1wawd\nested\draft.json. Import it into /admin and review before publishing.

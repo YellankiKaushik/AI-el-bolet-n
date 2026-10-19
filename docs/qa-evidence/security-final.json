@@ -1,0 +1,18 @@
+{
+  "checked_candidates": 159,
+  "credential_findings": [],
+  "exact_private_secret_scan": true,
+  "scope": "Current Git candidates and known patterns; not exhaustive historical secret analysis",
+  "normal_health": {
+    "status": 200,
+    "body": {
+      "status": "ok"
+    }
+  },
+  "headers": {
+    "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  }
+}

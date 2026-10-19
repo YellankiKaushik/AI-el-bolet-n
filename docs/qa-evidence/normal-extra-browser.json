@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "id": "N01",
+      "feature": "Normal app homepage and archive keep pre-existing drafts private",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "N02",
+      "feature": "Normal app authenticates privately and shows preserved drafts and sources with mail off",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "K1440",
+      "feature": "Login layout at 1440 pixels",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "K768",
+      "feature": "Login layout at 768 pixels",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "K390",
+      "feature": "Login layout at 390 pixels",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "K320",
+      "feature": "Login layout at 320 pixels",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "N03",
+      "feature": "Browser login throttling displays understandable error",
+      "status": "PASS",
+      "type": "browser"
+    },
+    {
+      "id": "N04",
+      "feature": "Additional browser pages have zero JavaScript exceptions",
+      "status": "PASS",
+      "type": "browser"
+    }
+  ],
+  "errors": []
+}

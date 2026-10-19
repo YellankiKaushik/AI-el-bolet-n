@@ -1,0 +1,26 @@
+{
+  "backup_integrity": "ok",
+  "restored_matches_source": true,
+  "unsafe_overwrite_rejected": true,
+  "transaction_rollback": true,
+  "synthetic_counts": {
+    "issues": 27,
+    "subscribers": 0,
+    "deliveries": 0,
+    "issue_events": 124
+  },
+  "smtp_mock_final_subscriber_states": {
+    "unsubscribed": 1
+  },
+  "concurrency": {
+    "workers": 8,
+    "requests": 48,
+    "all_status_200": true,
+    "max_seconds": 0.093
+  },
+  "real_email_connections": 0,
+  "sqlite_write_contention_rejected": true,
+  "sqlite_recovers_after_lock_release": true,
+  "post_restart_database_matches_backup": true,
+  "actual_unavailable_loopback_ollama_error": "Local Ollama request failed. Check ollama serve, OLLAMA_MODEL and timeout; no cloud fallback was used."
+}

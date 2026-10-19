@@ -1,0 +1,11 @@
+{
+  "automated_passed": 91,
+  "automated_failed": 0,
+  "automated_skipped": 0,
+  "browser_passed": 75,
+  "browser_failed": 0,
+  "protocol_passed": 2,
+  "application_defects_found": 4,
+  "application_defects_fixed": 4,
+  "unresolved_local_defects": 0
+}

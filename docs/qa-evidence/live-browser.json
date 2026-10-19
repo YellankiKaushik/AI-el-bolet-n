@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "id": "L01",
+      "feature": "Log in to isolated live integration app and open Source feed",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Actual HTTPS RSS and local Gemma; separate private DB"
+    },
+    {
+      "id": "L02",
+      "feature": "Click Refresh news sources and observe real collector result",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Actual HTTPS RSS and local Gemma; separate private DB"
+    },
+    {
+      "id": "L03",
+      "feature": "Generate selection with no selected sources",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Actual HTTPS RSS and local Gemma; separate private DB"
+    },
+    {
+      "id": "L04",
+      "feature": "Select too many source checkboxes and generate",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Actual HTTPS RSS and local Gemma; separate private DB"
+    },
+    {
+      "id": "L05",
+      "feature": "Open Original story link in a real browser popup",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Actual HTTPS RSS and local Gemma; separate private DB"
+    },
+    {
+      "id": "L06",
+      "feature": "Generate a real local Gemma draft through selected-source UI",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Actual HTTPS RSS and local Gemma; separate private DB"
+    },
+    {
+      "id": "L07",
+      "feature": "Private generated draft is absent from public archive and JS has no exceptions",
+      "type": "browser",
+      "status": "PASS",
+      "transport": "Actual HTTPS RSS and local Gemma; separate private DB"
+    }
+  ],
+  "errors": []
+}
