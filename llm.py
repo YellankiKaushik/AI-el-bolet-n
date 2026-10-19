@@ -6,7 +6,7 @@ import re
 import threading
 import ipaddress
 from urllib.parse import urlparse
-from urllib.request import urlopen, Request
+from urllib.request import build_opener, HTTPRedirectHandler, ProxyHandler, Request
 from urllib.error import URLError
 from validation import verify_issue, valid_url
 
@@ -41,6 +41,16 @@ SCHEMA["properties"]["items"] = {
 }
 
 
+class LocalOnlyRedirect(HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise URLError("Local Ollama redirects are forbidden")
+
+
+def urlopen(request, timeout):
+    # Do not let system proxy settings or a redirect route local prompts elsewhere.
+    return build_opener(ProxyHandler({}), LocalOnlyRedirect()).open(request, timeout=timeout)
+
+
 def generate(stories):
     if not GENERATION_LOCK.acquire(blocking=False):
         raise RuntimeError("Another generation is running. Try again after it finishes.")
@@ -54,6 +64,8 @@ def _generate(stories):
     stories = stories[:8]
     if not stories:
         raise ValueError("Collect news from RSS feeds first")
+    if re.search(r"(?:^|[:/_-])cloud(?:$|[:/_-])", OLLAMA_MODEL.strip(), re.IGNORECASE):
+        raise ValueError("Choose an installed local Ollama model; cloud model tags are forbidden")
     if not valid_url(OLLAMA_URL):
         raise ValueError("OLLAMA_URL must be an HTTP(S) endpoint")
     hostname = urlparse(OLLAMA_URL).hostname
