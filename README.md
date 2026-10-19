@@ -8,6 +8,8 @@ Signal Daily collects AI news from RSS/Atom feeds, drafts editions with a local 
 
 This repository contains the application source. The public newsletter service is **not deployed**. Fresh clones contain no credentials, database, generated editions or subscriber records.
 
+The current laptop workflow is verified: **80 tests pass**, local Gemma created a new five-story draft, and live email stays disabled. See the [local launch report](docs/LOCAL_LAUNCH_REPORT.md) for the ready-to-review edition and exact Windows/browser steps. Public deployment remains deferred.
+
 ![Signal Daily desktop layout with synthetic verification content](docs/screenshots/desktop.jpg)
 
 ## Features
@@ -57,6 +59,8 @@ cd AI-el-bolet-n
 python tools/setup_local.py
 python run.py
 ```
+
+On the existing Windows laptop, `./Start-Local.ps1` finds the working Python and forces loopback-only, mail-off development settings. Keep the terminal open. If this session's local app is already running, open the URLs below without starting a second instance.
 
 On Windows, use `py` instead of `python` if that is how your Python installation is registered. If neither runs, install Python and verify the executable path first. A machine-specific Codex runtime workaround is retained in the [deployment guide](docs/DEPLOYMENT_GUIDE.md).
 
@@ -151,6 +155,7 @@ Node is needed only for the optional local JavaScript check. Tests use temporary
 
 ## Documentation
 
+- [Local launch report and ready-to-review draft](docs/LOCAL_LAUNCH_REPORT.md)
 - [Production readiness report](docs/PRODUCTION_READINESS_REPORT.md)
 - [Controlled pilot runbook and first real edition](docs/PRODUCTION_RUNBOOK.md)
 - [Implementation and architecture decisions](docs/IMPLEMENTATION_REPORT.md)
