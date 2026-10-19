@@ -276,8 +276,8 @@ def update_issue(issue_id, data):
         event(db, issue_id, "saved")
 
 
-def approve(issue_id):
-    transition(issue_id, "review", "approved")
+def approve(issue_id, version=None):
+    transition(issue_id, "review", "approved", version)
 
 
 def review(issue_id):
@@ -296,12 +296,14 @@ def revise(issue_id):
         event(db, issue_id, "revision_requested")
 
 
-def transition(issue_id, expected, target):
+def transition(issue_id, expected, target, version=None):
     with connect() as db:
         db.execute("BEGIN IMMEDIATE")
         issue = db.execute("SELECT * FROM issues WHERE id=?", (issue_id,)).fetchone()
         if not issue:
             raise ValueError("Edition not found")
+        if version is not None and (type(version) is not int or version != issue["version"]):
+            raise ValueError("Edition changed. Reload before continuing.")
         if issue["status"] != expected:
             raise ValueError(f"Edition must be {expected} before {target}")
         verify_issue(row(issue), complete=True)
@@ -314,8 +316,8 @@ def transition(issue_id, expected, target):
         event(db, issue_id, target)
 
 
-def publish(issue_id):
-    transition(issue_id, "approved", "published")
+def publish(issue_id, version=None):
+    transition(issue_id, "approved", "published", version)
 
 
 def event(conn, issue_id, action):

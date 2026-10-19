@@ -61,6 +61,13 @@ class TestRecovery(DatabaseTest):
         db.review(identity)
         db.approve(identity)
         db.publish(identity)
+        with db.connect() as conn:
+            subscriber = conn.execute(
+                "INSERT INTO subscribers(email,status,unsubscribe_token,created_at) VALUES(?,?,?,?)",
+                ("fictional-backup@example.org", "active", "synthetic-backup-token", db.now()),
+            ).lastrowid
+        self.assertTrue(db.claim_delivery(identity, subscriber))
+        db.record_delivery(identity, subscriber, "sent")  # Simulated acceptance; no SMTP call.
         # Include committed WAL contents while the source connection remains open.
         with db.connect() as live:
             live.execute(

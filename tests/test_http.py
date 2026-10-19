@@ -69,6 +69,36 @@ class TestHTTP(unittest.TestCase):
         except HTTPError as exc:
             return exc.code, exc.read(), dict(exc.headers)
 
+    def test_stale_editor_approval_and_publication_versions_are_rejected(self):
+        self.login()
+        payload = json.loads(
+            (
+                Path(__file__).resolve().parents[1] / "docs/examples/synthetic-newsletter.json"
+            ).read_text(encoding="utf-8")
+        )
+        status, body, _ = self.call("/api/admin/import", payload)
+        self.assertEqual(status, 200)
+        identity = json.loads(body)["issue_id"]
+        prefix = f"/api/admin/issue/{identity}"
+        self.assertEqual(self.call(prefix + "/review", {})[0], 200)
+        stale_review = db.get_issue(issue_id=identity)["version"]
+        self.assertEqual(self.call(prefix + "/save", payload)[0], 200)
+        self.assertEqual(self.call(prefix + "/review", {})[0], 200)
+        self.assertEqual(self.call(prefix + "/approve", {"version": stale_review})[0], 400)
+        self.assertEqual(db.get_issue(issue_id=identity)["status"], "review")
+        version = db.get_issue(issue_id=identity)["version"]
+        self.assertEqual(self.call(prefix + "/approve", {"version": version})[0], 200)
+        stale_approval = db.get_issue(issue_id=identity)["version"]
+        self.assertEqual(self.call(prefix + "/save", payload)[0], 200)
+        self.assertEqual(self.call(prefix + "/review", {})[0], 200)
+        self.assertEqual(self.call(prefix + "/approve", {})[0], 200)
+        with patch.object(mailer, "email_issue") as dispatch:
+            self.assertEqual(self.call(prefix + "/publish", {"version": stale_approval})[0], 400)
+            dispatch.assert_not_called()
+        self.assertEqual(db.get_issue(issue_id=identity)["status"], "approved")
+        version = db.get_issue(issue_id=identity)["version"]
+        self.assertEqual(self.call(prefix + "/publish", {"version": version})[0], 200)
+
     def test_complete_editor_and_subscriber_flow(self):
         status, body, _ = self.call("/")
         self.assertEqual(status, 200)

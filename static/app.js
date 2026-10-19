@@ -105,10 +105,10 @@
       $('#issue-form').addEventListener('submit',e=>{e.preventDefault();action(async()=>{await api(`/api/admin/issue/${issue.id}/save`,{...gather(),version:issue.version});toast('Draft saved. Approval reset so you can review changes.');await refresh()})});
       const review=$('#review-issue');if(review)review.addEventListener('click',()=>action(async()=>{await api(`/api/admin/issue/${issue.id}/save`,{...gather(),version:issue.version});await api(`/api/admin/issue/${issue.id}/review`,{});toast('Submitted for review. Preview and fact-check before approval.');await refresh()}));
       const revise=$('#revise-issue');if(revise)revise.addEventListener('click',()=>action(async()=>{await api(`/api/admin/issue/${issue.id}/revise`,{});await refresh()}));
-      const approve=$('#approve-issue'); if(approve)approve.addEventListener('click',()=>action(async()=>{await api(`/api/admin/issue/${issue.id}/approve`,{});toast('Edition approved. Review completed; you can publish now.');await refresh()}));
+      const approve=$('#approve-issue'); if(approve)approve.addEventListener('click',()=>action(async()=>{await api(`/api/admin/issue/${issue.id}/approve`,{version:issue.version});toast('Edition approved. Review completed; you can publish now.');await refresh()}));
       const pub=$('#publish-issue');if(pub)pub.addEventListener('click',()=>{
         if(!confirm(state.data.mailer?'Publish this approved edition to your website and email verified subscribers?':'Publish this approved edition on this server? Email is disabled; no messages will be sent.'))return;
-        action(async()=>{const result=await api(`/api/admin/issue/${issue.id}/publish`,{});toast(`Published! Emails sent: ${result.sent}, failed: ${result.failed}. ${result.note}`);await refresh()})
+        action(async()=>{const result=await api(`/api/admin/issue/${issue.id}/publish`,{version:issue.version});toast(`Published! Emails sent: ${result.sent}, failed: ${result.failed}. ${result.note}`);await refresh()})
       });
     } else if($('#retry-send')) $('#retry-send').addEventListener('click',()=>action(async()=>{const r=await api(`/api/admin/issue/${issue.id}/send`,{});toast(`Delivery: ${r.sent} sent, ${r.failed} failed, ${r.remaining} remaining.`)}));
     // Approval always applies to the saved revision, never to unsaved visible edits.
@@ -148,7 +148,7 @@
   function importTab(){
     shell(`<div class="eyebrow">LOCAL / OFFLINE GENERATION</div><h2>Bring your draft<span class="pink">.</span></h2>
       <p class="settings-lead">If your public site runs on a remote server, keep Ollama private on your laptop. Run <code>python tools/local_generate.py</code> on your laptop and import the generated JSON here.</p>
-      <form id="import-form"><div class="form-field"><label for="json-import">Paste newsletter JSON (or upload a .json file)</label><textarea id="json-import" rows="12" placeholder='{"title":"...","subject":"...","intro":"...","closing":"...","items":[{"headline":"...","summary":"...","why":"...","source":"...","url":"https://..."}]}' required></textarea></div><input type="file" accept=".json,application/json" id="import-file"><button class="btn btn-dark" type="submit">Import as unapproved draft ↗</button></form>`);
+      <form id="import-form"><div class="form-field"><label for="json-import">Paste newsletter JSON (or upload a .json file)</label><textarea id="json-import" rows="12" placeholder='{"title":"...","subject":"...","intro":"...","closing":"...","items":[{"headline":"...","summary":"...","why":"...","source":"...","url":"https://..."}]}' required></textarea></div><label for="import-file">Upload newsletter JSON</label><input type="file" accept=".json,application/json" id="import-file"><button class="btn btn-dark" type="submit">Import as unapproved draft ↗</button></form>`);
     $('#import-file').addEventListener('change',async e=>{if(e.target.files[0])$('#json-import').value=await e.target.files[0].text()});
     $('#import-form').addEventListener('submit',e=>{e.preventDefault();action(async()=>{
       let data;try{data=JSON.parse($('#json-import').value)}catch{throw Error('Enter valid JSON')}

@@ -144,6 +144,35 @@ class TestPersistenceWorkflow(DatabaseCase):
         with self.assertRaisesRegex(ValueError, "changed"):
             db.update_issue(identity, saved)
 
+    def test_stale_approval_rejects_a_new_unseen_reviewed_revision(self):
+        identity = db.create_issue(edition())
+        db.review(identity)
+        stale = db.get_issue(issue_id=identity)["version"]
+        db.update_issue(identity, {**edition(), "subject": "A different revision"})
+        db.review(identity)
+        before = db.history(identity)
+        with self.assertRaisesRegex(ValueError, "changed"):
+            db.approve(identity, stale)
+        self.assertEqual(db.get_issue(issue_id=identity)["status"], "review")
+        self.assertEqual(db.history(identity), before)
+        db.approve(identity, db.get_issue(issue_id=identity)["version"])
+
+    def test_stale_publication_rejects_a_new_unseen_approved_revision(self):
+        identity = db.create_issue(edition())
+        db.review(identity)
+        db.approve(identity)
+        stale = db.get_issue(issue_id=identity)["version"]
+        db.update_issue(identity, {**edition(), "subject": "A different revision"})
+        db.review(identity)
+        db.approve(identity)
+        before = db.history(identity)
+        for version in (stale, True, str(stale)):
+            with self.assertRaisesRegex(ValueError, "changed"):
+                db.publish(identity, version)
+        self.assertEqual(db.get_issue(issue_id=identity)["status"], "approved")
+        self.assertEqual(db.history(identity), before)
+        db.publish(identity, db.get_issue(issue_id=identity)["version"])
+
     def test_history_records_transitions_and_snapshots(self):
         identity = self.published()
         self.assertEqual(

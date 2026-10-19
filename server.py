@@ -561,10 +561,10 @@ class Handler(BaseHTTPRequestHandler):
                         db.revise(issue_id)
                         return self.json_out(200, {"ok": True})
                     if action == "approve":
-                        db.approve(issue_id)
+                        db.approve(issue_id, data.get("version"))
                         return self.json_out(200, {"ok": True})
                     if action == "publish":
-                        db.publish(issue_id)
+                        db.publish(issue_id, data.get("version"))
                         result = (
                             self.deliver(issue_id)
                             if mailer.configured()
