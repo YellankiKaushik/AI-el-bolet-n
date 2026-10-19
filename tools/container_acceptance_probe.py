@@ -110,12 +110,15 @@ def proxy():
         with response:
             return response.code, response.read()
 
-    ensure(call("/health")[0] == 200, "Caddy did not forward canonical HTTPS metadata")
+    status, _ = call("/health")
+    ensure(status == 200, f"Proxy health expected 200, received {status}")
     status, body = call("/archive")
-    ensure(status == 200 and b"SYNTHETIC" in body)
+    ensure(status == 200 and b"SYNTHETIC" in body, f"Proxy archive failed, status {status}")
     for path in ("/admin", "/api/admin/data", "/api/login", "/api/logout"):
-        ensure(call(path)[0] == 403, "Editor CIDR restriction was bypassed")
-    ensure(call("/api/subscribe", b"x" * 140001)[0] == 413)
+        status, _ = call(path)
+        ensure(status == 403, f"Editor CIDR expected 403 for {path}, received {status}")
+    status, _ = call("/api/subscribe", b"x" * 140001)
+    ensure(status == 413, f"Oversized proxy request expected 413, received {status}")
     print(json.dumps({"proxy_checks": 7, "public_tls": "NOT_TESTED", "external_ports": 0}))
 
 

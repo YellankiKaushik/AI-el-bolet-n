@@ -28,6 +28,21 @@ def ensure(condition, message="Container acceptance assertion failed"):
         raise AssertionError(message)
 
 
+def unused_subnet(networks):
+    """Docker's built-in host/none networks legitimately have null IPAM config."""
+    occupied = [
+        ipaddress.ip_network(config["Subnet"])
+        for item in networks
+        for config in ((item.get("IPAM") or {}).get("Config") or [])
+        if config.get("Subnet")
+    ]
+    return next(
+        candidate
+        for candidate in ipaddress.ip_network("172.28.0.0/16").subnets(new_prefix=24)
+        if not any(candidate.overlaps(other) for other in occupied if other.version == 4)
+    )
+
+
 class Acceptance:
     def __init__(self, image, output):
         self.executable = shutil.which("docker")
@@ -229,17 +244,7 @@ class Acceptance:
         # Choose an unused range so acceptance can coexist with unrelated daemon networks.
         network_ids = self.docker("network", "ls", "--quiet").splitlines()
         existing = json.loads(self.docker("network", "inspect", *network_ids))
-        occupied = [
-            ipaddress.ip_network(config["Subnet"])
-            for item in existing
-            for config in item.get("IPAM", {}).get("Config", [])
-            if config.get("Subnet")
-        ]
-        available = next(
-            candidate
-            for candidate in ipaddress.ip_network("172.28.0.0/16").subnets(new_prefix=24)
-            if not any(candidate.overlaps(other) for other in occupied if other.version == 4)
-        )
+        available = unused_subnet(existing)
         self.docker("network", "create", "--internal", "--subnet", available, network)
         self.networks.append(network)
         details = self.inspect("network", network)
