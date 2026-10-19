@@ -24,7 +24,7 @@ This repository contains the application source. The public newsletter service i
 
 | Layer | Implementation |
 |---|---|
-| Backend | Python 3.11+ standard library, bounded HTTP server |
+| Backend | Python 3.11+, Waitress WSGI in production; standard-library server locally |
 | Frontend | Server-rendered HTML, CSS and plain JavaScript |
 | Persistence | SQLite with migrations, transactions and delivery reservations |
 | Local AI | Ollama HTTP API; configurable installed model tag |
@@ -32,7 +32,7 @@ This repository contains the application source. The public newsletter service i
 | Delivery | SMTP with STARTTLS or implicit TLS |
 | Checks | unittest, Ruff, Bandit, Node syntax check, OSV advisory audit |
 
-There are **no third-party runtime Python or npm dependencies**. Developer checker dependencies are pinned separately in [requirements-dev.txt](requirements-dev.txt).
+Local `run.py` needs only the standard library. Production serving uses pinned [requirements.txt](requirements.txt); checker dependencies are in [requirements-dev.txt](requirements-dev.txt). No npm dependencies are required.
 
 ```text
 RSS/Atom → feeds.py → SQLite stories → local Ollama draft
@@ -113,11 +113,12 @@ SMTP_USER=your-smtp-username
 SMTP_PASSWORD=your-smtp-password
 MAIL_FROM=Signal Daily <newsletter@your-domain.com>
 PUBLIC_URL=https://news.your-domain.com
+EMAIL_DELIVERY_ENABLED=true
 ```
 
-STARTTLS is required on port 587; port 465 or `SMTP_SSL=true` selects implicit TLS. Public subscriptions stay unavailable until SMTP is configured. A generic subscription response and one-time 24-hour confirmation protect consent and privacy. Only confirmed active subscribers receive editions; unsubscribe requires a confirmation POST.
+Enable delivery only after sender configuration and consented mailbox testing are approved. Production defaults to disabled email, and the setup template explicitly disables it. STARTTLS is required on port 587; port 465 or `SMTP_SSL=true` selects implicit TLS. Public subscriptions stay unavailable until SMTP is configured and enabled. A generic subscription response and one-time 24-hour confirmation protect consent and privacy. Only confirmed active subscribers receive editions; unsubscribe requires a confirmation POST.
 
-Delivery defaults to 25 recipients per action, capped at 100. The ledger prevents duplicate concurrent dispatch. SMTP acceptance can be ambiguous after a disconnect: `sending`/`uncertain` rows require provider-log reconciliation before retry. See the [operations guide](docs/DEPLOYMENT_GUIDE.md).
+Delivery defaults to 25 recipients per action, capped at 100; production Compose uses five. The ledger prevents duplicate concurrent dispatch. SMTP acceptance can be ambiguous after a disconnect: `sending`/`uncertain` rows require provider-log reconciliation before retry. See the [production runbook](docs/PRODUCTION_RUNBOOK.md).
 
 ## Keep laptop AI private when hosting
 
@@ -135,21 +136,23 @@ All supported environment variables are documented in [.env.example](.env.exampl
 ## Tests and quality checks
 
 ```powershell
-python -m pip install -r requirements-dev.txt
+python -m pip install -r requirements.txt -r requirements-dev.txt
 python -m unittest discover -s tests -v
 python -m ruff check .
 python -m ruff format --check .
-python -m compileall -q db.py server.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests
+python -m compileall -q db.py server.py production.py instance.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests
 node --check static/app.js
 python -m bandit -q -r . --exclude ./.tmp,./tests,./.venv,./data
 python tools/release_audit.py
 python tools/audit_dependencies.py
 ```
 
-Node is needed only for the optional local JavaScript check. Tests use temporary SQLite databases, loopback HTTP and mocked external transports; they send no real email. The publication pass independently reran all **56 tests**. The [CI workflow](.github/workflows/tests.yml) defines Windows/Linux jobs for Python 3.11/3.12; current hosted results are visible in [GitHub Actions](https://github.com/YellankiKaushik/AI-el-bolet-n/actions).
+Node is needed only for the optional local JavaScript check. Tests use temporary SQLite databases, loopback HTTP and mocked external transports; they send no real email. Phase 2 passes **77 tests** on Windows Python 3.12. The previous 56-test release passed all four CI jobs; the updated [CI workflow](.github/workflows/tests.yml) still defines Windows/Linux jobs for Python 3.11/3.12, but this development branch has not been pushed or run on hosted CI.
 
 ## Documentation
 
+- [Production readiness report](docs/PRODUCTION_READINESS_REPORT.md)
+- [Controlled pilot runbook and first real edition](docs/PRODUCTION_RUNBOOK.md)
 - [Implementation and architecture decisions](docs/IMPLEMENTATION_REPORT.md)
 - [Test report and evidence](docs/TEST_REPORT.md)
 - [Resolved issues and remaining limitations](docs/ISSUE_REPORT.md)
@@ -162,7 +165,7 @@ REA is a separate optional investigation tool. Its source is not bundled or requ
 
 ## Production status and limits
 
-The website remains **undeployed**. Launch requires an HTTPS host, strong production configuration, persistent private storage, backups/restoration testing, SMTP/sender DNS and a consented mailbox acceptance test. The retained standard-library HTTP server needs production serving-layer/edge hardening and load testing. Use one application process; distributed queues, shared rate limits, bounce/complaint handling, account recovery and multi-editor roles are deferred.
+The website remains **undeployed** and **NOT READY FOR CONTROLLED DEPLOYMENT** pending the checks in the production report. `production.py` runs Waitress with bounded requests and explicit proxy trust; production Compose adds Caddy HTTPS, editor IP restrictions and persistent volumes. `run.py` refuses production mode. Local backup/restore and process restart were verified; Docker, Linux, public TLS, live SMTP and off-host recovery still need acceptance. Use one application process; distributed queues, automatic bounce/complaint handling, account recovery and multi-editor roles are deferred.
 
 ## Licensing and reference
 

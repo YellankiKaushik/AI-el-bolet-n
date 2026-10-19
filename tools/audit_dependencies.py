@@ -1,4 +1,4 @@
-"""Query OSV for pinned developer packages. Only public package names/versions are sent."""
+"""Query OSV for all pinned packages. Only public package names/versions are sent."""
 
 import json
 from pathlib import Path
@@ -8,11 +8,17 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    pins = [
-        line.split("==")
-        for line in (ROOT / "requirements-dev.txt").read_text().splitlines()
-        if "==" in line and not line.startswith("#")
-    ]
+    runtime_count = 0
+    pins = []
+    for filename in ("requirements.txt", "requirements-dev.txt"):
+        entries = [
+            line.split("==")
+            for line in (ROOT / filename).read_text(encoding="utf-8").splitlines()
+            if "==" in line and not line.startswith("#")
+        ]
+        if filename == "requirements.txt":
+            runtime_count = len(entries)
+        pins.extend(entries)
     queries = [
         {"package": {"name": name, "ecosystem": "PyPI"}, "version": version}
         for name, version in pins
@@ -31,8 +37,9 @@ def main():
     ]
     report = {
         "source": "https://api.osv.dev/v1/querybatch",
-        "runtime_third_party_packages": 0,
-        "developer_packages": findings,
+        "runtime_third_party_packages": runtime_count,
+        "runtime_packages": findings[:runtime_count],
+        "developer_packages": findings[runtime_count:],
         "advisory_count": sum(len(r["advisories"]) for r in findings),
     }
     (ROOT / "docs/dependency-audit.json").write_text(

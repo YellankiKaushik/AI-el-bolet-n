@@ -34,7 +34,7 @@ def audit():
         if (
             (path.name.startswith(".env") and path.name != ".env.example")
             or path.suffix in (".db", ".sqlite", ".sqlite3", ".key", ".pem")
-            or any(p in (".tmp", "data", "local-drafts", "__pycache__") for p in parts)
+            or any(p in (".tmp", "data", "backups", "local-drafts", "__pycache__") for p in parts)
         ):
             failures.append(
                 {"file": name, "reason": "private or generated file in push candidates"}
@@ -54,6 +54,9 @@ def audit():
         "validation.py",
         "config.py",
         "run.py",
+        "production.py",
+        "instance.py",
+        "requirements.txt",
         ".env.example",
         ".gitignore",
         "README.md",

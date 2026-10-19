@@ -1,6 +1,13 @@
 {
   "source": "https://api.osv.dev/v1/querybatch",
-  "runtime_third_party_packages": 0,
+  "runtime_third_party_packages": 1,
+  "runtime_packages": [
+    {
+      "package": "waitress",
+      "version": "3.0.2",
+      "advisories": []
+    }
+  ],
   "developer_packages": [
     {
       "package": "ruff",

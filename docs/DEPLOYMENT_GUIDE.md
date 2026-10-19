@@ -2,9 +2,11 @@
 
 Date: 2026-10-19. Source readiness and a live production launch are separate. This application has not been deployed.
 
+Phase 2's [production readiness report](PRODUCTION_READINESS_REPORT.md) and [controlled pilot runbook](PRODUCTION_RUNBOOK.md) contain the current launch gates, Docker rehearsal, backup/restore commands and first-edition instructions.
+
 ## Windows local installation
 
-Use Python 3.11+ and SQLite (bundled with Python). No pip packages are needed to run the service. Work from the `signal-daily` folder. Git is needed for the release audit; Node is only needed for the JavaScript syntax check.
+Use Python 3.11+ and SQLite (bundled with Python). Local `run.py` needs no pip packages; `production.py` requires `requirements.txt`. Work from the `signal-daily` folder. Git is needed for the release audit; Node is only needed for the JavaScript syntax check.
 
 ```powershell
 python tools/setup_local.py
@@ -35,7 +37,7 @@ Use fetched material, inspect the source evidence, edit, submit for review, appr
 | Variable | Purpose |
 |---|---|
 | APP_ENV | `development` locally; set `production` before a public launch. |
-| HOST / PORT | Defaults `127.0.0.1:8787`. Container binds internally to all interfaces; compose exposes only host loopback. |
+| HOST / PORT | Defaults `127.0.0.1:8787`. Production container binds internally; only Caddy publishes ports. |
 | PUBLIC_URL | Bare origin, e.g. `https://news.example.org`; no path/query/fragment. Used for confirmation, unsubscribe, sitemap and edition links. |
 | ADMIN_PASSWORD | Unique editor password. Production minimum 16 characters; generated local value exceeds this. |
 | SESSION_SECRET | Random signing key, at least 32 characters in production. Rotate to invalidate sessions. |
@@ -49,6 +51,11 @@ Use fetched material, inspect the source evidence, edit, submit for review, appr
 | SMTP_USER / SMTP_PASSWORD | Provider credentials when required; never commit. |
 | MAIL_FROM | Verified sender address or display-name mailbox. |
 | SMTP_SSL | `true` for implicit TLS; port 465 also enables it. |
+| EMAIL_DELIVERY_ENABLED | Explicit `true` required in production; setup defaults false. Gates confirmation and edition mail. |
+| ENABLE_LOCAL_GENERATION | False on the host; local laptop generation remains enabled in development. |
+| TRUSTED_PROXY | Exact reverse proxy IP; wildcard trust is rejected. Compose uses `172.30.0.2`. |
+| PUBLIC_HOST / EDITOR_CIDR | Compose public DNS name and operator IP/VPN range. Default editor range denies remote access. |
+| DATABASE_FILE | Optional restored database filename inside Compose's persistent `/data`. |
 
 Environment values supplied by the process take precedence over `.env`. Restart after changes. Placeholder credentials are rejected; production also requires a non-local HTTPS public origin and strong credentials. Local setup does not configure SMTP or hosting.
 
@@ -69,17 +76,9 @@ For `sending`/`uncertain`, first stop competing delivery work and inspect provid
 
 ## Public hosting architecture
 
-Use one persistent Python service/container behind an HTTPS reverse proxy on a host you control. Keep SQLite on a private durable disk with backups. Keep SMTP outbound only. Configure request/body/connection/time limits and IP-based throttling at the proxy. The app deliberately ignores untrusted forwarded client headers; behind a proxy its built-in limits may treat clients as one proxy address, so edge throttling is important.
+Use the current [production runbook](PRODUCTION_RUNBOOK.md): one Waitress process behind Caddy, a private upstream port, HTTPS, editor IP/VPN restrictions and persistent local SQLite storage. Waitress trusts exactly the configured proxy's forwarding headers; production throttles use a SQLite ledger keyed by hashed client identity. Both entry points hold an OS process lock. The development `http.server` entry point refuses production mode. No throughput or availability claim was tested.
 
-The bounded standard-library HTTP server is suitable for local validation and a small controlled pilot, not a verified production server. Python's [http.server documentation](https://docs.python.org/3.12/library/http.server.html) advises against production use. Harden or replace the serving layer and perform representative load/security checks before launch. No production throughput or availability claim was tested.
-
-The supplied Dockerfile uses an unprivileged service user. Compose binds host `127.0.0.1:8787` and mounts the `signal_data` volume at `/data`. Before any future deployment, configure `APP_ENV=production`, your HTTPS `PUBLIC_URL`, secrets, SMTP and a reverse proxy. Then, only after deployment authorization:
-
-```powershell
-docker compose up -d --build
-```
-
-Docker was absent from PATH during this audit, so image build and runtime are NOT VERIFIED. Do not use an ephemeral/serverless filesystem for this SQLite architecture. Multiple service processes would require shared sessions/rate limits and a delivery worker design; only one application instance is supported here.
+The Dockerfile runs as an unprivileged user. Compose adds a read-only application root, capability restrictions, bounded resources, persistent data/certificate volumes and health checks. Docker and Linux are NOT VERIFIED on this machine. Complete the isolated container rehearsal and validate Caddy before separate deployment authorization. Only one application instance is supported; do not use ephemeral storage or multiple writers.
 
 ## Keep laptop AI private
 
@@ -97,6 +96,8 @@ In the hosted editor choose Import local draft, upload/paste JSON, review, appro
 Schedule only `python tools/collect_news.py`; set Task Scheduler's executable, script path and project working directory. No schedule was created automatically. This command cannot approve, publish or send.
 
 Back up SQLite using its backup API or stop the service before copying a WAL database. Include WAL state in a live backup; never copy only the main file during active writes. Encrypt/restrict backups, test restoration and monitor disk space. Host ACLs and backup retention are operator responsibilities. Story/event/operation history currently has no automated retention policy.
+
+Use `python tools/database_backup.py backup SOURCE NEW_BACKUP`, `restore BACKUP NEW_DATABASE`, and `check DATABASE`. Restore refuses overwrites; the runbook explains selecting the restored path while retaining the old database. Phase 2 verified a real backup and separate restoration of the original local database. Migration version 2 adds persistent throttle records without changing editions or consent.
 
 Feed URL checks reject private resolved addresses/redirects. Because configuration is operator-controlled, this is defense in depth; enforce outbound network policy against DNS rebinding and local infrastructure in a public environment. No arbitrary reader-supplied URL is fetched.
 

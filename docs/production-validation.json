@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-19",
+  "platform": "Windows",
+  "python": "3.12.14",
+  "baseline_tests": 56,
+  "final_tests": 77,
+  "failed_tests": 0,
+  "quality_checks": {
+    "ruff_lint": "passed",
+    "ruff_format": "passed",
+    "compileall": "passed",
+    "node_syntax": "passed",
+    "bandit": "passed",
+    "osv_advisories": 0
+  },
+  "database": {
+    "original_database_unchanged": true,
+    "backup_restore_exact_match": true,
+    "original": {
+      "logical_sha256": "f1d7ee351c9a723c464267b8494a64dc872b0026adcb832cf58357c10cf319ca",
+      "counts": {
+        "stories": 19,
+        "issues": 1,
+        "subscribers": 0,
+        "deliveries": 0,
+        "issue_events": 1,
+        "operations": 1
+      },
+      "issue_states": {
+        "draft": 1
+      },
+      "schema_version": 1
+    },
+    "restored_migration_schema": 2,
+    "original_unchanged_at_end": true
+  },
+  "live_workflow": {
+    "rss_records": 18,
+    "rss_errors": [],
+    "model": "gemma4:e4b",
+    "generation_seconds": 28.2,
+    "generated_item_count": 5,
+    "authenticated_real_json_import": "draft only; private before and after restart",
+    "synthetic_workflow": "draft -> review -> approved -> published; public home/archive/issue verified",
+    "process_restart_persistence": true,
+    "old_sessions_invalid_after_restart": true,
+    "outgoing_email": false,
+    "original_database_used": false,
+    "generation_cli_seconds": 26.75,
+    "generation_seconds_note": "generation_seconds in the temporary observation included subsequent HTTP checks"
+  },
+  "docker": "unavailable; not verified",
+  "linux": "unavailable; not verified",
+  "caddy_tls": "not verified",
+  "smtp": "mocks only; no real connections",
+  "public_deployment": false,
+  "push": false,
+  "status": "NOT READY FOR CONTROLLED DEPLOYMENT"
+}
