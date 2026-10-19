@@ -91,6 +91,6 @@ Current CI was not rerun or reverified on GitHub; this was a Windows local audit
 
 The normal application was started through `Start-Local.ps1` and health-checked after the final test-server cleanup: HTTP 200, `{"status":"ok"}`. Normal app and Ollama listen only on `127.0.0.1` (8787 and 11434). Temporary ports 8790/8791/8792 are stopped. These are background processes, not installed Windows services; persistence across reboot/app exit is not guaranteed. Exact restart commands and private-password instructions are in [manual handoff](MANUAL_TESTING_HANDOFF.md).
 
-See [final server evidence](qa-evidence/final-servers.json), [coverage matrix](TEST_COVERAGE_MATRIX.md), [release checklist](FINAL_RELEASE_CHECKLIST.md) and [screenshot manifest](qa-evidence/screenshot-manifest.json). The starting tree was clean. Source fixes and reports are local commits on the audit branch; no push/deployment was performed. Use `git log -2 --oneline` for the source and evidence commits.
+See [final server evidence](qa-evidence/final-servers.json), [coverage matrix](TEST_COVERAGE_MATRIX.md), [release checklist](FINAL_RELEASE_CHECKLIST.md) and [screenshot manifest](qa-evidence/screenshot-manifest.json). The starting tree was clean. Source fixes and reports are local commits on the audit branch; no push/deployment was performed. Use `git log --oneline main..HEAD` for the local audit commits.
 
 **SIGNAL DAILY — READY FOR USER ACCEPTANCE TESTING**
