@@ -1,0 +1,85 @@
+{
+  "data": "Fictional demo fixtures only; no real credentials, drafts or subscribers",
+  "renderer": "Playwright Chromium",
+  "images": [
+    {
+      "file": "homepage-desktop.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 47625,
+      "sha256": "c7be6fccb9ecaef3d5564bbcb4d0776e6dd755485e00e519601c5755e5034e5a",
+      "state": "Homepage with clearly marked fictional published editions",
+      "url": "/",
+      "cssViewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "editor-dashboard.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 18227,
+      "sha256": "3b6eb857d4cfd5e19456667e36b20c1232d19cb86d96f4e5d983f16fee8b71a2",
+      "state": "Authenticated edition dashboard; fictional data, email off",
+      "url": "/admin",
+      "cssViewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "newsletter-editor.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 18362,
+      "sha256": "40ad3d2f7b4d02aea19e9725bd9721b6b92f16dd303442b1591222ff8b37002c",
+      "state": "Unapproved fictional draft editor; no real news approved",
+      "url": "/admin",
+      "cssViewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "newsletter-preview.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 19878,
+      "sha256": "022b3a266fd1474d8a3787abe3a9e23b9f3eaf02e479281011cd72543ca7e606",
+      "state": "Saved fictional edition preview with source references",
+      "url": "/admin",
+      "cssViewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "published-edition.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 20062,
+      "sha256": "9c12b85368d6d4cb669a2057d6cb4936f51fbf84c0c355f17a1592161301fd3c",
+      "state": "Fictional published edition on localhost only",
+      "url": "/issue/demo-a-quieter-kind-of-ai-briefing-64075c",
+      "cssViewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "homepage-mobile.png",
+      "width": 780,
+      "height": 1688,
+      "bytes": 45907,
+      "sha256": "ce70cc38a6766a2790a8a8541ba13855faf113e33e3bf3c15f9eeb447bc96dac",
+      "state": "Mobile homepage, 390 CSS pixels at 2x pixel density",
+      "url": "/",
+      "cssViewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "javascriptErrors": []
+}
