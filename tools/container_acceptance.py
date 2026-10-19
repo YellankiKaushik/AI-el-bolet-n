@@ -49,6 +49,11 @@ class Acceptance:
         if not self.executable:
             raise RuntimeError("Docker CLI is unavailable; container execution is not verified")
         self.image = image
+        self.base_image = next(
+            line.split()[1]
+            for line in (ROOT / "Dockerfile").read_text(encoding="utf-8").splitlines()
+            if line.startswith("FROM ")
+        )
         self.output = output
         self.prefix = "sd-acceptance-" + secrets.token_hex(6)
         self.containers = []
@@ -310,13 +315,13 @@ class Acceptance:
                 raise RuntimeError("Acceptance requires a Linux Docker daemon")
             # BuildKit may keep FROM layers in its cache without creating a daemon image
             # entry; pull explicitly so the base digest can be inspected as evidence.
-            self.docker("pull", "python:3.12-slim")
+            self.docker("pull", self.base_image)
             self.docker("build", "--pull", "--tag", self.image, ROOT)
             self.report["image_id"] = json.loads(self.docker("image", "inspect", self.image))[0][
                 "Id"
             ]
             self.report["python_base_image"] = json.loads(
-                self.docker("image", "inspect", "python:3.12-slim")
+                self.docker("image", "inspect", self.base_image)
             )[0]["RepoDigests"]
             self.checked("Actual Dockerfile builds on Linux")
             with tempfile.TemporaryDirectory(prefix=self.prefix) as temp:

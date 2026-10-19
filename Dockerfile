@@ -1,8 +1,10 @@
-FROM python:3.12-slim
+FROM python:3.12.15-alpine3.24
 WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt \
-    && useradd -r -u 10001 signal && mkdir -p /data && chown signal:signal /data
+    && addgroup -S -g 10001 signal \
+    && adduser -S -D -H -u 10001 -G signal signal \
+    && mkdir -p /data && chown signal:signal /data
 COPY *.py /app/
 COPY static /app/static
 COPY tools /app/tools
