@@ -1,0 +1,284 @@
+{
+  "release_date": "2026-10-19",
+  "quality_checks": {
+    "unittest": {
+      "exit_code": 0,
+      "passed": true,
+      "tests_run": 88
+    },
+    "ruff_check": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "ruff_format": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "compileall": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "javascript": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "screenshot_script": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "bandit": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "documentation": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "release_audit": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "dependency_audit": {
+      "exit_code": 0,
+      "passed": true
+    }
+  },
+  "fresh_windows_onboarding": {
+    "independent_clone": true,
+    "new_virtual_environment": true,
+    "pinned_dependencies_installed": true,
+    "setup_creates_private_config": true,
+    "setup_preserves_existing_config": true,
+    "actual_http_pages_and_authentication": true,
+    "mail_disabled": true,
+    "synthetic_import_review_approval_publication": true,
+    "restart_persistence_and_session_invalidation": true,
+    "tests_passed": 88,
+    "tests_failed": 0,
+    "original_private_data_used": false
+  },
+  "remote_publication": {
+    "implementation_commit": "56d76d8b7d49a0a26dfcbe8d04ad3582dc0be83f",
+    "independent_public_clone_commit": "56d76d8b7d49a0a26dfcbe8d04ad3582dc0be83f",
+    "remote_files_equal": 93,
+    "six_remote_screenshot_hashes_match": true,
+    "original_database_unchanged": true,
+    "private_config_unchanged": true,
+    "original_counts": {
+      "stories": 19,
+      "issues": 2,
+      "subscribers": 0,
+      "deliveries": 0
+    },
+    "original_states": {
+      "draft": 2
+    },
+    "public_newsletter_deployed": false,
+    "real_emails_sent": 0
+  },
+  "implementation_ci": {
+    "repository": "YellankiKaushik/AI-el-bolet-n",
+    "default_branch": "main",
+    "private": false,
+    "head_sha": "56d76d8b7d49a0a26dfcbe8d04ad3582dc0be83f",
+    "runs": [
+      {
+        "id": 39239865526,
+        "url": "https://github.com/YellankiKaushik/AI-el-bolet-n/actions/runs/39239865526",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "56d76d8b7d49a0a26dfcbe8d04ad3582dc0be83f",
+        "jobs": [
+          {
+            "name": "checks (windows-latest, 3.12)",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "checks (ubuntu-latest, 3.12)",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "checks (windows-latest, 3.11)",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "checks (ubuntu-latest, 3.11)",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "privacy_audit": {
+    "commits_scanned": 39,
+    "unique_blobs_scanned": 137,
+    "candidate_files": 93,
+    "exact_local_secret_values_compared_in_memory": 2,
+    "findings": [],
+    "scope": "Known credential patterns, exact local credential values, forbidden paths; screenshots independently inspected; not exhaustive secret detection"
+  },
+  "local_gemma": {
+    "model": "gemma4:e4b",
+    "actual_loopback_generation": true,
+    "input": "Three explicitly fictional source notes; no real news or private data",
+    "output_items": 3,
+    "generation_seconds": 26.11,
+    "original_database_unchanged": true,
+    "private_config_unchanged": true,
+    "original_counts": {
+      "stories": 19,
+      "issues": 2,
+      "subscribers": 0,
+      "deliveries": 0
+    },
+    "original_states": {
+      "draft": 2
+    },
+    "saved_only_in_ignored_tmp": true
+  },
+  "diagram_validation": {
+    "parser": "mermaid 12.2.0",
+    "diagrams": [
+      {
+        "file": "README.md",
+        "type": "flowchart-v2",
+        "svgBytes": 20645,
+        "svg": true
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "type": "flowchart-v2",
+        "svgBytes": 20843,
+        "svg": true
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "type": "stateDiagram",
+        "svgBytes": 15506,
+        "svg": true
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "type": "flowchart-v2",
+        "svgBytes": 17504,
+        "svg": true
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "type": "flowchart-v2",
+        "svgBytes": 18160,
+        "svg": true
+      }
+    ]
+  },
+  "badge_endpoints": [
+    {
+      "url": "https://github.com/YellankiKaushik/AI-el-bolet-n/actions/workflows/tests.yml/badge.svg?branch=main",
+      "http": 200,
+      "svg": true,
+      "bytes": 2342
+    },
+    {
+      "url": "https://img.shields.io/badge/Python-3.11%20%7C%203.12-306998?logo=python&logoColor=white",
+      "http": 200,
+      "svg": true,
+      "bytes": 3437
+    },
+    {
+      "url": "https://img.shields.io/badge/Notices-Apache%202.0%20%2B%20MIT-56694e",
+      "http": 200,
+      "svg": true,
+      "bytes": 1347
+    },
+    {
+      "url": "https://img.shields.io/badge/AI-local%20Ollama-183b2d",
+      "http": 200,
+      "svg": true,
+      "bytes": 1298
+    }
+  ],
+  "github_rendering": {
+    "heading": "Signal Daily",
+    "subtitle": true,
+    "images": [
+      {
+        "alt": "Build and tests",
+        "loaded": true,
+        "width": 220
+      },
+      {
+        "alt": "Python 3.11 and 3.12",
+        "loaded": true,
+        "width": 139
+      },
+      {
+        "alt": "Existing Apache and MIT notices",
+        "loaded": true,
+        "width": 160
+      },
+      {
+        "alt": "Local AI with Ollama",
+        "loaded": true,
+        "width": 100
+      },
+      {
+        "alt": "Signal Daily homepage rendered in a real browser with a clearly marked fictional demo workspace",
+        "loaded": true,
+        "width": 1440
+      },
+      {
+        "alt": "Dashboard with fictional draft, review and published editions",
+        "loaded": true,
+        "width": 1440
+      },
+      {
+        "alt": "Unapproved fictional draft with editable subject and source-backed stories",
+        "loaded": true,
+        "width": 1440
+      },
+      {
+        "alt": "Saved fictional edition preview with collected-source evidence",
+        "loaded": true,
+        "width": 1440
+      },
+      {
+        "alt": "Fictional published edition on the isolated local demo server",
+        "loaded": true,
+        "width": 1440
+      },
+      {
+        "alt": "Signal Daily mobile homepage at a 390 CSS pixel viewport, showing the fictional demo banner",
+        "loaded": true,
+        "width": 780
+      }
+    ],
+    "mermaidFrames": [
+      "https://viewscreen.githubusercontent.com/markdown/mermaid?docs_host=https%3A%2F%2Fdocs.github.com&color_mode=light#617ca7e1-cbd8-47c8-8035-fdaa4fa143ab"
+    ],
+    "mermaidErrors": false,
+    "guideLinks": [
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/GETTING_STARTED.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/USER_GUIDE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/LOCAL_TESTING_GUIDE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/TROUBLESHOOTING.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/ARCHITECTURE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/ARCHITECTURE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/GETTING_STARTED.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/GETTING_STARTED.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/LOCAL_TESTING_GUIDE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/LOCAL_TESTING_GUIDE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/GETTING_STARTED.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/USER_GUIDE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/LOCAL_TESTING_GUIDE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/ARCHITECTURE.md",
+      "https://github.com/YellankiKaushik/AI-el-bolet-n/blob/main/docs/TROUBLESHOOTING.md"
+    ],
+    "httpStatus": 200,
+    "mermaidSvgCount": 8
+  },
+  "scope": "Evidence snapshot at implementation commit. Final evidence-only commit receives its own four-job CI run. No public newsletter deployment or real mail."
+}
