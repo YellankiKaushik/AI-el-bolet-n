@@ -60,7 +60,9 @@ class TestDemoWorkspace(unittest.TestCase):
 
     def test_workspace_rejects_traversal(self):
         with patch.object(demo, "ROOT", self.root):
-            self.assertEqual(demo.workspace("acceptance"), self.root / ".tmp/acceptance")
+            self.assertEqual(
+                demo.workspace("acceptance"), (self.root / ".tmp/acceptance").resolve()
+            )
             for name in ("../data", "", "nested/name", "name with spaces"):
                 with self.subTest(name=name), self.assertRaises(ValueError):
                     demo.workspace(name)
