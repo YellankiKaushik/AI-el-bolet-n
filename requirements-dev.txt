@@ -1,0 +1,10 @@
+# Optional developer checks only; the application uses Python's standard library.
+ruff==0.14.1
+bandit==1.8.6
+PyYAML==6.0.3
+stevedore==5.9.1
+rich==15.0.0
+colorama==0.4.6
+markdown-it-py==4.2.0
+pygments==2.21.0
+mdurl==0.1.2
