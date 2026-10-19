@@ -16,7 +16,7 @@ The five baseline tests passed after using the bundled Python and enabling loopb
 - Added server-side archive title/introduction search, topic filters and pagination. Search works without JavaScript, and empty results are explicit.
 - Added social title metadata, robots.txt, a published-only sitemap, skip navigation, focus outlines, reduced-motion support, labels for dynamic fields and versioned static assets.
 - Centralized bounded validation for email addresses, HTTP(S) source URLs and draft fields. Imports must be complete; manually started drafts may be incomplete until review.
-- Added the explicit `draft â†’ review â†’ approved â†’ published` gate. Only authenticated administrators can mutate editions. Revisions and saves reset approval. Published editions are immutable.
+- Added the explicit `draft → review → approved → published` gate. Only authenticated administrators can mutate editions. Revisions and saves reset approval. Published editions are immutable.
 - Added draft previews, collected-source evidence, topic editing and edition history. The editor blocks approval/publication after unsaved edits and sends the loaded version on saves.
 - Added transactional SQLite schema migration version 1, preserving original edition/subscriber/delivery records. Added `issue_events`, operational logs, topic/version fields, confirmation expiry and delivery reservations. Legacy pending tokens with no expiry become invalid and must be reissued.
 - Configured actual installed `gemma4:e4b`. Generation has one in-flight request per service, finite context/output/response bounds, timeout handling, a reusable prompt and JSON output schema. Loopback-only connection avoids exposing or depending on the laptop from a remote host.

@@ -12,7 +12,7 @@ This directory is **Signal Daily**, a standalone Python newsletter product. It i
 1. Read README.md and `docs/REA-CODEX-WORKFLOW.md` first.
 2. Run `python -m unittest discover -s tests -v` before and after changes.
 3. Keep real credentials in `.env`; never commit them or log SMTP passwords.
-4. Do not remove the `draft â†’ approved â†’ published` gate or introduce automatic publishing without explicit user approval.
+4. Do not remove the `draft → review → approved → published` gate or introduce automatic publishing without explicit user approval.
 5. Do not infer unpublished facts from a local LLM. Keep source references and prompt grounding.
 6. If running the website on a remote server, leave local Ollama private and use the JSON import workflow (`tools/local_generate.py`).
 7. Use REA only for authorized/passive observation of a target's publicly visible behavior; distinguish evidence from inference. Do not assert private backend analysis that has not happened.

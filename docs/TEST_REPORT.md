@@ -45,7 +45,7 @@ The HTTP tests use the actual request handler, loopback HTTP, signed session coo
 1. A test RSS collection response goes through `/api/admin/ingest` and real SQLite source storage.
 2. `/api/admin/draft` calls the actual Ollama client with a fake HTTP response; source attribution survives persistence.
 3. Publishing is rejected before approval; approval is rejected before review.
-4. Explicit review â†’ approval â†’ publication succeeds, and the edition appears on public routes/archive.
+4. Explicit review → approval → publication succeeds, and the edition appears on public routes/archive.
 5. A subscriber registers through HTTP and the confirmation transport is intercepted. Opening the real confirmation route activates the record; expired/reused links do not.
 6. The delivery workflow dispatches only to active confirmed records, records results, retries safe failures and excludes duplicates. Template tests execute the actual multipart construction against a fake SMTP connection.
 7. Unsubscribe GET preserves consent; POST changes it. A newly published future fixture edition sends nothing to the unsubscribed record.
