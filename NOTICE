@@ -1,0 +1,10 @@
+Signal Daily licensing notices
+
+The destination repository already contained the Apache License 2.0 text in LICENSE.
+That file and its original commit are preserved unchanged.
+
+The Signal Daily application was supplied with the MIT license notice now retained
+in LICENSES/Signal-Daily-MIT.txt. Its existing notice is preserved.
+
+REA is a separate optional investigation tool and its source is not bundled here.
+See docs/REA_ANALYSIS.md for the investigation scope and evidence.
