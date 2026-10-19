@@ -47,7 +47,7 @@
   function shell(inner){
     const s=state.data.stats;
     root.innerHTML=`<div class="studio-top"><p>THE SIGNAL DAILY NEWSROOM <span>✳</span> POWERED BY ${escapeHtml(state.data.model)}</p><button id="logout" class="mini-link">Log out ↗</button></div>
-    <div class="stats-grid"><div class="stat"><strong>${s.stories}</strong><span>NEWS SOURCES</span></div><div class="stat"><strong>${s.drafts}</strong><span>IN REVIEW</span></div><div class="stat"><strong>${s.published}</strong><span>PUBLISHED</span></div><div class="stat"><strong>${s.subscribers}</strong><span>SUBSCRIBERS</span></div></div>
+    <div class="stats-grid"><div class="stat"><strong>${s.stories}</strong><span>NEWS SOURCES</span></div><div class="stat"><strong>${s.drafts}</strong><span>UNPUBLISHED</span></div><div class="stat"><strong>${s.published}</strong><span>PUBLISHED</span></div><div class="stat"><strong>${s.subscribers}</strong><span>SUBSCRIBERS</span></div></div>
     <div class="tabbar" role="tablist">${[['overview','Editions'],['sources','Source feed'],['import','Import local draft'],['settings','Publishing setup']].map(([v,label])=>`<button role="tab" aria-selected="${state.tab===v}" data-tab="${v}" class="${state.tab===v?'selected':''}">${label}</button>`).join('')}</div>
     <div class="studio-content">${inner}</div>`;
     $('#logout').addEventListener('click',async()=>{await api('/api/logout',{});state.data=null;login()});
@@ -60,7 +60,7 @@
     if(state.tab==='settings')return settingsTab();
     const issues=state.data.issues;
     shell(`<div class="split-heading"><div><div class="eyebrow">ISSUES / EDITORIAL PIPELINE</div><h2>Your editions<span class="pink">.</span></h2></div><div class="action-stack"><button class="btn btn-outline" id="blank-draft">+ New blank edition</button><button class="btn btn-dark" id="quick-generate">✳ Generate with Gemma</button></div></div>
-     <div class="notice"><strong>Approval gate is enabled.</strong> A Gemma draft cannot publish until you review and approve it. ${state.data.mailer?'Verified subscribers receive the approved issue on publication.':'SMTP is not configured. You can publish to the website, but email subscriptions and delivery remain disabled.'}</div>
+     <div class="notice"><strong>Approval gate is enabled.</strong> A Gemma draft cannot publish until you review and approve it. ${state.data.mailer?'Verified subscribers receive the approved issue on publication.':'Email is disabled. Publishing makes an approved edition readable on this server; no subscriber emails will be sent.'}</div>
     ${issues.length?`<div class="issues-table">${issues.map(i=>`<button class="edition-row" data-open="${i.id}"><span class="status-tag status-${i.status}">${i.status.toUpperCase()}</span><span class="edition-title">${escapeHtml(i.title)}<small>${escapeHtml((i.updated_at||'').slice(0,10))} · ${i.items.length} stories</small></span><span class="row-arrow">↗</span></button>`).join('')}</div>`:
      `<div class="empty-state"><span class="empty-symbol">✳</span><h3>No editions yet.</h3><p>Collect sources and generate your first local-AI draft, or start manually.</p></div>`}`);
     $('#blank-draft').addEventListener('click',async()=>{
@@ -89,6 +89,7 @@
   function editor(){
     const issue=state.data.issues.find(i=>i.id===state.currentId);
     if(!issue){state.currentId=null;render();return}
+    state.tab='overview';
     const isPublished=issue.status==='published';
     shell(`<button class="back-button" id="back-to-issues">← Back to all editions</button><div class="editor-header"><div><div class="eyebrow">EDITION #${issue.id} / ${issue.status.toUpperCase()}</div><h2>${escapeHtml(issue.title)}<span class="pink">.</span></h2></div><span class="status-tag status-${issue.status}">${issue.status.toUpperCase()}</span></div>
     <form id="issue-form" class="issue-form"><div class="two-fields"><div class="form-field"><label>Issue title</label><input name="title" value="${escapeHtml(issue.title)}" maxlength="180" required ${isPublished?'disabled':''}></div><div class="form-field"><label>Email subject</label><input name="subject" value="${escapeHtml(issue.subject)}" required ${isPublished?'disabled':''}></div></div>
@@ -96,8 +97,8 @@
      <div class="section-label">THE STORIES <span>Fact-check each link and claim before approving.</span></div><div id="story-fields">${issue.items.map(itemMarkup).join('')}</div>
      ${!isPublished?'<button type="button" class="btn btn-outline" id="add-story">+ Add another story</button>':''}
      <div class="form-field closing-field"><label>Closing note</label><textarea name="closing" rows="3" ${isPublished?'disabled':''}>${escapeHtml(issue.closing)}</textarea></div>
-     <div class="editor-actions">${!isPublished?`<button type="submit" class="btn btn-outline">Save as draft</button>${issue.status==='draft'?'<button type="button" class="btn btn-dark" id="review-issue">Submit for review →</button>':''}${issue.status==='review'?'<button type="button" class="btn btn-dark" id="approve-issue">✓ Approve reviewed edition</button>':''}${['review','approved'].includes(issue.status)?'<button type="button" class="btn btn-outline" id="revise-issue">Request revision</button>':''}${issue.status==='approved'?'<button type="button" class="btn btn-accent" id="publish-issue">Publish + notify subscribers ↗</button>':''}`:
-     `<a href="/issue/${encodeURIComponent(issue.slug)}" target="_blank" rel="noopener" class="btn btn-outline">View published edition ↗</a><button type="button" class="btn btn-dark" id="retry-send">Send / retry subscriber delivery ↗</button>`}</div></form>`);
+     <div class="editor-actions">${!isPublished?`<button type="submit" class="btn btn-outline">Save as draft</button>${issue.status==='draft'?'<button type="button" class="btn btn-dark" id="review-issue">Submit for review →</button>':''}${issue.status==='review'?'<button type="button" class="btn btn-dark" id="approve-issue">✓ Approve reviewed edition</button>':''}${['review','approved'].includes(issue.status)?'<button type="button" class="btn btn-outline" id="revise-issue">Request revision</button>':''}${issue.status==='approved'?`<button type="button" class="btn btn-accent" id="publish-issue">${state.data.mailer?'Publish + notify subscribers':'Publish online only'} ↗</button>`:''}`:
+     `<a href="/issue/${encodeURIComponent(issue.slug)}" target="_blank" rel="noopener" class="btn btn-outline">View published edition ↗</a>${state.data.mailer?'<button type="button" class="btn btn-dark" id="retry-send">Send / retry subscriber delivery ↗</button>':'<p class="muted">Email is disabled. No subscriber delivery is available.</p>'}`}</div></form>`);
     $('#back-to-issues').addEventListener('click',()=>{state.currentId=null;state.tab='overview';render()});
     if(!isPublished){
       $('#add-story').addEventListener('click',()=>{$('#story-fields').insertAdjacentHTML('beforeend',itemMarkup({},$$('.story-form').length));wireRemoves();form.dispatchEvent(new Event('input',{bubbles:true}))});
@@ -106,10 +107,10 @@
       const revise=$('#revise-issue');if(revise)revise.addEventListener('click',()=>action(async()=>{await api(`/api/admin/issue/${issue.id}/revise`,{});await refresh()}));
       const approve=$('#approve-issue'); if(approve)approve.addEventListener('click',()=>action(async()=>{await api(`/api/admin/issue/${issue.id}/approve`,{});toast('Edition approved. Review completed; you can publish now.');await refresh()}));
       const pub=$('#publish-issue');if(pub)pub.addEventListener('click',()=>{
-        if(!confirm('Publish this approved edition to your public website and email verified subscribers?'))return;
+        if(!confirm(state.data.mailer?'Publish this approved edition to your website and email verified subscribers?':'Publish this approved edition on this server? Email is disabled; no messages will be sent.'))return;
         action(async()=>{const result=await api(`/api/admin/issue/${issue.id}/publish`,{});toast(`Published! Emails sent: ${result.sent}, failed: ${result.failed}. ${result.note}`);await refresh()})
       });
-    } else $('#retry-send').addEventListener('click',()=>action(async()=>{const r=await api(`/api/admin/issue/${issue.id}/send`,{});toast(`Delivery: ${r.sent} sent, ${r.failed} failed, ${r.remaining} remaining.`)}));
+    } else if($('#retry-send')) $('#retry-send').addEventListener('click',()=>action(async()=>{const r=await api(`/api/admin/issue/${issue.id}/send`,{});toast(`Delivery: ${r.sent} sent, ${r.failed} failed, ${r.remaining} remaining.`)}));
     // Approval always applies to the saved revision, never to unsaved visible edits.
     const form=$('#issue-form');
     if(isPublished)$$('input,textarea,select',form).forEach(el=>el.disabled=true);
