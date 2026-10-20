@@ -1,0 +1,8 @@
+{
+  "baseline_main": "d7494f9a6d8f27d2bb0a76342e7925193b96cb0c",
+  "original_files_verified_byte_for_byte": 193,
+  "original_line_endings_recovered_from_discovery_fingerprint": 33,
+  "all_discovery_fingerprints_match": true,
+  "storage": "Ignored private preservation directory; originals not staged or uploaded",
+  "note": "Initial preservation copied Git-normalized content. Where the working original used CRLF, those bytes were recovered and verified against the pre-edit SHA-256 fingerprint. No original report text was reconstructed or invented."
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-20",
+  "observed_publication_commit": "bd45cc636d8a443b2777f3aca9b3bcfc216c0c42",
+  "browser": "Codex in-app browser; public unsigned GitHub page",
+  "pages": [
+    {
+      "path": "docs/MASTER_REPORT_INDEX.md",
+      "result": "PASS",
+      "observed": "Actual GitHub Preview loaded with the Signal Daily master heading, A-H category headings and rendered eight-column report tables. Latest file commit showed bd45cc6."
+    },
+    {
+      "path": "docs/COMPLETE_PROJECT_STATUS.md",
+      "result": "PASS",
+      "observed": "Followed the master index relative link; actual GitHub Preview loaded with the complete status heading, revision definitions, consolidated review table and explicit NOT DEPLOYED / DISABLED boundary."
+    },
+    {
+      "path": "docs/REPORT_PUBLICATION_SUMMARY.md",
+      "result": "PASS",
+      "observed": "Followed the consolidated status relative link; actual GitHub Preview loaded with count reconciliation, privacy, revision and publication-ledger sections. Initial ledger correctly showed pending results before its verification follow-up."
+    },
+    {
+      "path": "README.md",
+      "result": "PASS",
+      "observed": "Actual GitHub Preview exposed working relative links labeled master report index, complete project status and report publication summary, each resolving to the intended repository document."
+    }
+  ],
+  "external_search_fetch_limitation": "Search-tool opening of the newly published pages returned cache misses. This was not treated as a repository failure; the actual public GitHub pages loaded in the browser and the GitHub API independently matched all remote blobs.",
+  "boundary": "Public documentation rendering/navigation only; no application UI, sign-in, publication, email or deployment was executed. Remote tree/hash/link validation is separately recorded."
+}

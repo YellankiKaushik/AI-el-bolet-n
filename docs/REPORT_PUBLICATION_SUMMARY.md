@@ -29,7 +29,7 @@ Nine existing public files required sanitization. Personal machine paths and act
 - Engineering [commands](engineering-evidence/checks.json), [baseline log](engineering-evidence/baseline-unittest.txt) and [final log](engineering-evidence/final-unittest.txt).
 - Historical QA [commands](qa-evidence/checks.json), [baseline log](qa-evidence/baseline-unittest.txt) and [final log](qa-evidence/final-unittest.txt).
 
-Byte-for-byte originals were saved in an ignored private preservation directory before editing public copies. This preserves the original local evidence without publishing that private directory. Existing public screenshots were not edited; all 43 were reviewed as fictional/demo, empty or login views. Public publisher headlines and package-maintainer metadata are distinct from subscriber data and private generated prose. The [scoped privacy audit](reports/evidence/publication-privacy-audit.json) records exact private-value comparisons performed in memory without recording values.
+Originals were saved in an ignored private preservation directory before editing public copies. The [preservation verification](reports/evidence/publication-original-preservation.json) matched all 193 retained original files against their pre-edit fingerprints, recovering original CRLF bytes where Git had normalized line endings. This preserves the byte-for-byte original local evidence without publishing that private directory. Existing public screenshots were not edited; all 43 were reviewed as fictional/demo, empty or login views. Public publisher headlines and package-maintainer metadata are distinct from subscriber data and private generated prose. The [scoped privacy audit](reports/evidence/publication-privacy-audit.json) records exact private-value comparisons performed in memory without recording values.
 
 Git history was not rewritten. Earlier published snapshots may retain the old personal paths/private title metadata; the current public copies are sanitized. No claim of historical erasure or exhaustive secret detection is made. Important security findings and limitations remain visible in the [security report](FINAL_SECURITY_REPORT.md) and [issue register](FINAL_ISSUE_REGISTER.md).
 
@@ -49,16 +49,20 @@ The isolated before and after regression runs each passed **97 tests, zero failu
 
 The [local validation](reports/evidence/publication-local-validation.json) accounts for all 465 discovered document/artifact copies, all 39 canonical master rows and 42 final Markdown documents. The documentation checker passed 467 local links/anchors and six gallery manifest entries, with zero findings. The separate privacy review covers all 43 public screenshots. Titles, UTF-8, inventory dispositions, privacy boundaries and documentation-only changed paths passed. GitHub remote verification must compare the exact remote tree/blob hashes, all canonical report paths, index/README targets and the unchanged application source.
 
-| Publication item | State at this document's initial preparation |
+| Publication item | Verified content-publication result |
 |---|---|
 | Target branch | `main`, ordinary fast-forward push only |
-| Current remote main verified at discovery | D, full SHA above |
-| Documentation commits created by this task | Not yet created at initial preparation; verified commit ledger added after publication |
-| GitHub push | PENDING initial publication |
-| Remote files/rendered index/status/README links | PENDING initial publication |
-| GitHub Actions for this documentation release | NOT RUN before its first push; older D's five successful jobs are separately identified |
+| Remote main verified for this content publication | **`bd45cc636d8a443b2777f3aca9b3bcfc216c0c42`** (A); exact local/remote equality established after push |
+| Content commit created by this task | **A**, `docs(reports): index and sanitize the complete engineering record` |
+| Verification follow-up | This summary update plus observed remote/browser/preservation/CI evidence; its containing SHA is identified by file history and the final completion response |
+| GitHub push | **SUCCESS** for A; no forced history rewrite |
+| Remote files and relative links | **PASS**: all **259** remote file/blob IDs match the audited commit; all **42** canonical Markdown paths and **469** relative links/anchors verified |
+| GitHub rendered index/status/summary/README navigation | **PASS**, all four public pages opened and observed in the actual browser |
+| GitHub Actions for content commit A | **PASS**, all **five jobs**: four Windows/Linux Python jobs plus the container job; all nine container phases and both strict image scans passed |
 
-This ledger will be updated with observed publication results. A document cannot embed the hash of its own containing commit; the containing commit is identified by GitHub's file history and the final completion response. A final verification-only follow-up must be distinguished from any earlier content commit it records.
+The [remote verification](reports/evidence/publication-remote-verification.json) records exact tree/hash/link comparisons and confirms application source/production configuration are unchanged. The [browser record](reports/evidence/publication-browser-verification.json) records rendered-page navigation. The [content CI record](reports/evidence/publication-content-ci.json) and [actual container/scan evidence](reports/evidence/publication-container-verification.json) refer to A. Direct workflows: [release checks](https://github.com/YellankiKaushik/AI-el-bolet-n/actions/runs/39374370311), [Linux container acceptance](https://github.com/YellankiKaushik/AI-el-bolet-n/actions/runs/39374370324).
+
+These are observed A results, not an inherited claim about the later verification-only follow-up. That follow-up is also pushed and independently checked before the final response, which reports its exact remote SHA and actual Actions state. A document cannot embed its own containing commit hash; GitHub's file history identifies it without a self-hash loop. No application or production configuration changes are included in either documentation commit.
 
 ## Remaining limitations and project condition
 

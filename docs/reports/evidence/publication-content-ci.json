@@ -1,0 +1,448 @@
+{
+  "repository": "YellankiKaushik/AI-el-bolet-n",
+  "head_sha": "bd45cc636d8a443b2777f3aca9b3bcfc216c0c42",
+  "remote_main": "bd45cc636d8a443b2777f3aca9b3bcfc216c0c42",
+  "runs": [
+    {
+      "id": 39374370311,
+      "name": "Signal Daily release checks",
+      "url": "https://github.com/YellankiKaushik/AI-el-bolet-n/actions/runs/39374370311",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "bd45cc636d8a443b2777f3aca9b3bcfc216c0c42",
+      "jobs": [
+        {
+          "id": 118469067757,
+          "name": "checks (ubuntu-latest, 3.12)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install -r requirements.txt -r requirements-dev.txt",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest discover -s tests -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m ruff check .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m ruff format --check .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m compileall -q db.py server.py production.py instance.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check static/app.js",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check tools/capture_screenshots.cjs",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check tools/acceptance_browser.cjs",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m bandit -q -r . --exclude ./.tmp,./tests,./.venv,./data",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python tools/release_audit.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python tools/check_docs.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Audit pinned dependencies against OSV",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 118469068032,
+          "name": "checks (windows-latest, 3.12)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install -r requirements.txt -r requirements-dev.txt",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest discover -s tests -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m ruff check .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m ruff format --check .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m compileall -q db.py server.py production.py instance.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check static/app.js",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check tools/capture_screenshots.cjs",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check tools/acceptance_browser.cjs",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m bandit -q -r . --exclude ./.tmp,./tests,./.venv,./data",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python tools/release_audit.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python tools/check_docs.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Audit pinned dependencies against OSV",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 118469068078,
+          "name": "checks (ubuntu-latest, 3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install -r requirements.txt -r requirements-dev.txt",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest discover -s tests -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m ruff check .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m ruff format --check .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m compileall -q db.py server.py production.py instance.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check static/app.js",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check tools/capture_screenshots.cjs",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check tools/acceptance_browser.cjs",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m bandit -q -r . --exclude ./.tmp,./tests,./.venv,./data",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python tools/release_audit.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python tools/check_docs.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Audit pinned dependencies against OSV",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 118469068219,
+          "name": "checks (windows-latest, 3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install -r requirements.txt -r requirements-dev.txt",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest discover -s tests -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m ruff check .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m ruff format --check .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m compileall -q db.py server.py production.py instance.py feeds.py llm.py mailer.py config.py validation.py run.py tools tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check static/app.js",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check tools/capture_screenshots.cjs",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --check tools/acceptance_browser.cjs",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m bandit -q -r . --exclude ./.tmp,./tests,./.venv,./data",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python tools/release_audit.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python tools/check_docs.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Audit pinned dependencies against OSV",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "id": 39374370324,
+      "name": "Linux container acceptance",
+      "url": "https://github.com/YellankiKaushik/AI-el-bolet-n/actions/runs/39374370324",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "bd45cc636d8a443b2777f3aca9b3bcfc216c0c42",
+      "jobs": [
+        {
+          "id": 118469067643,
+          "name": "docker",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Exercise actual image, volume recovery and isolated Caddy proxy",
+              "conclusion": "success"
+            },
+            {
+              "name": "Scan the built image for operating-system and Python vulnerabilities",
+              "conclusion": "success"
+            },
+            {
+              "name": "Scan the actual Caddy proxy image",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain sanitized acceptance and image scan evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Scan the actual Caddy proxy image",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Scan the built image for operating-system and Python vulnerabilities",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12242692629,
+          "name": "linux-container-acceptance",
+          "expired": false
+        }
+      ],
+      "downloaded_json_files": [
+        ".tmp/final-engineering-20261020/ci-artifacts/39374370324/image-vulnerabilities.json",
+        ".tmp/final-engineering-20261020/ci-artifacts/39374370324/proxy-vulnerabilities.json",
+        ".tmp/final-engineering-20261020/ci-artifacts/39374370324/report.json"
+      ]
+    }
+  ]
+}
