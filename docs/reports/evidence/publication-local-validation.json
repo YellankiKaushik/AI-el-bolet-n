@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-20",
+  "baseline_main": "d7494f9a6d8f27d2bb0a76342e7925193b96cb0c",
+  "canonical_reports_before": 39,
+  "canonical_reports_after": 42,
+  "new_markdown_documents": 3,
+  "updated_existing_markdown_documents": 13,
+  "updated_existing_markdown_paths": [
+    "README.md",
+    "docs/ARCHITECTURE.md",
+    "docs/BROWSER_TEST_REPORT.md",
+    "docs/BUG_REPORT.md",
+    "docs/DEPLOYMENT_GUIDE.md",
+    "docs/FINAL_QA_REPORT.md",
+    "docs/FINAL_RELEASE_CHECKLIST.md",
+    "docs/HISTORY.md",
+    "docs/LOCAL_LAUNCH_REPORT.md",
+    "docs/MANUAL_TESTING_HANDOFF.md",
+    "docs/PRODUCTION_RUNBOOK.md",
+    "docs/TEST_COVERAGE_MATRIX.md",
+    "docs/qa-evidence/commands.md"
+  ],
+  "inventory_items_accounted_for": 465,
+  "canonical_master_links_checked": 39,
+  "all_inventory_dispositions_present": true,
+  "documentation_checker": {
+    "markdown_files": 42,
+    "local_links_checked": 467,
+    "screenshots_checked": 6,
+    "findings": [],
+    "scope": "Local links/heading anchors and PNG manifest integrity; external URLs/rendering checked separately"
+  },
+  "release_private_path_checker": {
+    "candidate_count": 258,
+    "findings": [],
+    "scope": "Git candidates; known credential signatures and private file rules. Not an exhaustive secret detector."
+  },
+  "before_regression": {
+    "passed": 97,
+    "failed": 0,
+    "skipped": 0
+  },
+  "after_regression": {
+    "passed": 97,
+    "failed": 0,
+    "skipped": 0
+  },
+  "application_source_or_production_configuration_changed": false,
+  "browser_model_rss_not_rerun": true,
+  "rendering_limit": "Local link/title/table/source validation; actual GitHub rendered entry-point verification performed after push."
+}

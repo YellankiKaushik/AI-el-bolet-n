@@ -1,5 +1,7 @@
 # SIGNAL DAILY — LOCAL LAUNCH REPORT
 
+> Public copy sanitized on 20 October 2026: personal machine paths and private generated title/subject are `[REDACTED]`. The original is preserved privately; historical test counts and findings are unchanged. See the [publication summary](REPORT_PUBLICATION_SUMMARY.md).
+
 > Historical snapshot: retain the recorded results and machine details as evidence. For current behavior, portable setup and verification, see [Project status](PROJECT_STATUS.md), [Getting started](GETTING_STARTED.md) and the [documentation release report](GITHUB_DOCUMENTATION_REPORT.md).
 
 Date: 2026-10-19. **Local application: READY. Newsletter draft: READY FOR REVIEW.**
@@ -11,9 +13,9 @@ Signal Daily is running on this Windows laptop, with the real editor left open o
 | Item | Verified value |
 |---|---|
 | Git branch | `production-readiness`; existing Phase 2 commits retained |
-| Project directory | `C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily` |
+| Project directory | `[REDACTED]` |
 | OS | Windows 11, build 26300 |
-| Working Python | Python **3.12.14**, `C:\Users\YellankiKaushik\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe` |
+| Working Python | Python **3.12.14**, `[REDACTED]\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe` |
 | Other Python commands | `python` points at the Windows Store alias; `py` exists but has no working registered runtime on this laptop |
 | Existing configuration | Ignored `.env` present, administrator password/session secret present, no SMTP password configured; file hash unchanged |
 | Ollama | Running at `http://127.0.0.1:11434`, bound only to `127.0.0.1` |
@@ -37,7 +39,7 @@ The verified listener is `127.0.0.1:8787`. The current Python process ID was **2
 When the app is stopped, open PowerShell in the project directory and run:
 
 ```powershell
-Set-Location -LiteralPath 'C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily'
+Set-Location -LiteralPath '[REDACTED]'
 .\Start-Local.ps1
 ```
 
@@ -83,15 +85,15 @@ Five source stories were selected in the dashboard and **Generate selected with 
 
 | Draft detail | Value |
 |---|---|
-| Title | **AI Model Updates and Industry Shifts** |
-| Email subject | Exploring new open models and evolving platform access for AI agents. |
+| Title | **[REDACTED]** |
+| Email subject | [REDACTED] |
 | Generated | **2026-10-19 09:10:40 UTC / 14:40:40 IST** |
 | Story count | **5** |
 | Source coverage | Hugging Face: 2; MIT Technology Review: 1; The Verge AI: 2 |
 | Source publication dates | **2026-10-13 through 2026-10-17** |
 | Model | `gemma4:e4b`, local Ollama |
 | State | **DRAFT**, version 1; creation event only; no review/approval/publication event |
-| Dashboard location | `/admin` → **Editions** → **AI Model Updates and Industry Shifts** → **EDITION #2 / DRAFT** |
+| Dashboard location | `/admin` → **Editions** → **[REDACTED]** → **EDITION #2 / DRAFT** |
 | Database location | `data/signal_daily.db`, issue ID 2 |
 | Private JSON copy | `local-drafts/local-review-2026-10-19.json` |
 
@@ -180,7 +182,7 @@ The laptop must stay awake with the app and Ollama running. The app uses a devel
 ## 13. Exactly how to use it now
 
 1. Open [http://localhost:8787/admin](http://localhost:8787/admin). The current app is already running. If login is requested, read **ADMIN_PASSWORD** privately in the existing `.env` file and enter it; do not share it. The app does not have a separate username.
-2. Under **Editions**, select **AI Model Updates and Industry Shifts**. Confirm **EDITION #2 / DRAFT** and five stories. Your older **AI Model Updates** draft is also preserved.
+2. Under **Editions**, select **[REDACTED]**. Confirm **EDITION #2 / DRAFT** and five stories. Your older **AI Model Updates** draft is also preserved.
 3. Expand **Preview saved edition** and each collected-source evidence section. Open all five original links and check every claim, attribution, number and implication.
 4. Make your changes and select **Save as draft**, then reopen the saved preview. Check the title/subject and all five stories. No publication is necessary to read the private preview.
 5. Only after your own editorial decision, select **Submit for review**, recheck, then **Approve reviewed edition**. Phase 3 deliberately did neither to real content.

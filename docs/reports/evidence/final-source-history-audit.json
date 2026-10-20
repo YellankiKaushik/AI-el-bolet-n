@@ -1,0 +1,8 @@
+{
+  "commits_scanned": 51,
+  "unique_blobs_scanned": 272,
+  "candidate_files": 245,
+  "exact_local_secret_values_compared_in_memory": 2,
+  "findings": [],
+  "scope": "All reachable Git refs plus current release candidates; known credential patterns, exact local credential values and forbidden paths. Targeted detection, not an exhaustive secret guarantee."
+}

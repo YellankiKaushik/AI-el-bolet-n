@@ -1,5 +1,7 @@
 # Architecture
 
+> Current acceptance context: [complete project status](COMPLETE_PROJECT_STATUS.md) and [master index](MASTER_REPORT_INDEX.md). Later Linux CI verified the actual Docker/Caddy images; public HTTPS hosting and installed operations remain blocked. This guide describes the architecture, not a live deployment.
+
 Signal Daily is a small, single-instance Python application with server-rendered pages, plain browser JavaScript and local SQLite. The supported laptop entry point is `run.py` (or `Start-Local.ps1`). Production transport is prepared separately in `production.py`; source hosting on GitHub does not deploy either entry point.
 
 ## Components and ownership

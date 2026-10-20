@@ -78,8 +78,8 @@ Configure DNS A/AAAA records for this VPS; remove unusable AAAA records. Ensure 
 
 ```bash
 docker compose config --quiet
-docker compose run --rm --no-deps proxy caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
 docker compose build --pull
+docker compose run --rm --no-deps proxy caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
 ```
 
 `docker compose config` without `--quiet` can print expanded secrets. The proxy validation container need not publish ports; Caddy certificate issuance and the full ingress path are still unverified until an authorized launch. Once authorized, `docker compose up -d` starts the service. Confirm all of the following before inviting readers:

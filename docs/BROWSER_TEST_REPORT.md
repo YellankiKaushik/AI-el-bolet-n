@@ -1,5 +1,7 @@
 # Signal Daily — browser test report
 
+> Historical QA snapshot (19–20 October 2026), retained at its recorded revision and counts. The later [complete status](COMPLETE_PROJECT_STATUS.md) and [master report index](MASTER_REPORT_INDEX.md) supersede its current-status, push, Docker and manual-handoff statements. This annotation does not rerun or change the historical results.
+
 19–20 October 2026. Actual headless Playwright Chromium 151.0.7922.34 on Windows.
 
 **75 final browser scenarios passed, zero failed.** Two additional protocol checks passed and are explicitly labeled below; they are excluded from the browser count. Each scenario can contain several related interactions. Unittest assertions and screenshot-only captures are not counted as browser scenarios. Nine-view Axe diagnostics supplement these scenarios and are not counted a second time.

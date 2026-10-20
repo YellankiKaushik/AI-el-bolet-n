@@ -15,6 +15,8 @@ Local drafting, retained source evidence, and a mandatory approval gate keep the
 
 The [final engineering report](docs/FINAL_ENGINEERING_REPORT.md) records the 20 October 2026 acceptance: 97 automated tests, 75 fresh browser scenarios, actual Linux container/Caddy checks and strict scans of both images passed. Deployment needs a connected host with persistent storage and encrypted off-host backups.
 
+For independent technical review, start with the [master report index](docs/MASTER_REPORT_INDEX.md), [complete project status](docs/COMPLETE_PROJECT_STATUS.md) and [report publication summary](docs/REPORT_PUBLICATION_SUMMARY.md).
+
 ![Signal Daily homepage rendered in a real browser with a clearly marked fictional demo workspace](docs/screenshots/homepage-desktop.png)
 
 *Actual application rendering, captured with Playwright. All gallery editions are fictional demo fixtures in a separate database; no real subscribers, private drafts, credentials or tokens appear.*

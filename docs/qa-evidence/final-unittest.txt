@@ -113,15 +113,15 @@ test_body_header_method_limits_and_disabled_generation (test_production.TestProd
 test_confirmation_delivery_and_unsubscribe_with_mock_tls_smtp (test_production.TestProductionHTTP.test_confirmation_delivery_and_unsubscribe_with_mock_tls_smtp) ... ok
 test_host_https_origin_and_secure_cookie (test_production.TestProductionHTTP.test_host_https_origin_and_secure_cookie) ... Exception when servicing <waitress.channel.HTTPChannel connected 127.0.0.1:52471 at 0x22eee38bf80>
 Traceback (most recent call last):
-  File "C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily\.tmp\fresh-venv\Lib\site-packages\waitress\task.py", line 83, in handler_thread
+  File "[REDACTED]\.tmp\fresh-venv\Lib\site-packages\waitress\task.py", line 83, in handler_thread
     task.service()
-  File "C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily\.tmp\fresh-venv\Lib\site-packages\waitress\channel.py", line 512, in service
+  File "[REDACTED]\.tmp\fresh-venv\Lib\site-packages\waitress\channel.py", line 512, in service
     self.server.pull_trigger()
-  File "C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily\.tmp\fresh-venv\Lib\site-packages\waitress\server.py", line 334, in pull_trigger
+  File "[REDACTED]\.tmp\fresh-venv\Lib\site-packages\waitress\server.py", line 334, in pull_trigger
     self.trigger.pull_trigger()
-  File "C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily\.tmp\fresh-venv\Lib\site-packages\waitress\trigger.py", line 96, in pull_trigger
+  File "[REDACTED]\.tmp\fresh-venv\Lib\site-packages\waitress\trigger.py", line 96, in pull_trigger
     self._physical_pull()
-  File "C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily\.tmp\fresh-venv\Lib\site-packages\waitress\trigger.py", line 200, in _physical_pull
+  File "[REDACTED]\.tmp\fresh-venv\Lib\site-packages\waitress\trigger.py", line 200, in _physical_pull
     self.trigger.send(b"x")
 OSError: [WinError 10038] An operation was attempted on something that is not a socket
 ok
@@ -190,4 +190,4 @@ test_token_paths_are_redacted_in_logs (test_release.TestSecurityAndMail.test_tok
 Ran 91 tests in 7.925s
 
 OK
-Draft written to C:\Users\YellankiKaushik\AppData\Local\Temp\tmpiinp297a\nested\draft.json. Import it into /admin and review before publishing.
+Draft written to [REDACTED]\AppData\Local\Temp\tmpiinp297a\nested\draft.json. Import it into /admin and review before publishing.

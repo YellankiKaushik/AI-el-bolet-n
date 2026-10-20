@@ -1,5 +1,7 @@
 # Signal Daily — final release checklist
 
+> Historical QA snapshot (19–20 October 2026), retained at its recorded revision and counts. The later [complete status](COMPLETE_PROJECT_STATUS.md) and [master report index](MASTER_REPORT_INDEX.md) supersede its current-status, push, Docker and manual-handoff statements. This annotation does not rerun or change the historical results.
+
 19–20 October 2026. Status vocabulary: **PASS / FAIL / BLOCKED / NOT VERIFIED**. Local acceptance and production launch are separate decisions.
 
 ## Local automated readiness — PASS

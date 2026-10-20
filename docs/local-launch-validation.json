@@ -61,8 +61,8 @@
   "draft": {
     "generated_at": "2026-10-19T09:10:40+00:00",
     "draft_id": 2,
-    "title": "AI Model Updates and Industry Shifts",
-    "subject": "Exploring new open models and evolving platform access for AI agents.",
+    "title": "[REDACTED]",
+    "subject": "[REDACTED]",
     "status": "draft",
     "story_count": 5,
     "source_counts": {
@@ -134,7 +134,7 @@
         "reachable": true
       }
     ],
-    "json_export": "C:\\Users\\YellankiKaushik\\Desktop\\KAUSHIK\\ALL Projects\\AI Newsletter\\signal-daily\\local-drafts\\local-review-2026-10-19.json",
+    "json_export": "[REDACTED]\\local-drafts\\local-review-2026-10-19.json",
     "all_existing_rows_preserved": true,
     "schema_version": 2,
     "final_counts": {
@@ -193,7 +193,7 @@
       "content_type": "text/plain",
       "bytes": 9
     },
-    "/issue/ai-model-updates-and-industry-shifts-e40a5a": {
+    "/private-unapproved-edition": {
       "status": 404,
       "content_type": "text/html; charset=utf-8",
       "bytes": 1433

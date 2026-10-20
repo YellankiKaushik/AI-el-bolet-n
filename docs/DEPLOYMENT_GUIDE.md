@@ -2,7 +2,7 @@
 
 Date: 2026-10-19. Source readiness and a live production launch are separate. This application has not been deployed.
 
-Phase 2's [production readiness report](PRODUCTION_READINESS_REPORT.md) and [controlled pilot runbook](PRODUCTION_RUNBOOK.md) contain the current launch gates, Docker rehearsal, backup/restore commands and first-edition instructions.
+Phase 2's [production readiness report](PRODUCTION_READINESS_REPORT.md) is a historical snapshot. Later [complete status](COMPLETE_PROJECT_STATUS.md) and [final deployment evidence](FINAL_DEPLOYMENT_REPORT.md) record successful remote Docker/Caddy verification and the remaining public-hosting blockers. Use the [controlled pilot runbook](PRODUCTION_RUNBOOK.md) and [operations procedure](PRODUCTION_OPERATIONS.md) for future host steps.
 
 For portable laptop onboarding and the current release, use [Getting started](GETTING_STARTED.md), [Configuration](CONFIGURATION.md) and [Project status](PROJECT_STATUS.md). Historical audit counts remain in their dated reports.
 

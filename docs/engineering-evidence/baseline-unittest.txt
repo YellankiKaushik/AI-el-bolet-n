@@ -177,4 +177,4 @@ test_token_paths_are_redacted_in_logs (test_release.TestSecurityAndMail.test_tok
 Ran 91 tests in 6.874s
 
 OK
-Draft written to C:\Users\YellankiKaushik\AppData\Local\Temp\tmpy6li7a91\nested\draft.json. Import it into /admin and review before publishing.
+Draft written to [REDACTED]\AppData\Local\Temp\tmpy6li7a91\nested\draft.json. Import it into /admin and review before publishing.

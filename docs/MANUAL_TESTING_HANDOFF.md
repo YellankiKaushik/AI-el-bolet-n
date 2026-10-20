@@ -1,5 +1,7 @@
 # Signal Daily — your manual testing handoff
 
+> Historical QA snapshot (19–20 October 2026), retained at its recorded revision and counts. The later [complete status](COMPLETE_PROJECT_STATUS.md) and [master report index](MASTER_REPORT_INDEX.md) supersede its current-status, push, Docker and manual-handoff statements. This annotation does not rerun or change the historical results.
+
 Automated local acceptance completed on 20 October 2026, following tests begun on 19 October (Asia/Kolkata). The normal app was left running and its health endpoint returned HTTP 200 after temporary test servers were stopped. It is a background process, not a Windows service, so it may stop when the machine/app session ends.
 
 ## 1. Open your existing app
@@ -9,7 +11,7 @@ Open [http://localhost:8787](http://localhost:8787), then [Editor login](http://
 If the app is unavailable, open PowerShell in the project folder and run:
 
 ```powershell
-Set-Location 'C:\Users\YellankiKaushik\Desktop\KAUSHIK\ALL Projects\AI Newsletter\signal-daily'
+Set-Location '[REDACTED]'
 .\Start-Local.ps1
 ```
 

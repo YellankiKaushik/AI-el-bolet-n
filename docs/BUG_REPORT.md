@@ -1,5 +1,7 @@
 # Signal Daily — defect report
 
+> Historical QA snapshot (19–20 October 2026), retained at its recorded revision and counts. The later [complete status](COMPLETE_PROJECT_STATUS.md) and [master report index](MASTER_REPORT_INDEX.md) supersede its current-status, push, Docker and manual-handoff statements. This annotation does not rerun or change the historical results.
+
 19–20 October 2026. **Four reproducible application defects found; four fixed; zero unresolved local defects identified.** Multiple contrast failures share one stylesheet root cause and are counted as one defect. Stale approval/publication share one missing-version-check defect. Harness/environment problems are not counted as application defects.
 
 | ID | Severity | Issue | Root Cause | Fix | Regression Test | Final Status |

@@ -1,5 +1,7 @@
 # Audit command record
 
+> Historical QA snapshot (19–20 October 2026), retained at its recorded revision and counts. The later [complete status](../COMPLETE_PROJECT_STATUS.md) and [master report index](../MASTER_REPORT_INDEX.md) supersede its current-status, push, Docker and manual-handoff statements. This annotation does not rerun or change the historical results.
+
 Run from the `signal-daily` project root on Windows, 19–20 October 2026 (Asia/Kolkata). Paths below are exactly the project-relative commands used; PowerShell's call operator invokes Python. Full checker executable paths and durations are in [checks.json](checks.json).
 
 | Command | Observed result |

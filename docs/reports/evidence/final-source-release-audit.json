@@ -1,0 +1,21 @@
+{
+  "final_commit": "d7494f9a6d8f27d2bb0a76342e7925193b96cb0c",
+  "remote_synchronized": true,
+  "working_tree_clean": true,
+  "actions_jobs_passed": 5,
+  "container_phases_passed": 9,
+  "scans": [
+    {
+      "image": "signal-daily:acceptance",
+      "high_critical_findings": 0
+    },
+    {
+      "image": "signal-daily-proxy:acceptance",
+      "high_critical_findings": 0
+    }
+  ],
+  "reports_created": 7,
+  "public_url": null,
+  "smtp": "DISABLED",
+  "release_signal": "SIGNAL DAILY — CODE COMPLETE, DEPLOYMENT BLOCKED"
+}

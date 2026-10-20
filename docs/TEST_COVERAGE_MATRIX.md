@@ -1,5 +1,7 @@
 # Signal Daily — test coverage matrix
 
+> Historical QA snapshot (19–20 October 2026), retained at its recorded revision and counts. The later [complete status](COMPLETE_PROJECT_STATUS.md) and [master report index](MASTER_REPORT_INDEX.md) supersede its current-status, push, Docker and manual-handoff statements. This annotation does not rerun or change the historical results.
+
 19–20 October 2026. This is feature coverage, **not a line-coverage percentage**. Tests use isolated SQLite and reserved fictional addresses. Browser IDs resolve in the [browser report](BROWSER_TEST_REPORT.md). Unit/integration final result: 91/91; browser scenarios: 75/75; additional protocol checks: 2/2.
 
 | Implemented feature | Unit tests | Integration tests | Browser tests | Real external integration | Remaining manual testing / gaps |

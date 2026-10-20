@@ -1,5 +1,7 @@
 # Signal Daily — final QA report
 
+> Historical QA snapshot (19–20 October 2026), retained at its recorded revision and counts. The later [complete status](COMPLETE_PROJECT_STATUS.md) and [master report index](MASTER_REPORT_INDEX.md) supersede its current-status, push, Docker and manual-handoff statements. This annotation does not rerun or change the historical results.
+
 Audit date: **19–20 October 2026, Asia/Kolkata**. **Local automated acceptance: PASS. Ready for human acceptance. Production: BLOCKED.**
 
 This audit independently executed the current checkout. Previous reports and CI badges were context, not evidence of this run. No GitHub push, public deployment, real-news approval/publication, real SMTP connection, real-recipient email or original database reset occurred.
