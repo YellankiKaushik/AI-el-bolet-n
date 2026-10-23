@@ -1,5 +1,7 @@
 # Portfolio preview deployment report
 
+Initial integration snapshot. The later [release readiness report](PORTFOLIO_RELEASE_READINESS.md) records dependency remediation, the new exact-commit preview and the remaining account-level release gate.
+
 23 October 2026. Target verified through Vercel project metadata and authenticated CLI: project `kaushik`, ID `prj_XgrIOPf3xzxQpsZ16fLZLafMd3sn`, team `team_UYEpjjRaObtrYF55SYu5rqUl`. Portfolio source is `YellankiKaushik/KAUSHIK`, baseline `fd0f0be68e9434854ffb702928c2fadd92ced17d`; feature branch `feat/signal-daily-newsletter` at `11969c2c5c513ba279652e777f64c02c90cdb4d2`.
 
 Vercel connector deployment reads returned 403/404. Its mapped CLI fallback succeeded with the same project/team, without disabling protection or changing account permissions. Existing production deployment `dpl_6Cx1bVxuhwKC6dUUeECTo3m6bQPf` serves the `kaaush.vercel.app` / `kaaushik.vercel.app` aliases. No production promotion, alias reassignment, domain purchase or new host/database was performed.

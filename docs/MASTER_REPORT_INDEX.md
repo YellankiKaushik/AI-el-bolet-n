@@ -124,3 +124,13 @@ The following new reports supersede earlier persistent-host requirements for the
 - [EMAIL_PROVIDER_INTEGRATION.md](EMAIL_PROVIDER_INTEGRATION.md)
 - [PORTFOLIO_TEST_REPORT.md](PORTFOLIO_TEST_REPORT.md)
 - [PORTFOLIO_DEPLOYMENT_REPORT.md](PORTFOLIO_DEPLOYMENT_REPORT.md)
+
+## Portfolio release preparation — 23 October 2026
+
+Current release-preparation evidence supersedes the initial integration dependency counts. Feature commit `7909c58e409bf316d57d2c2d17c85f6ea144979f` clears both critical findings and 16 high entries; 12 full-tree findings remain, with 0 high/critical in production dependencies. New protected preview is verified; production main/aliases remain unchanged under the portfolio Actions account restriction. Real news approval and email activation remain separate owner actions.
+
+- [PORTFOLIO_RELEASE_READINESS.md](PORTFOLIO_RELEASE_READINESS.md)
+- [DEPENDENCY_REMEDIATION_REPORT.md](DEPENDENCY_REMEDIATION_REPORT.md)
+- [LIVE_PORTFOLIO_VERIFICATION.md](LIVE_PORTFOLIO_VERIFICATION.md)
+- [FIRST_NEWSLETTER_LAUNCH_GUIDE.md](FIRST_NEWSLETTER_LAUNCH_GUIDE.md)
+- [EMAIL_ACTIVATION_CHECKLIST.md](EMAIL_ACTIVATION_CHECKLIST.md)

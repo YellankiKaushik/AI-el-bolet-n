@@ -1,0 +1,1224 @@
+{
+  "date": "2026-10-23",
+  "before": {
+    "info": 0,
+    "low": 0,
+    "moderate": 7,
+    "high": 23,
+    "critical": 2,
+    "total": 32
+  },
+  "after": {
+    "info": 0,
+    "low": 0,
+    "moderate": 5,
+    "high": 7,
+    "critical": 0,
+    "total": 12
+  },
+  "production_after": {
+    "info": 0,
+    "low": 0,
+    "moderate": 2,
+    "high": 0,
+    "critical": 0,
+    "total": 2
+  },
+  "packages": [
+    {
+      "package": "@huggingface/transformers",
+      "before_severity": "high",
+      "before_versions": [
+        "3.7.2"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "sharp",
+          "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+          "url": "https://github.com/advisories/GHSA-f88m-g3jw-g9cj",
+          "severity": "high",
+          "range": "<0.35.0"
+        },
+        {
+          "name": "sharp",
+          "title": "sharp: Vulnerabilities in libheif: GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545",
+          "url": "https://github.com/advisories/GHSA-rgj7-g3m4-5g8c",
+          "severity": "high",
+          "range": "<0.35.4"
+        },
+        {
+          "name": "sharp",
+          "title": "sharp : Vulnerability in librsvg dependency CVE-2026-96889",
+          "url": "https://github.com/advisories/GHSA-wq5f-xc86-pv6w",
+          "severity": "high",
+          "range": "<0.35.5"
+        }
+      ]
+    },
+    {
+      "package": "@humanfs/node",
+      "before_severity": "moderate",
+      "before_versions": [
+        "0.16.7"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/@humanfs/node",
+          "version": "0.16.8",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "@humanfs/node",
+          "title": "humanfs: Recursive copy follows symlinked files and copies data from outside the source tree",
+          "url": "https://github.com/advisories/GHSA-p498-v437-472g",
+          "severity": "moderate",
+          "range": "<0.16.8"
+        }
+      ]
+    },
+    {
+      "package": "@protobufjs/utf8",
+      "before_severity": "moderate",
+      "before_versions": [
+        "1.1.0"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "@protobufjs/utf8",
+          "title": "protobufjs has overlong UTF-8 decoding",
+          "url": "https://github.com/advisories/GHSA-q6x5-8v7m-xcrf",
+          "severity": "moderate",
+          "range": "<=1.1.0"
+        }
+      ]
+    },
+    {
+      "package": "@remix-run/router",
+      "before_severity": "moderate",
+      "before_versions": [
+        "1.23.2"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/@remix-run/router",
+          "version": "1.23.4",
+          "dev": false,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "@remix-run/router",
+          "title": "React Router's same-origin redirect with path starting // causes open redirect via protocol-relative URL reinterpretation",
+          "url": "https://github.com/advisories/GHSA-2j2x-hqr9-3h42",
+          "severity": "moderate",
+          "range": ">=1.3.0 <1.23.3"
+        }
+      ]
+    },
+    {
+      "package": "@tailwindcss/typography",
+      "before_severity": "moderate",
+      "before_versions": [
+        "0.5.15"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/@tailwindcss/typography",
+          "version": "0.5.20",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "moderate",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "postcss-selector-parser",
+          "title": "postcss-selector-parser allows denial of service through uncontrolled AST recursion",
+          "url": "https://github.com/advisories/GHSA-w9m9-85wc-3x92",
+          "severity": "low",
+          "range": ">=6.1.0 <6.1.3"
+        },
+        {
+          "name": "postcss-selector-parser",
+          "title": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+          "url": "https://github.com/advisories/GHSA-rj75-hqrm-r3gf",
+          "severity": "moderate",
+          "range": "<7.1.6"
+        }
+      ]
+    },
+    {
+      "package": "@typescript-eslint/eslint-plugin",
+      "before_severity": "high",
+      "before_versions": [
+        "8.11.0"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/@typescript-eslint/eslint-plugin",
+          "version": "8.72.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "@typescript-eslint/parser",
+      "before_severity": "high",
+      "before_versions": [
+        "8.11.0"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/@typescript-eslint/parser",
+          "version": "8.72.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "@typescript-eslint/type-utils",
+      "before_severity": "high",
+      "before_versions": [
+        "8.11.0"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/@typescript-eslint/type-utils",
+          "version": "8.72.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "@typescript-eslint/typescript-estree",
+      "before_severity": "high",
+      "before_versions": [
+        "8.11.0"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/@typescript-eslint/typescript-estree",
+          "version": "8.72.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "@typescript-eslint/utils",
+      "before_severity": "high",
+      "before_versions": [
+        "8.11.0"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/@typescript-eslint/utils",
+          "version": "8.72.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "brace-expansion",
+      "before_severity": "high",
+      "before_versions": [
+        "1.1.13",
+        "2.0.3"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+          "version": "5.0.12",
+          "dev": true,
+          "optional": false
+        },
+        {
+          "path": "node_modules/brace-expansion",
+          "version": "1.1.21",
+          "dev": true,
+          "optional": false
+        },
+        {
+          "path": "node_modules/glob/node_modules/brace-expansion",
+          "version": "2.1.7",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "brace-expansion",
+          "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+          "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp",
+          "severity": "high",
+          "range": "<1.1.16"
+        },
+        {
+          "name": "brace-expansion",
+          "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+          "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg",
+          "severity": "high",
+          "range": ">=2.0.0 <2.1.3"
+        },
+        {
+          "name": "brace-expansion",
+          "title": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+          "url": "https://github.com/advisories/GHSA-rgw5-rvv9-x895",
+          "severity": "high",
+          "range": "<1.1.18"
+        },
+        {
+          "name": "brace-expansion",
+          "title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+          "url": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr",
+          "severity": "moderate",
+          "range": ">=2.0.0 <2.1.7"
+        },
+        {
+          "name": "brace-expansion",
+          "title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+          "url": "https://github.com/advisories/GHSA-qhr7-859c-m2p7",
+          "severity": "high",
+          "range": ">=2.0.0 <2.1.6"
+        },
+        {
+          "name": "brace-expansion",
+          "title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+          "url": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p",
+          "severity": "high",
+          "range": ">=2.0.0 <2.1.5"
+        }
+      ]
+    },
+    {
+      "package": "braces",
+      "before_severity": "high",
+      "before_versions": [
+        "3.0.3"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/braces",
+          "version": "3.0.3",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "high",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "browserslist",
+      "before_severity": "high",
+      "before_versions": [
+        "4.24.2"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/browserslist",
+          "version": "4.29.4",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "browserslist",
+          "title": "Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM",
+          "url": "https://github.com/advisories/GHSA-c83g-rgw3-j3cx",
+          "severity": "high",
+          "range": "<=4.28.6"
+        },
+        {
+          "name": "browserslist",
+          "title": "Browserslist: Uncaught crash / prototype write via untrusted browserslist-stats.json custom stats (normalizeStats)",
+          "url": "https://github.com/advisories/GHSA-73wf-gq98-2v4g",
+          "severity": "high",
+          "range": "<=4.28.6"
+        }
+      ]
+    },
+    {
+      "package": "chokidar",
+      "before_severity": "high",
+      "before_versions": [
+        "3.6.0"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/chokidar",
+          "version": "3.6.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "high",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "fast-glob",
+      "before_severity": "high",
+      "before_versions": [
+        "3.3.2"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/fast-glob",
+          "version": "3.3.3",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "high",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "gh-pages",
+      "before_severity": "high",
+      "before_versions": [
+        "6.3.0"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/gh-pages",
+          "version": "6.3.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "high",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "globby",
+      "before_severity": "high",
+      "before_versions": [
+        "11.1.0"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/globby",
+          "version": "11.1.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "high",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "js-yaml",
+      "before_severity": "high",
+      "before_versions": [
+        "4.1.1"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/js-yaml",
+          "version": "4.3.2",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "js-yaml",
+          "title": "JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases",
+          "url": "https://github.com/advisories/GHSA-h67p-54hq-rp68",
+          "severity": "moderate",
+          "range": ">=4.0.0 <=4.1.1"
+        },
+        {
+          "name": "js-yaml",
+          "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+          "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m",
+          "severity": "high",
+          "range": ">=4.0.0 <4.3.0"
+        },
+        {
+          "name": "js-yaml",
+          "title": "JS-YAML: Quadratic CPU consumption in !!omap resolution (3.x and 4.x) \u00e2\u20ac\u201d CVE-2026-59870 fix not backported",
+          "url": "https://github.com/advisories/GHSA-5p4m-2wfm-xmqj",
+          "severity": "high",
+          "range": ">=4.0.0 <4.3.1"
+        },
+        {
+          "name": "js-yaml",
+          "title": "js-yaml: maxTotalMergeKeys does not limit CPU use for empty merge sources",
+          "url": "https://github.com/advisories/GHSA-2883-xcg3-v3hh",
+          "severity": "high",
+          "range": ">=4.0.0 <4.3.2"
+        }
+      ]
+    },
+    {
+      "package": "lovable-tagger",
+      "before_severity": "high",
+      "before_versions": [
+        "1.1.13"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "micromatch",
+      "before_severity": "high",
+      "before_versions": [
+        "4.0.8"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/micromatch",
+          "version": "4.0.8",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "high",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "nanoid",
+      "before_severity": "high",
+      "before_versions": [
+        "3.3.11"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/nanoid",
+          "version": "3.3.20",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "nanoid",
+          "title": "nanoid: non-secure generators can loop indefinitely with negative size",
+          "url": "https://github.com/advisories/GHSA-28wg-ghj8-5hjv",
+          "severity": "high",
+          "range": "<3.3.16"
+        },
+        {
+          "name": "nanoid",
+          "title": "nanoid: custom generators can loop indefinitely when size is zero",
+          "url": "https://github.com/advisories/GHSA-2v37-7h3g-55p8",
+          "severity": "high",
+          "range": "<3.3.18"
+        },
+        {
+          "name": "nanoid",
+          "title": "nanoid: Integer Overflow or Wraparound",
+          "url": "https://github.com/advisories/GHSA-xwg4-73v4-xw9w",
+          "severity": "high",
+          "range": "<3.3.12"
+        }
+      ]
+    },
+    {
+      "package": "postcss",
+      "before_severity": "high",
+      "before_versions": [
+        "8.5.6"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/postcss",
+          "version": "8.5.31",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "postcss",
+          "title": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+          "url": "https://github.com/advisories/GHSA-qx2v-qp2m-jg93",
+          "severity": "moderate",
+          "range": "<8.5.10"
+        },
+        {
+          "name": "postcss",
+          "title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+          "url": "https://github.com/advisories/GHSA-6g55-p6wh-862q",
+          "severity": "high",
+          "range": "<=8.5.11"
+        },
+        {
+          "name": "postcss",
+          "title": "PostCSS: incomplete fix of GHSA-6g55-p6wh-862q \u00e2\u20ac\u201d attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset",
+          "url": "https://github.com/advisories/GHSA-fxqj-rqcc-2cmp",
+          "severity": "moderate",
+          "range": "<=8.5.22"
+        },
+        {
+          "name": "postcss",
+          "title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+          "url": "https://github.com/advisories/GHSA-r28c-9q8g-f849",
+          "severity": "high",
+          "range": "<=8.5.17"
+        }
+      ]
+    },
+    {
+      "package": "postcss-selector-parser",
+      "before_severity": "moderate",
+      "before_versions": [
+        "6.0.10",
+        "6.1.2"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/@tailwindcss/typography/node_modules/postcss-selector-parser",
+          "version": "6.0.10",
+          "dev": true,
+          "optional": false
+        },
+        {
+          "path": "node_modules/postcss-selector-parser",
+          "version": "6.1.5",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "moderate",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "postcss-selector-parser",
+          "title": "postcss-selector-parser allows denial of service through uncontrolled AST recursion",
+          "url": "https://github.com/advisories/GHSA-w9m9-85wc-3x92",
+          "severity": "low",
+          "range": ">=6.1.0 <6.1.3"
+        },
+        {
+          "name": "postcss-selector-parser",
+          "title": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+          "url": "https://github.com/advisories/GHSA-rj75-hqrm-r3gf",
+          "severity": "moderate",
+          "range": "<7.1.6"
+        }
+      ]
+    },
+    {
+      "package": "protobufjs",
+      "before_severity": "critical",
+      "before_versions": [
+        "7.5.4"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "protobufjs",
+          "title": "Arbitrary code execution in protobufjs",
+          "url": "https://github.com/advisories/GHSA-xq3m-2v4x-88gg",
+          "severity": "critical",
+          "range": "<7.5.5"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobuf.js: Code injection through bytes field defaults in generated toObject code",
+          "url": "https://github.com/advisories/GHSA-66ff-xgx4-vchm",
+          "severity": "high",
+          "range": "<=7.5.5"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobuf.js: Denial of service from crafted field names in generated code",
+          "url": "https://github.com/advisories/GHSA-2pr8-phx7-x9h3",
+          "severity": "moderate",
+          "range": "<=7.5.5"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobuf.js: Prototype injection in generated message constructors",
+          "url": "https://github.com/advisories/GHSA-fx83-v9x8-x52w",
+          "severity": "moderate",
+          "range": "<=7.5.5"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobuf.js: Code generation gadget after prototype pollution",
+          "url": "https://github.com/advisories/GHSA-75px-5xx7-5xc7",
+          "severity": "high",
+          "range": "<=7.5.5"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobuf.js: Process-wide denial of service through unsafe option paths",
+          "url": "https://github.com/advisories/GHSA-jvwf-75h9-cwgg",
+          "severity": "high",
+          "range": "<=7.5.5"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobuf.js: Denial of service through unbounded protobuf recursion",
+          "url": "https://github.com/advisories/GHSA-685m-2w69-288q",
+          "severity": "high",
+          "range": "<=7.5.5"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobufjs has overlong UTF-8 decoding",
+          "url": "https://github.com/advisories/GHSA-q6x5-8v7m-xcrf",
+          "severity": "moderate",
+          "range": "<=7.5.5"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobufjs: Denial of Service via unbounded recursive JSON descriptor expansion",
+          "url": "https://github.com/advisories/GHSA-jggg-4jg4-v7c6",
+          "severity": "moderate",
+          "range": "<=7.5.7"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobufjs: Denial of service through unbounded Any expansion during JSON conversion",
+          "url": "https://github.com/advisories/GHSA-wcpc-wj8m-hjx6",
+          "severity": "high",
+          "range": "<=7.6.0"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobufjs : Schema-derived names can shadow runtime-significant properties",
+          "url": "https://github.com/advisories/GHSA-f38q-mgvj-vph7",
+          "severity": "moderate",
+          "range": "<=7.6.2"
+        },
+        {
+          "name": "protobufjs",
+          "title": "protobufjs: Denial of Service via infinite loop in .proto option parsing",
+          "url": "https://github.com/advisories/GHSA-j3f2-48v5-ccww",
+          "severity": "moderate",
+          "range": ">=7.5.0 <=7.6.4"
+        }
+      ]
+    },
+    {
+      "package": "react-router",
+      "before_severity": "moderate",
+      "before_versions": [
+        "6.30.3"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/react-router",
+          "version": "6.30.6",
+          "dev": false,
+          "optional": false
+        }
+      ],
+      "after_severity": "moderate",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "react-router",
+          "title": "React Router's same-origin redirect with path starting // causes open redirect via protocol-relative URL reinterpretation",
+          "url": "https://github.com/advisories/GHSA-2j2x-hqr9-3h42",
+          "severity": "moderate",
+          "range": ">=6.7.0 <6.30.4"
+        },
+        {
+          "name": "react-router",
+          "title": "React Router: Open redirect via backslash in <Link> and useNavigate (CVE-2025-68470 bypass)",
+          "url": "https://github.com/advisories/GHSA-wrjc-x8rr-h8h6",
+          "severity": "moderate",
+          "range": ">=6.0.0 <7.18.0"
+        },
+        {
+          "name": "react-router",
+          "title": "React Router: Arbitrary Constructor Injection via deserializeErrors() in React Router SSR Hydration",
+          "url": "https://github.com/advisories/GHSA-337j-9hxr-rhxg",
+          "severity": "moderate",
+          "range": ">=6.4.0 <7.18.0"
+        }
+      ]
+    },
+    {
+      "package": "react-router-dom",
+      "before_severity": "moderate",
+      "before_versions": [
+        "6.30.3"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/react-router-dom",
+          "version": "6.30.6",
+          "dev": false,
+          "optional": false
+        }
+      ],
+      "after_severity": "moderate",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "react-router",
+          "title": "React Router's same-origin redirect with path starting // causes open redirect via protocol-relative URL reinterpretation",
+          "url": "https://github.com/advisories/GHSA-2j2x-hqr9-3h42",
+          "severity": "moderate",
+          "range": ">=6.7.0 <6.30.4"
+        },
+        {
+          "name": "react-router-dom",
+          "title": "React Router: Open redirect leading to XSS",
+          "url": "https://github.com/advisories/GHSA-jjmj-jmhj-qwj2",
+          "severity": "moderate",
+          "range": ">=6.30.2 <=6.30.5"
+        },
+        {
+          "name": "react-router",
+          "title": "React Router: Open redirect via backslash in <Link> and useNavigate (CVE-2025-68470 bypass)",
+          "url": "https://github.com/advisories/GHSA-wrjc-x8rr-h8h6",
+          "severity": "moderate",
+          "range": ">=6.0.0 <7.18.0"
+        },
+        {
+          "name": "react-router",
+          "title": "React Router: Arbitrary Constructor Injection via deserializeErrors() in React Router SSR Hydration",
+          "url": "https://github.com/advisories/GHSA-337j-9hxr-rhxg",
+          "severity": "moderate",
+          "range": ">=6.4.0 <7.18.0"
+        }
+      ]
+    },
+    {
+      "package": "sharp",
+      "before_severity": "high",
+      "before_versions": [
+        "0.34.3"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "sharp",
+          "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+          "url": "https://github.com/advisories/GHSA-f88m-g3jw-g9cj",
+          "severity": "high",
+          "range": "<0.35.0"
+        },
+        {
+          "name": "sharp",
+          "title": "sharp: Vulnerabilities in libheif: GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545",
+          "url": "https://github.com/advisories/GHSA-rgj7-g3m4-5g8c",
+          "severity": "high",
+          "range": "<0.35.4"
+        },
+        {
+          "name": "sharp",
+          "title": "sharp : Vulnerability in librsvg dependency CVE-2026-96889",
+          "url": "https://github.com/advisories/GHSA-wq5f-xc86-pv6w",
+          "severity": "high",
+          "range": "<0.35.5"
+        }
+      ]
+    },
+    {
+      "package": "source-map-js",
+      "before_severity": "high",
+      "before_versions": [
+        "1.2.1"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/source-map-js",
+          "version": "1.2.2",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "source-map-js",
+          "title": "source-map-js allows event-loop denial of service through indexed source-map section offsets",
+          "url": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q",
+          "severity": "high",
+          "range": ">=1.0.0 <1.2.2"
+        }
+      ]
+    },
+    {
+      "package": "tailwindcss",
+      "before_severity": "high",
+      "before_versions": [
+        "3.4.17"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [
+        {
+          "path": "node_modules/tailwindcss",
+          "version": "3.4.19",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": "high",
+      "result": "REMAINS",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "tar",
+      "before_severity": "critical",
+      "before_versions": [
+        "7.5.13"
+      ],
+      "before_dev_only": false,
+      "after_nodes": [],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "tar",
+          "title": "node-tar applies PAX size override to intermediary GNU long-name/long-link headers, causing tar parser interpretation differential (file smuggling)",
+          "url": "https://github.com/advisories/GHSA-vmf3-w455-68vh",
+          "severity": "moderate",
+          "range": "<=7.5.15"
+        },
+        {
+          "name": "tar",
+          "title": "node-tar: Process crash via PAX numeric path type confusion",
+          "url": "https://github.com/advisories/GHSA-w8wr-v893-vjvp",
+          "severity": "moderate",
+          "range": "<=7.5.17"
+        },
+        {
+          "name": "tar",
+          "title": "node-tar: Decompression/parse DoS via unlimited input",
+          "url": "https://github.com/advisories/GHSA-23hp-3jrh-7fpw",
+          "severity": "critical",
+          "range": "<=7.5.18"
+        },
+        {
+          "name": "tar",
+          "title": "node-tar: Negative tar entry size causes infinite loop in archive replace",
+          "url": "https://github.com/advisories/GHSA-8x88-c5mf-7j5w",
+          "severity": "high",
+          "range": "<=7.5.17"
+        },
+        {
+          "name": "tar",
+          "title": "node-tar: Uncaught Exception DoS via NUL byte in PAX path/linkpath records",
+          "url": "https://github.com/advisories/GHSA-gvwx-54wh-qm9j",
+          "severity": "moderate",
+          "range": "<=7.5.16"
+        },
+        {
+          "name": "tar",
+          "title": "node-tar: Uncontrolled recursion in mapHas/filesFilter allows uncatchable stack-overflow DoS via crafted long-path tar with member selection",
+          "url": "https://github.com/advisories/GHSA-r292-9mhp-454m",
+          "severity": "high",
+          "range": "<=7.5.20"
+        }
+      ]
+    },
+    {
+      "package": "typescript-eslint",
+      "before_severity": "high",
+      "before_versions": [
+        "8.11.0"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/typescript-eslint",
+          "version": "8.72.0",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "braces",
+          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+          "severity": "high",
+          "range": "<=3.0.3"
+        }
+      ]
+    },
+    {
+      "package": "vite",
+      "before_severity": "high",
+      "before_versions": [
+        "7.3.1"
+      ],
+      "before_dev_only": true,
+      "after_nodes": [
+        {
+          "path": "node_modules/vite",
+          "version": "7.3.7",
+          "dev": true,
+          "optional": false
+        }
+      ],
+      "after_severity": null,
+      "result": "CLEARED",
+      "advisories": [
+        {
+          "name": "vite",
+          "title": "Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling",
+          "url": "https://github.com/advisories/GHSA-4w7w-66w2-5vf9",
+          "severity": "moderate",
+          "range": ">=7.0.0 <=7.3.1"
+        },
+        {
+          "name": "vite",
+          "title": "Vite: `server.fs.deny` bypassed with queries",
+          "url": "https://github.com/advisories/GHSA-v2wj-q39q-566r",
+          "severity": "high",
+          "range": ">=7.1.0 <=7.3.1"
+        },
+        {
+          "name": "vite",
+          "title": "Vite Vulnerable to Arbitrary File Read via Vite Dev Server WebSocket",
+          "url": "https://github.com/advisories/GHSA-p9ff-h696-f583",
+          "severity": "high",
+          "range": ">=7.0.0 <=7.3.1"
+        },
+        {
+          "name": "vite",
+          "title": "launch-editor: NTLMv2 hash disclosure via UNC path handling on Windows",
+          "url": "https://github.com/advisories/GHSA-v6wh-96g9-6wx3",
+          "severity": "moderate",
+          "range": ">=7.0.0 <=7.3.4"
+        },
+        {
+          "name": "vite",
+          "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+          "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff",
+          "severity": "high",
+          "range": ">=7.0.0 <=7.3.4"
+        },
+        {
+          "name": "vite",
+          "title": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
+          "url": "https://github.com/advisories/GHSA-698v-4r3x-3vcv",
+          "severity": "moderate",
+          "range": ">=7.0.0 <=7.3.6"
+        },
+        {
+          "name": "vite",
+          "title": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
+          "url": "https://github.com/advisories/GHSA-r825-w8mm-5pxw",
+          "severity": "moderate",
+          "range": ">=7.0.0 <=7.3.6"
+        },
+        {
+          "name": "vite",
+          "title": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
+          "url": "https://github.com/advisories/GHSA-587h-7wmj-h5pm",
+          "severity": "high",
+          "range": ">=7.0.0 <=7.3.6"
+        },
+        {
+          "name": "vite",
+          "title": "Vite: Cross origin script execution through Vite custom middleware",
+          "url": "https://github.com/advisories/GHSA-9jrq-w75r-8gcw",
+          "severity": "low",
+          "range": ">=7.0.0 <=7.3.6"
+        },
+        {
+          "name": "vite",
+          "title": "Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine",
+          "url": "https://github.com/advisories/GHSA-rq7h-c2jc-7f22",
+          "severity": "moderate",
+          "range": ">=7.0.0 <=7.3.6"
+        }
+      ]
+    }
+  ],
+  "major_force_update": false,
+  "known_public_exploitable_high_critical": 0,
+  "scope_note": "No public exploit path found; tooling advisories remain unresolved, not suppressed."
+}

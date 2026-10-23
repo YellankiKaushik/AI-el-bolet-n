@@ -1,0 +1,31 @@
+{
+  "portfolio_commit": "7909c58e409bf316d57d2c2d17c85f6ea144979f",
+  "python_tests": 103,
+  "portfolio_build": "PASS",
+  "portfolio_typescript": "PASS",
+  "portfolio_existing_test_script": "NONE",
+  "existing_browser": 12,
+  "expanded_local_browser": 39,
+  "protected_preview_browser": 39,
+  "public_production_browser": 35,
+  "existing_detail_routes": 23,
+  "scoped_local_axe_violations": 0,
+  "production_promotion": "NOT_PERFORMED",
+  "real_test_email": "NOT_TESTED",
+  "full_audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 5,
+    "high": 7,
+    "critical": 0,
+    "total": 12
+  },
+  "production_audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 2,
+    "high": 0,
+    "critical": 0,
+    "total": 2
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://kaushik-aky7tp2xe-kaushik-yellanki-project.vercel.app",
+  "assets_checked": 2,
+  "known_private_values_checked": 1,
+  "findings": [],
+  "signup_disabled": true,
+  "fictional_content_absent": true,
+  "scope": "Exact deployed same-origin JS/CSS; known private local values and credential signatures, not exhaustive secret discovery."
+}

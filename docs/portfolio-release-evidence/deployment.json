@@ -1,0 +1,18 @@
+{
+  "id": "dpl_E85SZC6rUtkAZCaNKsr7MxScSHN9",
+  "projectId": "prj_XgrIOPf3xzxQpsZ16fLZLafMd3sn",
+  "readyState": "READY",
+  "url": "https://kaushik-aky7tp2xe-kaushik-yellanki-project.vercel.app",
+  "team_id": "team_UYEpjjRaObtrYF55SYu5rqUl",
+  "source_commit": "7909c58e409bf316d57d2c2d17c85f6ea144979f",
+  "branch": "feat/signal-daily-newsletter",
+  "environment": "preview",
+  "protection": "retained; short-lived development token scoped to exact origin",
+  "production_deployment_unchanged": "dpl_6Cx1bVxuhwKC6dUUeECTo3m6bQPf",
+  "production_main_unchanged": "fd0f0be68e9434854ffb702928c2fadd92ced17d",
+  "preserved_section_hashes_match": true,
+  "preserved_route_headings_match": true,
+  "public_catalog": [],
+  "signup_disabled": true,
+  "mail_sent": false
+}

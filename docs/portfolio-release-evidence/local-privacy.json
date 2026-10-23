@@ -1,0 +1,9 @@
+{
+  "candidate_files": 103,
+  "built_assets": 3,
+  "known_private_value_checks": 1,
+  "findings": [],
+  "catalog_empty": true,
+  "fictional_content_in_assets": false,
+  "scope": "Known local secret values and credential signatures; source candidates and final local bundle. Not an exhaustive secret detector."
+}

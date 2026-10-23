@@ -1,0 +1,203 @@
+{
+  "url": "https://kaushik-aky7tp2xe-kaushik-yellanki-project.vercel.app",
+  "passed": 39,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Preserved section home",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved section FeaturedInSection",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved section experience",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved section skills",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved section projects",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved section education",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved section certifications",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved section achievements",
+      "status": "PASS"
+    },
+    {
+      "name": "Preserved section contact",
+      "status": "PASS"
+    },
+    {
+      "name": "Newsletter presence and safe signup state",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/agroguia-ai",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/youtube-review",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/hazlo",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/ai-crowd-intelligence",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/sistemaa-electoral",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/gym-membership",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/krishi-seva",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/psymatch",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/vaaniplan",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /project/google-product-analysis",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /experience/challenge-participation",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /experience/uptoskills-ai-research",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /experience/edunet-ai-engineer",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /experience/crowdsource-marketing",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /experience/aashay-social-media",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /challenges/farmer-os-lyzr-agentathon-2026",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /challenges/ai-crowd-intelligence-assistant",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /challenges/vaaniplan-unleash-llm-innovation-challenge",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /challenges/prompt-wars",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /challenges/hack-culture-challenges",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /challenges/luma-builder-events",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /challenges/ai-for-good-hackathon-june-5",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing route /challenges/uptoskills-ai-building-hackathon",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard archive navigation",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard search and topic controls",
+      "status": "PASS"
+    },
+    {
+      "name": "Direct archive, content boundary and disabled preview signup",
+      "status": "PASS"
+    },
+    {
+      "name": "Unpublished edition route stays absent",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile homepage without horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile archive and keyboard return",
+      "status": "PASS"
+    }
+  ],
+  "existing_route_count": 23,
+  "routeHeadings": {
+    "/project/agroguia-ai": "AGROGUIA.AI",
+    "/project/youtube-review": "Integrated Review of YouTube Videos",
+    "/project/hazlo": "Hazlo",
+    "/project/ai-crowd-intelligence": "AI Crowd Intelligence Assistant",
+    "/project/sistemaa-electoral": "Sistemaa Electoral",
+    "/project/gym-membership": "FitZone Gym Membership Management System",
+    "/project/krishi-seva": "Krishi Seva AI Agent",
+    "/project/psymatch": "PsyMatch",
+    "/project/vaaniplan": "VaaniPlan - Voice-First AI Daily Planning Assistant",
+    "/project/google-product-analysis": "Public Interest Analysis of Google Products",
+    "/experience/challenge-participation": "Challenge & Participation Experience",
+    "/experience/uptoskills-ai-research": "AI Research Intern",
+    "/experience/edunet-ai-engineer": "AI Engineer",
+    "/experience/crowdsource-marketing": "Marketing Associate",
+    "/experience/aashay-social-media": "Social Media & Promotions Associate",
+    "/challenges/farmer-os-lyzr-agentathon-2026": "Farmer OS - Lyzr Agentathon 2026",
+    "/challenges/ai-crowd-intelligence-assistant": "AI Crowd Intelligence Assistant",
+    "/challenges/vaaniplan-unleash-llm-innovation-challenge": "VaaniPlan - Unleash LLM Innovation Challenge",
+    "/challenges/prompt-wars": "Prompt Wars",
+    "/challenges/hack-culture-challenges": "Hack Culture Challenges",
+    "/challenges/luma-builder-events": "Luma Builder Events",
+    "/challenges/ai-for-good-hackathon-june-5": "AI for Good Hackathon",
+    "/challenges/uptoskills-ai-building-hackathon": "UptoSkills AI Building Hackathon"
+  },
+  "sectionHashes": {
+    "home": "f6738c6fcb0fc88713b8c6522fe0b22c1403032d65f8d48fa51ec2193f27e793",
+    "FeaturedInSection": "40afd8dc1fb5ca7b4d95778146fad4df833b2744c257aca315255a516779acd9",
+    "experience": "01eac0358e1703efbf0ae34ca360b8373d0862e7639617e80460f844cfd99a41",
+    "skills": "692fa933728c67387183a4fa01190c08358d8370df34599dfe5c380303fc639b",
+    "projects": "f87714d750c47db9c536783b04ccc2bac3834bb46566aa570c7b8863dcded120",
+    "education": "e500c54a9fe1d889597fa25bd99830d65058165a51652937a64cbca56c615d8e",
+    "certifications": "913b28454c8eaaf433c5b1cd70cf23c87ccbcefc0e0f136feb352dd9418fb663",
+    "achievements": "9fd830dee35b54ef96941483ed962d6998f75edb445a9888ec50171d749ec8ff",
+    "contact": "05d9ec6bb538543edbe8e97fe00eefd18d0989064810d9a8a94adb9b479b8d8d"
+  },
+  "page_errors": [],
+  "mail_sent": false,
+  "newsletter_present": true
+}

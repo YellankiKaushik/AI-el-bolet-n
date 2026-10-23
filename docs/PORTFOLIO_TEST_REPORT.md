@@ -1,5 +1,7 @@
 # Portfolio integration test report
 
+Initial integration snapshot. See [release readiness](PORTFOLIO_RELEASE_READINESS.md) and [live verification](LIVE_PORTFOLIO_VERIFICATION.md) for the later dependency remediation and expanded browser acceptance.
+
 23 October 2026. Python baseline: **97 passed**. Final isolated suite: **103 passed, 0 failed/errors/skipped**. Six new methods cover approval/publication gating, public allowlisting, duplicate/stale export, topic ranking/empty results, provider draft reservations/uncertain failures and explicit one-mailbox test-send gating. No real mail was sent.
 
 Portfolio `npm ci`, `npm run build` and `npx tsc --noEmit -p tsconfig.app.json` passed. There was no existing portfolio test script. Initial type checking identified five diagnostics in the pre-existing SkillsSection/ExperienceDetail optional fields; two type-safe changes fixed them without changing portfolio content. Vite still reports an old Browserslist database and a >500KB chunk warning. Existing analytics/chat APIs were not exercised with real paid provider requests.
