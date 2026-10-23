@@ -192,3 +192,30 @@ def fetch_all():
         if len(results) >= limit:
             break
     return results, errors
+
+
+def rank_topic(stories, topic):
+    """Rank only supplied feed evidence; this is not unrestricted web search."""
+    if not isinstance(topic, str) or len(topic) > 200:
+        raise ValueError("Topic must be text of at most 200 characters")
+    ignored = {"the", "in", "of", "and", "for", "to", "latest", "developments", "ai"}
+    terms = {
+        word.rstrip("s")
+        for word in re.findall(r"[a-z0-9]+", topic.lower())
+        if len(word) > 2 and word not in ignored
+    }
+    if not topic.strip():
+        return list(stories)
+    if not terms:
+        raise ValueError("Use a specific topic, such as open-source models")
+    ranked = []
+    for index, story in enumerate(stories):
+        title = {word.rstrip("s") for word in re.findall(r"[a-z0-9]+", story["title"].lower())}
+        body = {
+            word.rstrip("s")
+            for word in re.findall(r"[a-z0-9]+", story.get("description", "").lower())
+        }
+        score = len(terms & title) * 3 + len(terms & body)
+        if score:
+            ranked.append((score, index, story))
+    return [story for _, _, story in sorted(ranked, key=lambda row: (-row[0], row[1]))]

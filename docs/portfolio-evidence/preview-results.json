@@ -1,0 +1,27 @@
+{
+  "url": "https://kaushik-99yfdjpnq-kaushik-yellanki-project.vercel.app",
+  "passed": 4,
+  "results": [
+    {
+      "path": "/",
+      "status": "PASS",
+      "http": 200
+    },
+    {
+      "path": "/newsletter",
+      "status": "PASS",
+      "http": 200
+    },
+    {
+      "path": "/newsletter/private-draft",
+      "status": "PASS",
+      "http": 200
+    },
+    {
+      "path": "mobile",
+      "status": "PASS"
+    }
+  ],
+  "protection": "development OIDC scoped only to preview origin",
+  "mail_sent": false
+}

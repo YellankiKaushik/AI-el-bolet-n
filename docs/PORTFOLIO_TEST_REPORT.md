@@ -1,0 +1,17 @@
+# Portfolio integration test report
+
+23 October 2026. Python baseline: **97 passed**. Final isolated suite: **103 passed, 0 failed/errors/skipped**. Six new methods cover approval/publication gating, public allowlisting, duplicate/stale export, topic ranking/empty results, provider draft reservations/uncertain failures and explicit one-mailbox test-send gating. No real mail was sent.
+
+Portfolio `npm ci`, `npm run build` and `npx tsc --noEmit -p tsconfig.app.json` passed. There was no existing portfolio test script. Initial type checking identified five diagnostics in the pre-existing SkillsSection/ExperienceDetail optional fields; two type-safe changes fixed them without changing portfolio content. Vite still reports an old Browserslist database and a >500KB chunk warning. Existing analytics/chat APIs were not exercised with real paid provider requests.
+
+**12 actual local Chromium scenarios passed**, zero failed: original nine homepage section IDs; new homepage section; archive fixture; empty search; topic filter; direct edition/source links; 390px overflow; unknown private slug; intercepted Buttondown signup; scoped Axe A/AA; private editor topic field; zero-result topic UI. [Scenario results](portfolio-evidence/browser-results.json), [Axe violations: empty](portfolio-evidence/axe.json), [fictional mobile screenshot](portfolio-evidence/newsletter-mobile.png). Accessibility coverage is the newsletter main region, not a full certification of existing portfolio pages. Initial harness/label issues were corrected before the final passing run. Tests used `/KAUSHIK/` locally, matching the existing Vite base; Vercel uses root `/`.
+
+The fixture was exported from a separate synthetic database after review/approval/publication, then removed from the public catalog before commit. Real RSS/local Gemma independently produced three items as a private unapproved DRAFT; [counts](portfolio-evidence/live-result.json). Real editor data/configuration were not reset, and no private content, database, secret or subscriber dataset was added to either repo.
+
+Ruff lint/format, JS syntax and Bandit passed locally. Reproducible Python tests are in `tests/test_portfolio.py`. Browser harness configuration and deployment acceptance are separate from unit tests. Exact GitHub Actions outcomes are recorded in the final response for the actual pushed commits; old green runs are not reused for new SHAs. See [deployment verification](PORTFOLIO_DEPLOYMENT_REPORT.md).
+
+## Dependency and release boundary
+
+The actual Vercel install audit reported **32 findings: 7 moderate, 23 high and 2 critical** in the inherited portfolio dependency tree. Dependencies/lockfile were not changed by the newsletter feature. This is an unresolved production-release blocker, not a passing security scan; avoid broad forced dependency upgrades without compatibility testing. The production portfolio remains unchanged.
+
+The reusable browser harness is `tools/portfolio_acceptance.cjs`. It requires a fictional exported catalog, loopback portfolio base, an isolated editor on8794, `SIGNAL_DEMO_CREDENTIALS` pointing to its ignored credentials file, Playwright and `SIGNAL_AXE_MODULE` pointing to the development Axe installation. It writes only ignored test output. The committed preview catalog is empty; it is not seeded by this harness. Four additional authenticated Chromium preview checks passed on the initial preview: original/home sections, empty archive, missing private slug and390px layout. [Preview observations](portfolio-evidence/preview-results.json).

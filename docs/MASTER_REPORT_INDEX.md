@@ -113,3 +113,14 @@ The [exact D CI record](reports/evidence/final-source-ci.json) retains successfu
 | FINAL_RELEASE_CHECKLIST.md | Earlier QA release gates | 19–20 Oct 2026 | Q-era audit; doc `9a7156f` | HISTORICAL | 91 tests, earlier 75 browser cases and historical acceptance boundaries | Later automated mission supersedes owner manual-QA requirement | [Open](FINAL_RELEASE_CHECKLIST.md) |
 
 The remaining engineering blockers are suitable existing hosting/storage access, approved origin/editor CIDR and private credentials, actual public HTTPS/reboot/operations acceptance, and optional separately authorized SMTP/sender/inbox acceptance. Source factual/editorial judgment remains with the owner. These are distinct from already executed local and remote automated acceptance; no real-news publication, real mail or deployment is claimed by any new index entry.
+
+## Portfolio integration — 23 October 2026
+
+The following new reports supersede earlier persistent-host requirements for the **static portfolio frontend only**; the private Python editor remains local. Current acceptance and release boundaries are separate from the historical 20 October snapshots.
+
+- [PORTFOLIO_INTEGRATION.md](PORTFOLIO_INTEGRATION.md)
+- [TOPIC_NEWSLETTER_WORKFLOW.md](TOPIC_NEWSLETTER_WORKFLOW.md)
+- [NEWSLETTER_PUBLISHING_GUIDE.md](NEWSLETTER_PUBLISHING_GUIDE.md)
+- [EMAIL_PROVIDER_INTEGRATION.md](EMAIL_PROVIDER_INTEGRATION.md)
+- [PORTFOLIO_TEST_REPORT.md](PORTFOLIO_TEST_REPORT.md)
+- [PORTFOLIO_DEPLOYMENT_REPORT.md](PORTFOLIO_DEPLOYMENT_REPORT.md)

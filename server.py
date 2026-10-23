@@ -506,6 +506,8 @@ class Handler(BaseHTTPRequestHandler):
                         },
                     )
                 if path == "/api/admin/ingest":
+                    topic = data.get("topic", "")
+                    feeds.rank_topic([], topic)
                     if not INGEST_LOCK.acquire(blocking=False):
                         raise RuntimeError("Collection is already running")
                     try:
@@ -514,8 +516,19 @@ class Handler(BaseHTTPRequestHandler):
                         db.log_operation("ingestion", f"{count} added; {len(errors)} feed errors")
                     finally:
                         INGEST_LOCK.release()
+                    matches = feeds.rank_topic(
+                        [s for s in db.get_stories(200) if feeds.relevant_recent(s)], topic
+                    )
                     return self.json_out(
-                        200, {"ok": True, "added": count, "found": len(incoming), "errors": errors}
+                        200,
+                        {
+                            "ok": True,
+                            "added": count,
+                            "found": len(incoming),
+                            "errors": errors,
+                            "matching_ids": [s["id"] for s in matches],
+                            "relevant": len(matches),
+                        },
                     )
                 if path == "/api/admin/draft":
                     default_generation = "false" if os.getenv("APP_ENV") == "production" else "true"
@@ -525,10 +538,16 @@ class Handler(BaseHTTPRequestHandler):
                         )
                     selected = data.get("story_ids")
                     all_stories = [s for s in db.get_stories(200) if feeds.relevant_recent(s)]
+                    topic = data.get("topic", "")
+                    all_stories = feeds.rank_topic(all_stories, topic)
                     if isinstance(selected, list) and selected:
                         ids = set(int(x) for x in selected[:12])
                         all_stories = [s for s in all_stories if s["id"] in ids]
-                    result = llm.generate(all_stories[:8])
+                    result = (
+                        llm.generate(all_stories[:8], topic=topic)
+                        if topic
+                        else llm.generate(all_stories[:8])
+                    )
                     validated = verify_issue(result)
                     issue_id = db.create_issue(validated)
                     return self.json_out(

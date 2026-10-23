@@ -1,0 +1,53 @@
+{
+  "passed": 12,
+  "results": [
+    {
+      "name": "All original homepage sections preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Signal Daily homepage section",
+      "status": "PASS"
+    },
+    {
+      "name": "Archive and published fixture",
+      "status": "PASS"
+    },
+    {
+      "name": "Search empty state",
+      "status": "PASS"
+    },
+    {
+      "name": "Topic filter",
+      "status": "PASS"
+    },
+    {
+      "name": "Direct individual route and source attribution",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Missing edition stays private/not found",
+      "status": "PASS"
+    },
+    {
+      "name": "Signup form mock only",
+      "status": "PASS"
+    },
+    {
+      "name": "Newsletter accessibility axe",
+      "status": "PASS"
+    },
+    {
+      "name": "Topic input accessible",
+      "status": "PASS"
+    },
+    {
+      "name": "Topic collection reports zero without generation",
+      "status": "PASS"
+    }
+  ]
+}

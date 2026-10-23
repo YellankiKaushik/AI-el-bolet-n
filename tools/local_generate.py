@@ -26,6 +26,7 @@ def main():
         help="A JSON array of stories, each with title,url,description,source and optional id",
     )
     parser.add_argument("--output", default="newsletter-draft.json")
+    parser.add_argument("--topic", default="", help="Filter configured RSS evidence by topic")
     args = parser.parse_args()
     path = Path(args.output).resolve()
     if path.exists():
@@ -41,7 +42,8 @@ def main():
         story.setdefault("id", index + 1)
     if not stories:
         sys.exit("No stories available. Check your RSS feeds or supply --stories.")
-    result = llm.generate(stories[:8])
+    stories = feeds.rank_topic(stories, args.topic)
+    result = llm.generate(stories[:8], topic=args.topic)
     path.parent.mkdir(parents=True, exist_ok=True)
     descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
     with os.fdopen(descriptor, "w", encoding="utf-8") as handle:

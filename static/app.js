@@ -4,7 +4,7 @@
   const $$ = (q, root=document) => [...root.querySelectorAll(q)];
   const escapeHtml = x => String(x??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const root=$('#editor-root');
-  const state={data:null, currentId:null, busy:false, tab:'overview'};
+  const state={data:null, currentId:null, busy:false, tab:'overview',topic:'',topicIds:null};
   function toast(message,kind='ok'){
     let el=$('#toast');
     if(!el){el=document.createElement('div');el.id='toast';el.className='toast';el.setAttribute('role','status');document.body.appendChild(el)}
@@ -133,16 +133,16 @@
     })};
   }
   function sourceTab(){
-    const stories=state.data.stories;
+    const stories=state.topicIds===null?state.data.stories:state.topicIds.map(id=>state.data.stories.find(s=>s.id===id)).filter(Boolean);
     shell(`<div class="split-heading"><div><div class="eyebrow">INGESTION / PRIMARY SOURCES</div><h2>The source feed<span class="pink">.</span></h2><p class="muted">Fetches RSS/Atom feeds. Drafts are written from feed summaries with source links.</p></div><button class="btn btn-dark" id="fetch-news">↓ Refresh news sources</button></div>
-     ${stories.length?`<div class="source-toolbar"><span>${stories.length} stories cached</span><button class="btn btn-accent" id="make-selected">Generate selected with Gemma ↗</button></div><div class="source-list">${stories.map(s=>`<label class="source-row"><input type="checkbox" name="story" value="${s.id}"><span class="source-details"><b>${escapeHtml(s.title)}</b><small>${escapeHtml(s.source)} · ${escapeHtml((s.published_at||s.created_at).slice(0,10))}</small><span class="source-description">${escapeHtml(s.description)}</span><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">Original story ↗</a></span></label>`).join('')}</div>`:
+     <div class="form-field"><label for="source-topic">Newsletter topic</label><input id="source-topic" maxlength="200" placeholder="Latest developments in open-source AI models" value="${escapeHtml(state.topic)}"><p>Searches configured trusted RSS feeds only. Select the final sources below; insufficient sources never create invented news.</p></div>${state.topicIds!==null?`<p role="status">${stories.length} relevant current cached stories found. Review the source dates before selecting.</p>`:''}${stories.length?`<div class="source-toolbar"><span>${stories.length} stories cached</span><button class="btn btn-accent" id="make-selected">Generate selected with Gemma ↗</button></div><div class="source-list">${stories.map(s=>`<label class="source-row"><input type="checkbox" name="story" value="${s.id}"><span class="source-details"><b>${escapeHtml(s.title)}</b><small>${escapeHtml(s.source)} · ${escapeHtml((s.published_at||s.created_at).slice(0,10))}</small><span class="source-description">${escapeHtml(s.description)}</span><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">Original story ↗</a></span></label>`).join('')}</div>`:
      `<div class="empty-state"><h3>Your source feed is empty.</h3><p>Click refresh to fetch available stories from configured sources.</p></div>`}`);
-    $('#fetch-news').addEventListener('click',()=>action(async()=>{const data=await api('/api/admin/ingest',{});toast(`${data.added} new stories imported.${data.errors.length?' Some sources failed: '+data.errors.join(' | '):''}`,data.errors.length?'warning':'ok');await refresh()}));
+    $('#fetch-news').addEventListener('click',()=>action(async()=>{state.topic=$('#source-topic').value.trim();const data=await api('/api/admin/ingest',{topic:state.topic});state.topicIds=state.topic?data.matching_ids:null;toast(`${data.added} new stories imported.${data.errors.length?' Some sources failed: '+data.errors.join(' | '):''}`,data.errors.length?'warning':'ok');await refresh()}));
     const selected=$('#make-selected');if(selected)selected.addEventListener('click',()=>action(async()=>{
       const ids=$$('input[name="story"]:checked').map(x=>Number(x.value));
       if(!ids.length||ids.length>8)throw Error('Select between 1 and 8 stories');
       toast('Generating a local Gemma draft from your selected sources.');
-      const x=await api('/api/admin/draft',{story_ids:ids});await refresh();state.currentId=x.issue_id;editor();toast('Draft ready. Verify all details and approve before publishing.');
+      const x=await api('/api/admin/draft',{story_ids:ids,topic:state.topic});await refresh();state.currentId=x.issue_id;editor();toast('Draft ready. Verify all details and approve before publishing.');
     }));
   }
   function importTab(){
