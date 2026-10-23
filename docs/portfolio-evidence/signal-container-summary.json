@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "checks": [
+    "Actual Dockerfile builds on Linux",
+    "Production Compose validates with synthetic configuration; app and Ollama have no published ports",
+    "Non-root startup, healthcheck, readonly root, resource limits, bounded local logs and no external network",
+    "Authenticated import, approval bypass rejection, review, approval, synthetic publication and public archive",
+    "Mounted-volume publication survives actual container restart",
+    "Online backup, integrity, separate-volume restore and invalid/existing restore rejection; consent and delivery ledger preserved",
+    "Actual image migrates v1 SQLite volume to v2 without losing publication, consent or ledger",
+    "Unmodified production Caddy configuration validates in the real Caddy image",
+    "Real Caddy proxy: canonical metadata, public archive, four editor CIDR denials and request limit on isolated network"
+  ],
+  "source_commit": "84f0272ddd9606b7eb25fdf4fcc36832e9ac692d",
+  "image_id": "sha256:c93200810c021c95010f8836fc70c6c6b2ad06f7e0713fe5a9f3437a159f393f",
+  "caddy_image_id": "sha256:8961d485dbe255d5bbf8d36228e87b49ae303be1cc65f461eba4623eeb32f539",
+  "public_https": "NOT_TESTED",
+  "cleanup_errors": [],
+  "caddy_go_version": "go1.26.10",
+  "scans": {
+    "image-vulnerabilities.json": {
+      "vulnerabilities_by_severity": {},
+      "high": 0,
+      "critical": 0
+    },
+    "proxy-vulnerabilities.json": {
+      "vulnerabilities_by_severity": {},
+      "high": 0,
+      "critical": 0
+    }
+  }
+}
