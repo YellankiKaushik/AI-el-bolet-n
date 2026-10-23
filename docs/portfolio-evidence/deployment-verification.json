@@ -1,0 +1,21 @@
+{
+  "project": "kaushik",
+  "project_id": "prj_XgrIOPf3xzxQpsZ16fLZLafMd3sn",
+  "team_id": "team_UYEpjjRaObtrYF55SYu5rqUl",
+  "preview_id": "dpl_E9nboFvhrvu8TpRtgvePrrnCpR5c",
+  "preview_url": "https://kaushik-53jfiim1v-kaushik-yellanki-project.vercel.app",
+  "portfolio_commit": "11969c2c5c513ba279652e777f64c02c90cdb4d2",
+  "branch": "feat/signal-daily-newsletter",
+  "ready_state": "READY",
+  "browser_scenarios_passed": 4,
+  "production_deployment_unchanged": "dpl_6Cx1bVxuhwKC6dUUeECTo3m6bQPf",
+  "production_aliases_unchanged": [
+    "kaaush.vercel.app",
+    "kaaushik.vercel.app"
+  ],
+  "newsletter_catalog": [],
+  "email_delivery": "DISABLED",
+  "signup": "UNCONFIGURED",
+  "public_secret_findings": 0,
+  "verification": "CLI deployment completion, private API git metadata and origin-scoped OIDC Chromium checks; no protection disabled"
+}

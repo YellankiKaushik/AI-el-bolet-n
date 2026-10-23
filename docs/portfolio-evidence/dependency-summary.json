@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-23",
+  "inherited_portfolio_findings": {
+    "info": 0,
+    "low": 0,
+    "moderate": 7,
+    "high": 23,
+    "critical": 2,
+    "total": 32
+  },
+  "critical_packages": [
+    "protobufjs",
+    "tar"
+  ],
+  "dependencies_changed_by_integration": false,
+  "production_promotion": "BLOCKED",
+  "scope": "Actual npm advisory inventory; not proof of reachable exploitation"
+}

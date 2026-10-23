@@ -1,0 +1,24 @@
+{
+  "repository": "YellankiKaushik/KAUSHIK",
+  "head_sha": "11969c2c5c513ba279652e777f64c02c90cdb4d2",
+  "remote_main": "fd0f0be68e9434854ffb702928c2fadd92ced17d",
+  "runs": [
+    {
+      "id": 39940895463,
+      "name": "Newsletter integration checks",
+      "url": "https://github.com/YellankiKaushik/KAUSHIK/actions/runs/39940895463",
+      "status": "completed",
+      "conclusion": "failure",
+      "head_sha": "11969c2c5c513ba279652e777f64c02c90cdb4d2",
+      "jobs": [
+        {
+          "id": 120371766546,
+          "name": "frontend",
+          "status": "completed",
+          "conclusion": "failure",
+          "steps": []
+        }
+      ]
+    }
+  ]
+}
